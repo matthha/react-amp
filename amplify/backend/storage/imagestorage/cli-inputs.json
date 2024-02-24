@@ -1,12 +1,12 @@
 {
   "resourceName": "imagestorage",
-  "policyUUID": "a257df64",
-  "bucketName": "image",
+  "policyUUID": "31981b3c",
+  "bucketName": "thethings",
   "storageAccess": "auth",
   "guestAccess": [],
   "authAccess": [
-    "CREATE_AND_UPDATE"
+    "CREATE_AND_UPDATE",
+    "READ"
   ],
-  "triggerFunction": "NONE",
   "groupAccess": {}
 }
