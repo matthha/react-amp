@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { Amplify as API, storage } from "aws-amplify";
+import { Amplify as API} from "aws-amplify";
+// import { sessionAPI as API } from "aws-amplify/utils";
 import {
   Button,
   Flex,
@@ -31,7 +32,7 @@ const App = ({ signOut }) => {
     await Promise.all(
       notesFromAPI.map(async (note) => {
         if (note.image) {
-          const url = await Storage.get(note.name);
+          const url = await API.get(note.name);
           note.image = url;
         }
         return note;
@@ -49,7 +50,7 @@ async function createNote(event) {
     description: form.get("description"),
     image: image.name,
   };
-  if (!!data.image) await Storage.put(data.name, image);
+  if (!!data.image) await API.put(data.name, image);
   await API.graphql({
     query: createNoteMutation,
     variables: { input: data },
@@ -61,7 +62,7 @@ async function createNote(event) {
 async function deleteNote({ id, name }) {
   const newNotes = notes.filter((note) => note.id !== id);
   setNotes(newNotes);
-  await Storage.remove(name);
+  await API.remove(name);
   await API.graphql({
     query: deleteNoteMutation,
     variables: { input: { id } },

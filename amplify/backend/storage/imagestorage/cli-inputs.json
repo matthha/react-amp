@@ -1,11 +1,11 @@
 {
-  "resourceName": "content",
-  "policyUUID": "bc066e9d",
-  "bucketName": "matthha",
+  "resourceName": "imagestorage",
+  "policyUUID": "a257df64",
+  "bucketName": "image",
   "storageAccess": "auth",
   "guestAccess": [],
   "authAccess": [
-    "READ"
+    "CREATE_AND_UPDATE"
   ],
   "triggerFunction": "NONE",
   "groupAccess": {}
