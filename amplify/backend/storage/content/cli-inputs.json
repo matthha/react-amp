@@ -1,0 +1,12 @@
+{
+  "resourceName": "content",
+  "policyUUID": "bc066e9d",
+  "bucketName": "matthha",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
