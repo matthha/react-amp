@@ -26,6 +26,9 @@
       },
       "storage": {
         "imagestorage": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
       }
     }
   }

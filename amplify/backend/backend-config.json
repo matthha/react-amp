@@ -50,6 +50,12 @@
       "service": "Lambda"
     }
   },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
   "parameters": {
     "AMPLIFY_function_S3Triggera65cf98c_deploymentBucketName": {
       "usedBy": [
