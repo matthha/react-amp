@@ -31,5 +31,38 @@
         "S3AndCloudFront": {}
       }
     }
+  },
+  "ops": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactamp-ops-123716-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381491866494:role/amplify-reactamp-ops-123716-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381491866494:role/amplify-reactamp-ops-123716-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactamp-ops-123716-deployment",
+      "UnauthRoleName": "amplify-reactamp-ops-123716-unauthRole",
+      "StackName": "amplify-reactamp-ops-123716",
+      "StackId": "arn:aws:cloudformation:us-east-1:381491866494:stack/amplify-reactamp-ops-123716/7ff7bc10-d8bb-11ee-be07-0e0517781055",
+      "AmplifyAppId": "d1zeozt5ryi0tl"
+    },
+    "categories": {
+      "auth": {
+        "reactamp8d944d16": {}
+      },
+      "function": {
+        "S3Triggera65cf98c": {
+          "deploymentBucketName": "amplify-reactamp-ops-123716-deployment",
+          "s3Key": "amplify-builds/S3Triggera65cf98c-33454653373842686e70-build.zip"
+        }
+      },
+      "api": {
+        "reactamp": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      },
+      "storage": {
+        "imagestorage": {}
+      }
+    }
   }
 }
