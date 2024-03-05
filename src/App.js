@@ -10,6 +10,8 @@ import {
   Image,
   View,
   withAuthenticator,
+  Authenticator,
+  useTheme
 } from "@aws-amplify/ui-react";
 import { listNotes } from "./graphql/queries";
 import {
@@ -19,127 +21,135 @@ import {
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import Home from "./screens/Home";
+import config from './aws-exports'
+import { Amplify } from "aws-amplify";
+import { ThemeProvider } from "@aws-amplify/ui-react"
+
+Amplify.configure(config)
 
 const client = generateClient();
-
-const App = ({ signOut }) => {
-  const [notes, setNotes] = useState([]);
-
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
-  async function fetchNotes() {
-    const apiData = await client.graphql({ query: listNotes });
-    const notesFromAPI = apiData.data.listNotes.items;
-    await Promise.all(
-      notesFromAPI.map(async (note) => {
-        if (note.image) {
-          const url = await getUrl({ key: note.name });
-          note.image = url.url;  
-        }
-        return note;
-      })
-    );
-    setNotes(notesFromAPI);
-  }
-
-  async function createNote(event) {
-    event.preventDefault();
-    const form = new FormData(event.target);
-    const image = form.get("image");
-    const data = {
-      name: form.get("name"),
-      description: form.get("description"),
-      image: image.name,
-    };
-    if (!!data.image) await uploadData({
-      key: data.name,
-      data: image
-    });
-    await client.graphql({
-      query: createNoteMutation,
-      variables: { input: data },
-    });
-    fetchNotes();
-    event.target.reset();
-  }
-
-  async function deleteNote({ id, name }) {
-    const newNotes = notes.filter((note) => note.id !== id);
-    setNotes(newNotes);
-    await remove({ key: name });
-    await client.graphql({
-      query: deleteNoteMutation,
-      variables: { input: { id } },
-    });
-  }
-
-  return (
-    <View>
-      <p>Here is the new stuff.</p>
-      <Home></Home>
-    </View>
-    // <View className="App">
-    //   <Heading level={1}>My Updated Notes App</Heading>
-    //   <View as="form" margin="3rem 0" onSubmit={createNote}>
-    //     <Flex direction="row" justifyContent="center">
-    //       <TextField
-    //         name="name"
-    //         placeholder="Note Name"
-    //         label="Note Name"
-    //         labelHidden
-    //         variation="quiet"
-    //         required
-    //       />
-    //       <TextField
-    //         name="description"
-    //         placeholder="Note Description"
-    //         label="Note Description"
-    //         labelHidden
-    //         variation="quiet"
-    //         required
-    //       />
-    //       <View
-    //         name="image"
-    //         as="input"
-    //         type="file"
-    //         style={{ alignSelf: "end" }}
-    //       />
-    //       <Button type="submit" variation="primary">
-    //         Create Note
-    //       </Button>
-    //     </Flex>
-    //   </View>
-    //   <Heading level={2}>Current Notes</Heading>
-    //   <View margin="3rem 0">
-    //     {notes.map((note) => (
-    //       <Flex
-    //         key={note.id || note.name}
-    //         direction="row"
-    //         justifyContent="center"
-    //         alignItems="center"
-    //       >
-    //         <Text as="strong" fontWeight={700}>
-    //           {note.name}
-    //         </Text>
-    //         <Text as="span">{note.description}</Text>
-    //         {note.image && (
-    //           <Image
-    //             src={note.image}
-    //             alt={`visual aid for ${notes.name}`}
-    //             style={{ width: 400 }}
-    //           />
-    //         )}
-    //         <Button variation="link" onClick={() => deleteNote(note)}>
-    //           Delete note
-    //         </Button>
-    //       </Flex>
-    //     ))}
-    //   </View>
-    //   <Button onClick={signOut}>Sign Out</Button>
-    // </View>
-  );
+const formFields = {
+  signIn: {
+    username: {
+      placeholder: 'Enter your email',
+    },
+  },
+  confirmVerifyUser: {
+    confirmation_code: {
+      label: 'New Label',
+      placeholder: 'Enter your Confirmation Code:',
+      isRequired: false,
+    },
+  },
 };
 
-export default withAuthenticator(App);
+const components = {
+  Header() {
+    const { tokens } = useTheme();
+
+    return (
+      <View textAlign="center" padding={tokens.space.xxxl} backgroundColor={tokens.colors.brand.primary[20]} >
+        <Image
+          alt="CCHS Logo"
+          src="./cclogo.png"
+        />
+      </View>
+    );
+  },
+
+  SignIn: {
+    Header() {
+      const { tokens } = useTheme();
+
+      return (
+        <Heading
+          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+          level={3}
+          color={tokens.colors.red[80]}
+        >
+          Orientation Dashboard
+        </Heading>
+      
+      );
+    },
+
+
+  VerifyUser: {
+    Header() {
+      const { tokens } = useTheme();
+      return (
+        <Heading
+          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+          level={3}
+        >
+          Enter Information:
+        </Heading>
+      );
+    },
+    Footer() {
+      return <Text>Footer Information</Text>;
+    },
+  },
+
+  ConfirmVerifyUser: {
+    Header() {
+      const { tokens } = useTheme();
+      return (
+        <Heading
+          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+          level={3}
+        >
+          Enter Information:
+        </Heading>
+      );
+    },
+    Footer() {
+      return <Text>Footer Information</Text>;
+    },
+  },
+}
+}
+
+
+const earthyTheme = {
+  name: "earthTheme",
+  tokens: {
+    colors: {
+      brand: {
+        primary: {
+          20: { value: "{colors.red.80}" },
+          80: { value: "{colors.red.80}" },
+          red: '#FF0000', 
+         
+        },
+       
+      },
+    },
+  },
+}
+
+
+
+export default function App() {
+  return (
+    <ThemeProvider theme={earthyTheme}>
+    <Authenticator style={{ backgroundColor: 'blue' }}
+      formFields={formFields}
+      components={components}
+      hideSignUp={true}
+    
+    >
+      {({ signOut, user }) => {
+        return (
+          <main>
+            <View >
+              <Home/>
+            </View>
+            <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
+          </main>
+        );
+      }}
+    </Authenticator>
+    </ThemeProvider>
+  );
+}

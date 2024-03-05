@@ -64,5 +64,39 @@
         "imagestorage": {}
       }
     }
+  },
+  "brindatest": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactamp-brindatest-183620-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381491866494:role/amplify-reactamp-brindatest-183620-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381491866494:role/amplify-reactamp-brindatest-183620-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactamp-brindatest-183620-deployment",
+      "UnauthRoleName": "amplify-reactamp-brindatest-183620-unauthRole",
+      "StackName": "amplify-reactamp-brindatest-183620",
+      "StackId": "arn:aws:cloudformation:us-east-1:381491866494:stack/amplify-reactamp-brindatest-183620/01ec0c60-da80-11ee-89a9-0a799b3b47b3",
+      "AmplifyAppId": "d1zeozt5ryi0tl"
+    },
+    "categories": {
+      "auth": {
+        "reactamp8d944d16": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "S3Triggera65cf98c": {
+          "deploymentBucketName": "amplify-reactamp-brindatest-183620-deployment",
+          "s3Key": "amplify-builds/S3Triggera65cf98c-33454653373842686e70-build.zip"
+        }
+      },
+      "api": {
+        "reactamp": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      },
+      "storage": {
+        "imagestorage": {}
+      }
+    }
   }
 }
