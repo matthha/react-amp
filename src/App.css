@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  margin: 0 !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +37,91 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (max-width: 500px) {
+  .headerMenu {
+    display: none;
+  }
+}
+@media (min-width: 500px) {
+  .menuicon {
+    display: none;
+  }
+}
+
+.header1 {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 24-simibold-title */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 116.667% */
+  margin: 0;
+}
+.header2 {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 20-simibold-title2 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+  margin: 0;
+}
+.content {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 14-medium */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.secondaryContent{
+  color: #868686;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 14-regular */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.paragraph {
+  margin-top: 12px;
+}
+.ant-menu-title-content {
+  color: white;
+}
+.ant-drawer-content-wrapper {
+  max-width: 76vw !important;
+}
+.ant-menu-title-content {
+  font-size: 16px !important;
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+}
+
+.ant-card-body {
+  padding: 8px !important;
+  padding-bottom: 20px !important;
+}
+.status-card{
+  display: flex;
+  gap: 4px;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
