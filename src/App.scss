@@ -8,6 +8,7 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
+$primaryColor: #9e2a2b;
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -72,6 +73,17 @@ body {
   line-height: 28px; /* 140% */
   margin: 0;
 }
+.header3 {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 20-simibold-title2 */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+  margin: 0;
+}
 .content {
   color: #000;
   font-feature-settings: "clig" off, "liga" off;
@@ -82,7 +94,7 @@ body {
   font-weight: 500;
   line-height: normal;
 }
-.secondaryContent{
+.secondaryContent {
   color: #868686;
   font-feature-settings: "clig" off, "liga" off;
   /* 14-regular */
@@ -92,6 +104,15 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+.buttonText {
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
 .paragraph {
   margin-top: 12px;
 }
@@ -116,11 +137,11 @@ body {
   padding: 8px !important;
   padding-bottom: 20px !important;
 }
-.status-card{
+.status-card {
   display: flex;
   gap: 4px;
 }
-.card-body{
+.card-body {
   display: flex;
   flex-direction: column;
   gap: 6px;

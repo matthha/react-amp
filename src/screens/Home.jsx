@@ -47,9 +47,8 @@ function Home(props) {
       <div
         style={{
           background: "#9E2A2B",
-          height: 60,
-          paddingLeft: 16,
-          paddingTop: 20,
+          height: "auto",
+          padding: "24px 16px",
         }}
         className="menuicon"
       >

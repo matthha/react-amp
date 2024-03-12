@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Orientation Video",
+    "estimationTime": "~10 mins",
+    "completed": true,
+    "coverImg": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "videoLink": "https://video.xx.fbcdn.net/v/t42.9040-2/75971711_2440157972922478_5950292406782918656_n.mp4?_nc_cat=111&ccb=1-7&_nc_sid=55d0d3&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_ohc=kpkAg725REcAX-JJIuD&_nc_rml=0&_nc_ht=video.fdet1-2.fna&oh=00_AfCgM0KMtcwHlBmPEedFsj0IzaHn-FnMg2eq-Pbb1eznsg&oe=65EFFE03",
+    "description": "Description or summary of the video content goes here",
+    "quizList": [
+      {
+        "question": "When is a student first considered truant?",
+        "options": [
+          "5th unexcused absence",
+          "3rd unexcused absence",
+          "Students are considered truant if they miss the first or last day of school"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "question": "When is a student first considered truant?",
+        "options": [
+          "5th unexcused absence",
+          "3rd unexcused absence",
+          "Students are considered truant if they miss the first or last day of school"
+        ],
+        "correctAnswer": "a"
+      }
+    ]
+  },
+  {
+    "title": "Orientation Video",
+    "estimationTime": "~10 mins",
+    "completed": false,
+    "coverImg": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "title": "Orientation Video",
+    "estimationTime": "~10 mins",
+    "completed": false,
+    "coverImg": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "title": "Orientation Video",
+    "estimationTime": "~10 mins",
+    "completed": false,
+    "coverImg": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

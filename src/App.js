@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import "@aws-amplify/ui-react/styles.css";
 import {
   Button,
@@ -21,6 +21,8 @@ import {
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import Home from "./screens/Home";
+import Video from "./screens/Video";
+import Quiz from "./screens/Quiz";
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react"
@@ -143,7 +145,7 @@ export default function App() {
         return (
           <main>
             <View >
-              <Home/>
+              <Video/>
             </View>
             <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
           </main>
