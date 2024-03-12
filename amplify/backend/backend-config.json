@@ -46,22 +46,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    },
-    "userPoolGroups": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "reactamp8d944d16"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
@@ -93,6 +77,13 @@
           "resourceName": "S3Triggera65cf98c"
         }
       ]
+    }
+  },
+  "predictions": {
+    "translateText8cbda5d0": {
+      "convertType": "translateText",
+      "providerPlugin": "awscloudformation",
+      "service": "Translate"
     }
   },
   "storage": {

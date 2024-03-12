@@ -24,6 +24,7 @@ import Home from "./screens/Home";
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react"
+import TestData from "./screens/TestData";
 
 Amplify.configure(config)
 
@@ -143,7 +144,7 @@ export default function App() {
         return (
           <main>
             <View >
-              <Home/>
+              <TestData client={client} user={user}/>
             </View>
             <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
           </main>

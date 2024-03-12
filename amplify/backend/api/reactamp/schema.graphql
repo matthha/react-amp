@@ -1,24 +1,13 @@
-type User @model @auth(rules: [{ allow: public }]) {
+type Progress @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String!
-  email: String!
-  modulesCompleted: [ModuleCompletion] @connection(keyName: "byUser", fields: ["id"])
+  userID: String
+  progress: AWSJSON
 }
 
-type Module @model {
+type Note @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   description: String
-  completions: [ModuleCompletion] @connection(keyName: "byModule", fields: ["id"])
+  image: String
 }
-
-type ModuleCompletion @model(queries: null) {
-  id: ID!
-  user: User @connection(keyName: "byUser", fields: ["userId"])
-  module: Module @connection(keyName: "byModule", fields: ["moduleId"])
-  progress: Int!
-  completed: Boolean!
-  userId: ID!
-  moduleId: ID!
-}
-
+ 

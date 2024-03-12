@@ -15,9 +15,6 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
-    },
-    "userPoolGroups": {
-      "parentsignupGroupRole": "string"
     }
   },
   "function": {
@@ -39,6 +36,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string",
       "S3BucketSecureURL": "string",
       "WebsiteURL": "string"
+    }
+  },
+  "predictions": {
+    "translateText8cbda5d0": {
+      "region": "string",
+      "sourceLang": "string",
+      "targetLang": "string"
     }
   },
   "storage": {
