@@ -14,6 +14,7 @@ import {
 } from "antd";
 // import { generateClient } from "aws-amplify/api";
 import { listProgresss, getProgress, listProgresses } from "../graphql/queries";
+import * as subscriptions from '../graphql/subscriptions';
 
 // const client = generateClient()
 const { Meta } = Card;
@@ -21,6 +22,23 @@ const { Meta } = Card;
 function TestData(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [myProgress, setMyProgress] = useState({"Attendance":"no"})
+  const [test, setTest] = useState({'nope':'not yet'})
+
+  const variables = {
+   filter: {
+     // Only receive Todo messages where the "type" field is "Personal"
+     userID: { eq: props.user.userID }
+   }
+   };
+   const sub = props.client
+   .graphql({
+      query: subscriptions.onUpdateProgress,
+      variables
+   })
+   .subscribe({
+      next: ({ data }) => console.log(data),
+      error: (error) => console.warn(error)
+   });
 
   useEffect(()=> {
    fetchProgress();
@@ -91,6 +109,7 @@ function TestData(props) {
         <Row gutter={[16, 16]}>
         <Card>Stuff Here {JSON.stringify(props.user)}</Card>
         <Card>{JSON.stringify(myProgress)}</Card>
+        <Card>{JSON.stringify(test)}</Card>
         </Row>
       </div>
     </div>
