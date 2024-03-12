@@ -2,5 +2,5 @@
   "AppSyncApiName": "reactamp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2024-03-03T00:14:31.932Z"
+  "AuthModeLastUpdated": "2024-03-12T17:44:36.609Z"
 }

@@ -13,7 +13,7 @@ import {
   Col,
 } from "antd";
 // import { generateClient } from "aws-amplify/api";
-import { listProgresss, getProgress } from "../graphql/queries";
+import { listProgresss, getProgress, listProgresses } from "../graphql/queries";
 
 // const client = generateClient()
 const { Meta } = Card;
@@ -27,14 +27,23 @@ function TestData(props) {
   }, []);
 
    async function fetchProgress() {
-   
+      console.log('Stuff !!')
    
       // Get a specific item
-      const oneProgress = await props.client.graphql({
-         query: getProgress,
-         variables: { userID: props.user.username }
+      // const oneProgress = await props.client.graphql({
+      //    query: getProgress,
+      //    variables: { userID: props.user.username }
+      // });
+      // // console.log(oneProgress)
+      // setMyProgress(oneProgress)
+
+      // List all items
+      const allProgresss = await props.client.graphql({
+         query: listProgresses
       });
-      console.log(oneProgress)
+      setMyProgress(allProgresss.data.listProgresses.items)
+      // console.log(allProgress);
+
    }
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
@@ -81,6 +90,7 @@ function TestData(props) {
         </h2>
         <Row gutter={[16, 16]}>
         <Card>Stuff Here {JSON.stringify(props.user)}</Card>
+        <Card>{JSON.stringify(myProgress)}</Card>
         </Row>
       </div>
     </div>

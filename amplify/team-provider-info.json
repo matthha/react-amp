@@ -62,6 +62,9 @@
       },
       "storage": {
         "imagestorage": {}
+      },
+      "predictions": {
+        "translateText8cbda5d0": {}
       }
     }
   },
