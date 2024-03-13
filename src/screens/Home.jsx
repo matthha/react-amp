@@ -83,7 +83,7 @@ function Home(props) {
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">CCHS Online Orientation</h1>
         <div className="content paragraph">
-          Hello, Alison <br />
+          Hello, {props.user.username} <br />
           Your current orientation progress:
         </div>
         <Progress strokeColor="#299E63" percent={30} />
