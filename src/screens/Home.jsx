@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -14,14 +14,29 @@ import {
   Row,
   Col,
 } from "antd";
+import { getCurrentUser } from "aws-amplify/auth";
 const { Meta } = Card;
+
 // Import other icons here if needed and use them as intended
-function Home(props) {
+function Home() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [username, setUsername] = useState(null);
   const navigate = useNavigate(); 
   const handleCardClick = (module) => {
     navigate(`/video`);
   };
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const user = await getCurrentUser();
+        setUsername(user.username);
+      } catch (error) {
+        console.error("Error fetching user information:", error);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
   const orientationModules = [
     {
       title: "Orientation Video",
@@ -83,7 +98,7 @@ function Home(props) {
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">CCHS Online Orientation</h1>
         <div className="content paragraph">
-          Hello, {props.user.username} <br />
+          Hello, {username} <br />
           Your current orientation progress:
         </div>
         <Progress strokeColor="#299E63" percent={30} />
