@@ -1,11 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import moduleData from "../orientationModules.json"; // path to your JSON file
+import {
+  Drawer,
+  Menu,
+  Progress,
+  Row,
+  Col
+} from "antd";
 
 const Quiz = () => {
   // Assuming we're taking the quizList from the first module.
   const [answers, setAnswers] = useState({});
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const navigate = useNavigate(); // Instantiate useNavigate
 
   const onAnswerChange = (e, questionIndex) => {
     setAnswers({
@@ -15,8 +27,9 @@ const Quiz = () => {
   };
 
   const handleSubmit = () => {
-    // Here you would handle submission, e.g., send answers to an API or compare with correct answers
-    console.log(answers);
+    // Handle the submission logic here
+    // console.log(answers);
+    navigate("/home"); // Add the navigate call to redirect to the home page
   };
 
   return (
@@ -29,8 +42,27 @@ const Quiz = () => {
         }}
         className="menuicon"
       >
-        <MenuOutlined style={{ color: "white", fontSize: 20 }} />
+        <MenuOutlined
+          style={{ color: "white", fontSize: 20 }}
+          onClick={() => {
+            setOpenMenu(true);
+          }}
+        />
       </div>
+      <span className="headerMenu">
+        <AppMenu />
+      </span>
+      <Drawer
+        placement="left"
+        visible={openMenu}
+        onClose={() => {
+          setOpenMenu(false);
+        }}
+        closable={false}
+        style={{ backgroundColor: "white" }}
+      >
+        <AppMenu isInline={true} />
+      </Drawer>
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">Module Quiz</h1>
         {moduleData[0].quizList.map((quizItem, index) => (
@@ -77,5 +109,40 @@ const Quiz = () => {
     </div>
   );
 };
+
+function AppMenu({ isInline = false }) {
+  // Corrected parameter destructuring
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    // navigate to the route corresponding to the menu item key
+    navigate(`/${e.key}`);
+  };
+ 
+  return (
+    <Menu
+      style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
+      mode={isInline ? "inline" : "horizontal"}
+      onClick={handleClick}
+      items={[
+        {
+          label: "CCHS Online Orientation",
+          key: "home", // Corrected property name to lowercase
+        },
+        {
+          label: "Orientation Recap",
+          key: "recap",
+        },
+        {
+          label: "FAQ",
+          key: "faq",
+        },
+        {
+          label: "Profile",
+          key: "profile",
+        },
+      ]}
+    ></Menu>
+  );
+}
 
 export default Quiz;

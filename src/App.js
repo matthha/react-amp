@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import "./App.scss";
 import "@aws-amplify/ui-react/styles.css";
 import {
@@ -23,6 +25,9 @@ import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import Home from "./screens/Home";
 import Video from "./screens/Video";
 import Quiz from "./screens/Quiz";
+import RecapPage from './screens/RecapPage'; 
+import FAQPage from './screens/FAQPage'; 
+import ProfilePage from './screens/ProfilePage'; 
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react"
@@ -134,24 +139,34 @@ const earthyTheme = {
 
 export default function App() {
   return (
-    <ThemeProvider theme={earthyTheme}>
-    <Authenticator style={{ backgroundColor: 'blue' }}
-      formFields={formFields}
-      components={components}
-      hideSignUp={true}
-    
-    >
-      {({ signOut, user }) => {
-        return (
-          <main>
-            <View >
-              <Video/>
-            </View>
-            <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
-          </main>
-        );
-      }}
-    </Authenticator>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={earthyTheme}>
+      <Authenticator style={{ backgroundColor: 'blue' }}
+        formFields={formFields}
+        components={components}
+        hideSignUp={true}
+      >
+        {({ signOut, user }) => {
+          return (
+            <main>
+              {/* <View >
+                <Home/>
+              </View> */} 
+              <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
+                <Route path="/video" element={<Video/>} />
+                <Route path="/quiz" element={<Quiz/>} />
+                <Route path="/recap" element={<RecapPage/>} />
+                <Route path="/faq" element={<FAQPage/>} />
+                <Route path="/profile" element={<ProfilePage/>} />
+              </Routes>
+              <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
+            </main>
+          );
+        }}
+      </Authenticator>
+      </ThemeProvider>
+    </Router>
   );
 }

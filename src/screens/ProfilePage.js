@@ -1,34 +1,32 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
+
+import {
+  MenuOutlined,
+  CheckCircleFilled,
+  MinusCircleFilled,
+} from "@ant-design/icons";
 import {
   Drawer,
   Menu,
   Card,
   Progress,
   Row,
-  Col, Button, Divider
+  Col,
 } from "antd";
-import {
-  ClockCircleOutlined,
-  PlayCircleOutlined,
-  MenuOutlined,
-} from "@ant-design/icons";
-import moduleData from "../orientationModules.json";
-
-const IntroductionVideo = () => {
+const { Meta } = Card;
+// Import other icons here if needed and use them as intended
+function ProfilePage(props) {
   const [openMenu, setOpenMenu] = useState(false);
-
-  const navigate = useNavigate();
-  const handleStartQuiz = () => {
-    navigate("/quiz"); // Navigate to your quiz page route
-  };
+  
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <div
         style={{
           background: "#9E2A2B",
-          height: "auto",
-          padding: "24px 16px",
+          height: 60,
+          paddingLeft: 16,
+          paddingTop: 20,
         }}
         className="menuicon"
       >
@@ -53,39 +51,13 @@ const IntroductionVideo = () => {
       >
         <AppMenu isInline={true} />
       </Drawer>
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">Introduction Video</h1>
-        <div className="secondaryContent" style={{ padding: "12px 0px" }}>
-          <ClockCircleOutlined /> {moduleData[0].estimationTime}
-        </div>
-        <div className="buttonText">
-          {moduleData[0].description}
-        </div>
-        <div style={{ textAlign: "center", margin: "24px 0" }}>
-          <video width="100%" controls>
-            <source src={moduleData[0].videoLink} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
 
-        <Button
-          style={{
-            backgroundColor: "#9E2A2B",
-            borderColor: "#9E2A2B",
-            color: "white",
-            margin: 10,
-            height: "40px",
-            borderRadius: "100px",
-          }}
-          block
-          onClick={handleStartQuiz} // Attach the navigate function here
-        >
-          <div className="buttonText">Start the quiz</div>
-        </Button>
+      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+        <h1 className="header1">Profile</h1>
       </div>
     </div>
   );
-};
+}
 
 function AppMenu({ isInline = false }) {
   // Corrected parameter destructuring
@@ -94,7 +66,6 @@ function AppMenu({ isInline = false }) {
     // navigate to the route corresponding to the menu item key
     navigate(`/${e.key}`);
   };
- 
   return (
     <Menu
       style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
@@ -122,4 +93,4 @@ function AppMenu({ isInline = false }) {
   );
 }
 
-export default IntroductionVideo;
+export default ProfilePage;

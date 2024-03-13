@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "reactamp8d944d16": {}
+        "reactamp8d944d16": {},
+        "userPoolGroups": {}
       },
       "api": {
         "reactamp": {}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import {
   MenuOutlined,
   CheckCircleFilled,
@@ -16,6 +18,10 @@ const { Meta } = Card;
 // Import other icons here if needed and use them as intended
 function Home(props) {
   const [openMenu, setOpenMenu] = useState(false);
+  const navigate = useNavigate(); 
+  const handleCardClick = (module) => {
+    navigate(`/video`);
+  };
   const orientationModules = [
     {
       title: "Orientation Video",
@@ -97,6 +103,7 @@ function Home(props) {
                     src={module.coverImg}
                   />
                 }
+                onClick={() => handleCardClick(module)}
               >
                 <div className="card-body">
                   <div className="content">{module.title}</div>
@@ -128,10 +135,17 @@ function Home(props) {
 
 function AppMenu({ isInline = false }) {
   // Corrected parameter destructuring
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    // navigate to the route corresponding to the menu item key
+    navigate(`/${e.key}`);
+  };
+ 
   return (
     <Menu
       style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
       mode={isInline ? "inline" : "horizontal"}
+      onClick={handleClick}
       items={[
         {
           label: "CCHS Online Orientation",
