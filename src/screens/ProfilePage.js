@@ -54,6 +54,7 @@ function ProfilePage(props) {
 
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">Profile</h1>
+        <button style={{backgroundColor:'red'}} onClick={props.signOut}>Sign out</button>
       </div>
     </div>
   );

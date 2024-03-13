@@ -159,9 +159,9 @@ export default function App() {
                 <Route path="/quiz" element={<Quiz/>} />
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
-                <Route path="/profile" element={<ProfilePage/>} />
+                <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
               </Routes>
-              <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button>
+              {/* <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button> */}
             </main>
           );
         }}

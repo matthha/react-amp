@@ -127,6 +127,7 @@ function Home(props) {
               </Card>
             </Col>
           ))}
+
         </Row>
       </div>
     </div>
