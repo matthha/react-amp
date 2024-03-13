@@ -4,65 +4,65 @@ import {
   CheckCircleFilled,
   MinusCircleFilled,
 } from "@ant-design/icons";
-import {
-  Drawer,
-  Menu,
-  Card,
-  Progress,
-  Row,
-  Col,
-} from "antd";
-// import { generateClient } from "aws-amplify/api";
+import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 import { listProgresss, getProgress, listProgresses } from "../graphql/queries";
-import * as subscriptions from '../graphql/subscriptions';
 
-// const client = generateClient()
-const { Meta } = Card;
-// Import other icons here if needed and use them as intended
+// -- TODO -- If use S3, need a way to get all items in storage --
+// import { getUrl } from 'aws-amplify/storage';
+// import { list } from 'aws-amplify/storage';
+
+// try {
+//   const result = await list({
+//     prefix: 'public/'
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
+// const getUrlResult = await getUrl({
+//   key: 'public/Attendance.yml',
+// });
+
+
 function TestData(props) {
   const [openMenu, setOpenMenu] = useState(false);
-  const [myProgress, setMyProgress] = useState({"Attendance":"no"})
+  const [myProgress, setMyProgress] = useState('Empty')
   const [test, setTest] = useState({'nope':'not yet'})
 
   const variables = {
-   filter: {
-     // Only receive Todo messages where the "type" field is "Personal"
-     userID: { eq: props.user.userID }
-   }
+    filter: {
+      // filter for records that match our username
+      userID: { eq: props.user.username }
+    }
    };
-   const sub = props.client
-   .graphql({
-      query: subscriptions.onUpdateProgress,
-      variables
-   })
-   .subscribe({
-      next: ({ data }) => console.log(data),
-      error: (error) => console.warn(error)
-   });
+  // -- TODO -- Need to find a way to use this --
+  //  const sub = props.client
+  //  .graphql({
+  //     query: subscriptions.onUpdateProgress,
+  //     variables
+  //  })
+  //  .subscribe({
+  //     next: ({ data }) => console.log(data),
+  //     error: (error) => console.warn(error)
+  //  });
 
   useEffect(()=> {
    fetchProgress();
-  }, []);
-
-   async function fetchProgress() {
-      console.log('Stuff !!')
    
-      // Get a specific item
-      // const oneProgress = await props.client.graphql({
-      //    query: getProgress,
-      //    variables: { userID: props.user.username }
-      // });
-      // // console.log(oneProgress)
-      // setMyProgress(oneProgress)
+  }, [myProgress]);
 
-      // List all items
-      const allProgresss = await props.client.graphql({
-         query: listProgresses
-      });
-      setMyProgress(allProgresss.data.listProgresses.items)
-      // console.log(allProgress);
+  async function fetchProgress() {
+    console.log('Fetch Stuff !!')
+  
+    const allProgresss = await props.client.graphql({
+        query: listProgresses,
+        variables: variables
+    });
+    // -- TODO -- If this doesn't return anything, we might want to initialize here --
+    setMyProgress(allProgresss.data.listProgresses.items[0].progress)
 
-   }
+  }
+
+
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <div
@@ -108,8 +108,8 @@ function TestData(props) {
         </h2>
         <Row gutter={[16, 16]}>
         <Card>Stuff Here {JSON.stringify(props.user)}</Card>
-        <Card>{JSON.stringify(myProgress)}</Card>
-        <Card>{JSON.stringify(test)}</Card>
+        <Card>My ID is {props.user.username} and my progress is {myProgress}</Card>
+        {/* <Card>Data is {JSON.stringify(sub[0])}</Card> */}
         </Row>
       </div>
     </div>
