@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+
+import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import {
   Drawer,
   Menu,
@@ -17,10 +18,11 @@ import moduleData from "../orientationModules.json";
 
 const IntroductionVideo = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
+  const location = useLocation();
+  const moduleName = location.state?.module.title;
   const navigate = useNavigate();
   const handleStartQuiz = () => {
-    navigate("/quiz"); // Navigate to your quiz page route
+    navigate("/quiz", { state: { moduleName } }); // Navigate to your quiz page route
   };
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>

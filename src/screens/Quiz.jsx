@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -16,7 +16,8 @@ const Quiz = () => {
   // Assuming we're taking the quizList from the first module.
   const [answers, setAnswers] = useState({});
   const [openMenu, setOpenMenu] = useState(false);
-
+  const location = useLocation();
+  const moduleName = location.state?.moduleName;
   const navigate = useNavigate(); // Instantiate useNavigate
 
   const onAnswerChange = (e, questionIndex) => {
@@ -29,6 +30,11 @@ const Quiz = () => {
   const handleSubmit = () => {
     // Handle the submission logic here
     // console.log(answers);
+    let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
+    if (!completedModules.includes(moduleName)) {
+      completedModules.push(moduleName);
+      localStorage.setItem("completedModules", JSON.stringify(completedModules));
+    }
     navigate("/home"); // Add the navigate call to redirect to the home page
   };
 
