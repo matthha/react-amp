@@ -62,6 +62,24 @@
       "service": "S3AndCloudFront"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_S3Triggera65cf98c_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggera65cf98c"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Triggera65cf98c_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggera65cf98c"
+        }
+      ]
+    }
+  },
   "predictions": {
     "translateText8cbda5d0": {
       "convertType": "translateText",
