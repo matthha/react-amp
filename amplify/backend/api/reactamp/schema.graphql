@@ -10,7 +10,3 @@ type Note @model @auth(rules: [{allow: public}]) {
   description: String
   image: String
 }
- type Subscription {
-  onCommentByPostId(postCommentsId: ID!): Comment
-    @aws_subscribe(mutations: ["createComment"])
-}
