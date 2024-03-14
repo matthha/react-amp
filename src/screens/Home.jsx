@@ -18,7 +18,7 @@ import { getCurrentUser } from "aws-amplify/auth";
 const { Meta } = Card;
 
 // Import other icons here if needed and use them as intended
-function Home() {
+function Home(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [username, setUsername] = useState(null);
   const [orientationModules, setOrientationModules] =useState([
