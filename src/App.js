@@ -153,7 +153,7 @@ export default function App() {
                 <Home/>
               </View> */} 
               <Routes>
-                <Route path="/" element={<Home/>} />
+                <Route path="/" element={<Home user={user}/>} />
                 <Route path="/home" element={<Home user={user}/>} />
                 <Route path="/video" element={<Video/>} />
                 <Route path="/quiz" element={<Quiz/>} />
