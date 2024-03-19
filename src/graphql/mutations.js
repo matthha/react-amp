@@ -1,45 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createProgress = /* GraphQL */ `
+  mutation CreateProgress(
+    $input: CreateProgressInput!
+    $condition: ModelProgressConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createProgress(input: $input, condition: $condition) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateProgress = /* GraphQL */ `
+  mutation UpdateProgress(
+    $input: UpdateProgressInput!
+    $condition: ModelProgressConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateProgress(input: $input, condition: $condition) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteProgress = /* GraphQL */ `
+  mutation DeleteProgress(
+    $input: DeleteProgressInput!
+    $condition: ModelProgressConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteProgress(input: $input, condition: $condition) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename

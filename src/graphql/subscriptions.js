@@ -1,36 +1,36 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNote = /* GraphQL */ `
-  subscription OnCreateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onCreateNote(filter: $filter) {
+export const onCreateProgress = /* GraphQL */ `
+  subscription OnCreateProgress($filter: ModelSubscriptionProgressFilterInput) {
+    onCreateProgress(filter: $filter) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateNote = /* GraphQL */ `
-  subscription OnUpdateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onUpdateNote(filter: $filter) {
+export const onUpdateProgress = /* GraphQL */ `
+  subscription OnUpdateProgress($filter: ModelSubscriptionProgressFilterInput) {
+    onUpdateProgress(filter: $filter) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteNote = /* GraphQL */ `
-  subscription OnDeleteNote($filter: ModelSubscriptionNoteFilterInput) {
-    onDeleteNote(filter: $filter) {
+export const onDeleteProgress = /* GraphQL */ `
+  subscription OnDeleteProgress($filter: ModelSubscriptionProgressFilterInput) {
+    onDeleteProgress(filter: $filter) {
       id
-      name
-      description
+      userID
+      progress
       createdAt
       updatedAt
       __typename
