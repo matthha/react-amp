@@ -54,7 +54,35 @@ function ProfilePage(props) {
 
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">Profile</h1>
-        <button style={{backgroundColor:'red'}} onClick={props.signOut}>Sign out</button>
+        <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
+        <div style={{paddingTop:25}}>
+            <div>
+                <h4 className="header4" style={{paddingBottom:5}}>NAME</h4>
+                <input 
+                    defaultValue="Alison" 
+                    className="profile-input" 
+                />
+            </div>
+            <div>
+                <h4 className="header4" style={{paddingBottom:5}}>EMAIL</h4>
+                <input 
+                    defaultValue="Alison123@gmail.com" 
+                    className="profile-input" 
+                />
+            </div>
+        </div>
+        <div style={{paddingTop:'40px'}}>
+          <button style={{
+              backgroundColor: "#9E2A2B",
+              borderColor: "#9E2A2B",
+              color: "white",
+              height: "40px",
+              borderRadius: "100px",
+              width: "350px"
+            }}
+                  onClick={props.signOut}>Sign out
+          </button>
+        </div>
       </div>
     </div>
   );

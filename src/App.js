@@ -28,6 +28,8 @@ import Quiz from "./screens/Quiz";
 import RecapPage from './screens/RecapPage'; 
 import FAQPage from './screens/FAQPage'; 
 import ProfilePage from './screens/ProfilePage'; 
+import RecapContentPage from './screens/RecapContentPage';
+
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react"
@@ -160,6 +162,7 @@ export default function App() {
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
+                <Route path="/recapcontent" element={<RecapContentPage/>} />
               </Routes>
               {/* <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button> */}
             </main>

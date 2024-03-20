@@ -146,3 +146,93 @@ $primaryColor: #9e2a2b;
   flex-direction: column;
   gap: 6px;
 }
+
+.profile-input {
+  width: 100%; /* Match the width in the screenshot */
+  padding: 10px; /* Adjust the padding to match the design */
+  margin-bottom: 16px; /* Space between the inputs */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Slightly rounded borders */
+  /* Add other styles as needed */
+}
+
+
+.site-collapse-custom-panel {
+  background: #fff;
+  border: 0;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Style for the collapse panel header */
+.site-collapse-custom-panel > .ant-collapse-header {
+  padding-left: 0 !important;
+  color: #9E2A2B;
+  font-size: 16px; 
+  font-weight: 600;
+}
+
+
+.site-collapse-custom-panel .ant-collapse-content-box {
+  font-size: 16px;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+/* CSS file */
+
+.cardStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+  margin-bottom: 10px;
+  /* other styles */
+}
+
+.infoIconStyle {
+  color: #9E2A2B;
+  font-size: 24px;
+  /* other styles */
+}
+
+.titleStyle {
+  font-weight: bold;
+  font-size: 18px;
+  /* other styles */
+}
+
+.contentStyle {
+  flex-grow: 1;
+  margin-left: 20px; /* Adjust spacing as needed */
+  align-self: flex-start;
+}
+
+.rightArrowStyle {
+  color: #9E2A2B; /* Adjust as needed */
+  font-size: 24px;
+  cursor: pointer;
+  /* other styles */
+}
+
+.dressCodeList {
+  padding-left: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.dressCodeList li {
+  padding: 5px 0;
+}
+
+.imageRow {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dressCodeImage {
+  width: 100%; /* This will make the image responsive */
+  height: auto;
+  object-fit: cover; /* This will cover the area without stretching the image */
+}

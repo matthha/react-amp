@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Collapse } from "antd";
-
 
 import {
   MenuOutlined,
@@ -17,35 +15,14 @@ import {
   Col,
 } from "antd";
 const { Meta } = Card;
-const { Panel } = Collapse;
-
 // Import other icons here if needed and use them as intended
-function FAQPage(props) {
+function ProfilePage(props) {
   const [openMenu, setOpenMenu] = useState(false);
-  const faqs = [
-    {
-      question: "What academic supports are in place at City High?",
-      answer:
-        "Most classes at City High are team-taught and embed Teaching Associates and Learning Support in the classroom.",
-    },
-    {
-      question: "How are students with learning support educated at City High?",
-      answer: "Your answer here.",
-    },
-    {
-        question: "What if I apply and my child has an IEP?",
-        answer: "Your answer here.",
-    },
-    {
-        question: "What is the City High attendance policy?",
-        answer: "Your answer here.",
-    },
-    {
-        question: " Does City High have for-credit College Electives?",
-        answer: "Your answer here.",
-    },
-    // Add other FAQs here
-  ];
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    // navigate to the route corresponding to the menu item key
+    navigate(`/recap`);
+  };
   
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
@@ -81,27 +58,29 @@ function FAQPage(props) {
       </Drawer>
 
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">FAQ</h1>
-
-        <Collapse
-          accordion
-          bordered={false}
-          expandIcon={({ isActive }) =>
-            isActive ? <MinusCircleFilled /> : <CheckCircleFilled />
-          }
-          className="site-collapse-custom-collapse"
-        >
-          {faqs.map((faq, index) => (
-            <Panel
-              header={faq.question}
-              key={index}
-              className="site-collapse-custom-panel"
-            >
-              <p>{faq.answer}</p>
-            </Panel>
-          ))}
-        </Collapse>
-       </div>
+        <p onClick={handleClick} style={{fontWeight:500, color:'#9E2A2B'}}>&lt; Go Back</p>
+        <h2 className="header1">Dress Code</h2>
+        <ul className="dressCodeList">
+            <li>Dress Blouse, Shirt with a Collar, Turtleneck</li>
+            <li>Sweaters (V-neck or crewneck), Blazers</li>
+            <li>Dress Pants: Full length or Ankle</li>
+            <li>(No capri pants or shorts)</li>
+        </ul>
+        {/* <Row gutter={16} className="imageRow">
+            <Col span={8}>
+                <img src="../images/shirts.png" alt="Shirts" className="dressCodeImage"/>
+            </Col>
+            <Col span={8}>
+                <img src="../images/pants.png" alt="Pants" className="dressCodeImage"/>
+            </Col>
+        </Row>
+        <ul className="dressCodeList">
+            <li>Dress Blouse, Shirt with a Collar, Turtleneck</li>
+            <li>Sweaters (V-neck or crewneck), Blazers</li>
+            <li>Dress Pants: Full length or Ankle</li>
+            <li>(No capri pants or shorts)</li>
+        </ul> */}
+      </div>
     </div>
   );
 }
@@ -140,4 +119,4 @@ function AppMenu({ isInline = false }) {
   );
 }
 
-export default FAQPage;
+export default ProfilePage;
