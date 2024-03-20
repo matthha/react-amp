@@ -3,6 +3,7 @@ import { parse, stringify } from 'yaml';
 // import fs from 'fs';
 import text from '../YamlContent/Modules.yml'
 import { useState } from "react";
+import NavBar from "../ui-components/NavBar";
 
 function TestYaml(props) {
    const [content, setContent] =useState({})
@@ -17,6 +18,7 @@ function TestYaml(props) {
    return (
       <>
       <View>
+         <NavBar />
          <h1>Here is a title.</h1>
          <div>
             <h2>Header</h2>
