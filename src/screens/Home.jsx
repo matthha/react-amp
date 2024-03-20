@@ -192,6 +192,10 @@ function AppMenu({ isInline = false }) {
           label: "Profile",
           key: "profile",
         },
+        {
+          label: "Yaml",
+          key: "yaml"
+        }
       ]}
     ></Menu>
   );

@@ -1,0 +1,18 @@
+- MODULE: Attendance
+  DESCRIPTION: 
+  # 2 spaces before dash
+    - REGULAR: “This is the first sentence.”
+    - BOLD: “This is the second sentence in Bold.”
+    - ITALICS: “This is the third sentence in Italics.”
+    - REGULAR: “This is the last sentence.”
+  QUIZ:
+    - QUESTION1:
+  # 4 spaces before dash
+      -  QUESTION: “What is the answer to this question?”
+      - WRONG: “A wrong answer.”
+      - WRONG: “Another wrong one.”
+      - CORRECT: “The right answer!”
+- MODULE: Transportation
+  DESCRIPTION: 
+  # 2 spaces before dash
+    - REGULAR: “Looking at transportation facts.”
