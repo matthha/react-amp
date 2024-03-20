@@ -70,6 +70,7 @@ function Home(props) {
     });
   }, []);
 
+  // The following is for calculating completion Percentage
   const totalModules = orientationModules.length;
   const completedModules = orientationModules.filter(
     (module) => module.completed
