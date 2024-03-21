@@ -1,20 +1,22 @@
 import { View } from "@aws-amplify/ui-react";
-import { parse, stringify } from 'yaml';
+import { parse } from 'yaml';
 // import fs from 'fs';
 import text from '../YamlContent/Modules.yml'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../ui-components/NavBar";
 
 function TestYaml(props) {
    const [content, setContent] =useState({})
+   // content = []
+   useEffect(()=> {
 
-   console.log(text)
    fetch(text)
    .then(r => r.text())
    .then(texts => {
-      setContent(texts)
+      setContent(parse(texts))
+      console.log('Content is',texts)
    });
-   
+   },[]) 
    return (
       <>
       <View>
@@ -23,7 +25,7 @@ function TestYaml(props) {
          <div>
             <h2>Header</h2>
             <p>I'm a paragraph!</p>
-            <p>{JSON.stringify(parse(content))}</p>
+            <p>{JSON.stringify(content)}</p>
          </div>
       </View>
       </>
