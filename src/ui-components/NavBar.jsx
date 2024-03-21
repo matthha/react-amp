@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCurrentUser } from "aws-amplify/auth";
 import {
   MenuOutlined,
 } from "@ant-design/icons";
@@ -7,6 +8,23 @@ import { Drawer, Menu} from "antd";
 
 const NavBar = ({ user }) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const [username, setUserName] = useState('');
+    const [email, setUserEmail] = useState('');
+
+    useEffect(() => {
+      const fetchUserInfo = async () => {
+        try {
+          const user = await getCurrentUser();
+          setUserName(user.username);
+          setUserEmail(user.email);
+        } catch (error) {
+          console.error("Error fetching user information:", error);
+        }
+      };
+  
+      fetchUserInfo();
+    }, []);
+  
   return (
     <>
       <div
@@ -40,7 +58,7 @@ const NavBar = ({ user }) => {
           <div className="navLogoBox">
             <img src="/logo.png" alt="CCHS's Logo" />
           </div>
-          <div className="titleStyle">Your Name</div>
+          <div className="titleStyle">{username}</div>
           <div className="secondaryContent">example@gmail.com</div>
         </div>
         <div style={{marginTop:20}}></div>
