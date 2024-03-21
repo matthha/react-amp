@@ -8,7 +8,6 @@ import {
 } from "@ant-design/icons";
 import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 import { parse } from "yaml";
-
 // Import other icons here if needed and use them as intended
 function Home(props) {
   const [username, setUsername] = useState(null);
@@ -21,7 +20,7 @@ function Home(props) {
   };
 
   useEffect(() => {
-    fetch('/YamlContent/Modules.yml')
+    fetch(require('../YamlFiles/Modules.yml'))
       .then(r => r.text())
       .then(texts => parse(texts))
       .then(cons => {

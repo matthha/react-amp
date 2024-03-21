@@ -1,22 +1,29 @@
 import { View } from "@aws-amplify/ui-react";
 import { parse } from 'yaml';
 // import fs from 'fs';
-import text from '../YamlContent/Modules.yml'
+
 import { useEffect, useState } from "react";
 import NavBar from "../ui-components/NavBar";
 
 function TestYaml(props) {
    const [content, setContent] =useState({})
    // content = []
-   useEffect(()=> {
-
-   fetch(text)
-   .then(r => r.text())
-   .then(texts => {
-      setContent(parse(texts))
-      console.log('Content is',texts)
-   });
-   },[]) 
+   useEffect(() => {
+      fetch(require('../YamlFiles/Modules.yml'))
+        .then(r => r.text())
+        .then(texts => parse(texts))
+        .then(cons => {
+          if (!Array.isArray(cons)) {
+            console.error('Parsed data is not an array:', cons);
+            return; // Don't set orientationModules if cons isn't an array
+          }
+         //  setOrientationModules(cons);
+          console.log(cons)
+        })
+        .catch(error => {
+          console.error('Error fetching or parsing the YAML content:', error);
+        });
+    }, []);
    return (
       <>
       <View>
