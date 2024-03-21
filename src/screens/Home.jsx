@@ -14,7 +14,7 @@ import text from '../YamlContent/Modules.yml'
 // Import other icons here if needed and use them as intended
 function Home(props) {
   const [username, setUsername] = useState(null);
-  const [orientationModules, setOrientationModules] = useState([''])
+  const [orientationModules, setOrientationModules] = useState([])
   const [content, setContent] =useState([])
 
   const navigate = useNavigate();
