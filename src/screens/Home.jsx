@@ -20,7 +20,7 @@ function Home(props) {
   };
 
   useEffect(() => {
-    fetch(require('../YamlFiles/Modules.yml'))
+    fetch('/YamlFiles/Modules.yml')
       .then(r => r.text())
       .then(texts => parse(texts))
       .then(cons => {

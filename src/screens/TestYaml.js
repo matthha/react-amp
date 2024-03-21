@@ -9,7 +9,7 @@ function TestYaml(props) {
    const [content, setContent] =useState({})
    // content = []
    useEffect(() => {
-      fetch(require('../YamlFiles/Modules.yml'))
+      fetch('/YamlFiles/Modules.yml')
         .then(r => r.text())
         .then(texts => parse(texts))
         .then(cons => {
