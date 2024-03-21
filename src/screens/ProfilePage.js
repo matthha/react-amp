@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { getCurrentUser } from "aws-amplify/auth";
 import {
   MenuOutlined,
   CheckCircleFilled,
@@ -16,9 +16,28 @@ import {
 } from "antd";
 const { Meta } = Card;
 // Import other icons here if needed and use them as intended
+
+
+
 function ProfilePage(props) {
   const [openMenu, setOpenMenu] = useState(false);
-  
+  const [username, setUserName] = useState('');
+  const [email, setUserEmail] = useState('');
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const user = await getCurrentUser();
+        setUserName(user.username);
+        setUserEmail(user.email);
+      } catch (error) {
+        console.error("Error fetching user information:", error);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <div
@@ -59,14 +78,14 @@ function ProfilePage(props) {
             <div>
                 <h4 className="header4" style={{paddingBottom:5}}>NAME</h4>
                 <input 
-                    defaultValue="Alison" 
+                    defaultValue={username}
                     className="profile-input" 
                 />
             </div>
             <div>
                 <h4 className="header4" style={{paddingBottom:5}}>EMAIL</h4>
                 <input 
-                    defaultValue="Alison123@gmail.com" 
+                    defaultValue={email}
                     className="profile-input" 
                 />
             </div>
