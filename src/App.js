@@ -134,8 +134,6 @@ const earthyTheme = {
 
 
 export default function App() {
-  // const [modules, setModules] = useState([])
-  let mods = []
 
   return (
     <Router>
@@ -156,7 +154,7 @@ export default function App() {
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
-                <Route path="/yaml" element={<TestYaml mods={mods}/>} />
+                <Route path="/yaml" element={<TestYaml />} />
                 <Route path="/recapcontent" element={<RecapContentPage/>} />
               </Routes>
             </main>

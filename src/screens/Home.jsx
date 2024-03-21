@@ -14,7 +14,7 @@ import text from '../YamlContent/Modules.yml'
 // Import other icons here if needed and use them as intended
 function Home(props) {
   const [username, setUsername] = useState(null);
-  const [orientationModules, setOrientationModules] = useState([])
+  const [orientationModules, setOrientationModules] = useState([''])
   const [content, setContent] =useState([])
 
   const navigate = useNavigate();
@@ -27,8 +27,8 @@ function Home(props) {
     fetch(text)
     .then(r => r.text())
     .then(texts => parse(texts))
-    .then(cons => setOrientationModules(cons))
-
+    .then(cons => {setOrientationModules(cons); console.log(cons)})
+    
   }, []);
 
   // The following is for calculating completion Percentage
@@ -52,17 +52,18 @@ function Home(props) {
         </h2>
         <Row gutter={[16, 16]}>
           {orientationModules.map((module, index) => (
+            
             <Col span={12} key={index}>
               <Card
                 hoverable
                 style={{ width: "100%" }}
-                cover={
-                  <img
-                    style={{ height: 164, objectFit: "cover" }}
-                    alt="example"
-                    src={module.coverImg}
-                  />
-                }
+                // cover={
+                //   <img
+                //     style={{ height: 164, objectFit: "cover" }}
+                //     alt="example"
+                //     src={module?.coverImg}
+                //   />
+                // }
                 onClick={() => handleCardClick(module)}
               >
                 <div className="card-body">
