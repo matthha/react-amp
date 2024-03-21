@@ -33,10 +33,10 @@ function Home(props) {
 
   // The following is for calculating completion Percentage
   const totalModules = orientationModules.length;
-  const completedModules = orientationModules.filter(
-    (module) => module.completed
-  ).length;
-  const completionPercentage = (completedModules / totalModules) * 100;
+  // const completedModules = orientationModules.filter(
+  //   (module) => module.completed
+  // ).length;
+  const completionPercentage = (totalModules) * 100;
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
