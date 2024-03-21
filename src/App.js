@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "./App.scss";
@@ -15,13 +15,7 @@ import {
   Authenticator,
   useTheme
 } from "@aws-amplify/ui-react";
-import { listNotes } from "./graphql/queries";
-import {
-  createNote as createNoteMutation,
-  deleteNote as deleteNoteMutation,
-} from "./graphql/mutations";
 import { generateClient } from 'aws-amplify/api';
-import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import Home from "./screens/Home";
 import Video from "./screens/Video";
 import Quiz from "./screens/Quiz";
@@ -33,11 +27,10 @@ import RecapContentPage from './screens/RecapContentPage';
 
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
-import { ThemeProvider } from "@aws-amplify/ui-react"
-
+import { ThemeProvider } from "@aws-amplify/ui-react";
 Amplify.configure(config)
 
-const client = generateClient();
+// const client = generateClient();
 const formFields = {
   signIn: {
     username: {
@@ -141,6 +134,9 @@ const earthyTheme = {
 
 
 export default function App() {
+  // const [modules, setModules] = useState([])
+  let mods = []
+
   return (
     <Router>
       <ThemeProvider theme={earthyTheme}>
@@ -152,21 +148,17 @@ export default function App() {
         {({ signOut, user }) => {
           return (
             <main>
-              {/* <View >
-                <Home/>
-              </View> */} 
               <Routes>
-                <Route path="/" element={<Home user={user}/>} />
-                <Route path="/home" element={<Home user={user}/>} />
+                <Route path="/" element={<Home user={user} />} />
+                <Route path="/home" element={<Home user={user} />} />
                 <Route path="/video" element={<Video/>} />
                 <Route path="/quiz" element={<Quiz/>} />
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
-                <Route path="/yaml" element={<TestYaml />} />
+                <Route path="/yaml" element={<TestYaml mods={mods}/>} />
                 <Route path="/recapcontent" element={<RecapContentPage/>} />
               </Routes>
-              {/* <button style={{backgroundColor:'red'}} onClick={signOut}>Sign out</button> */}
             </main>
           );
         }}

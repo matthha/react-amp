@@ -7,67 +7,28 @@ import {
   MinusCircleFilled,
 } from "@ant-design/icons";
 import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
-import { getCurrentUser } from "aws-amplify/auth";
-const { Meta } = Card;
+import { parse } from 'yaml';
+import text from '../YamlContent/Modules.yml'
+
 
 // Import other icons here if needed and use them as intended
 function Home(props) {
   const [username, setUsername] = useState(null);
-  const [orientationModules, setOrientationModules] = useState([
-    {
-      title: "Dress Code",
-      estimationTime: "~10 mins",
-      completed: false,
-      coverImg:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "Attendence",
-      estimationTime: "~10 mins",
-      completed: false,
-      coverImg:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "Career",
-      estimationTime: "~10 mins",
-      completed: false,
-      coverImg:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "Orientation Video",
-      estimationTime: "~10 mins",
-      completed: false,
-      coverImg:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ]);
+  const [orientationModules, setOrientationModules] = useState([])
+  const [content, setContent] =useState([])
 
   const navigate = useNavigate();
   const handleCardClick = (module) => {
     navigate(`/video`, { state: { module } });
   };
+  
   useEffect(() => {
-    const fetchUserInfo = async () => {
-      try {
-        const user = await getCurrentUser();
-        setUsername(user.username);
-      } catch (error) {
-        console.error("Error fetching user information:", error);
-      }
-    };
+    // For reading the YAML Files
+    fetch(text)
+    .then(r => r.text())
+    .then(texts => parse(texts))
+    .then(cons => setOrientationModules(cons))
 
-    fetchUserInfo();
-
-    const completedModules =
-      JSON.parse(localStorage.getItem("completedModules")) || [];
-    setOrientationModules((prevModules) => {
-      return prevModules.map((module) => ({
-        ...module,
-        completed: completedModules.includes(module.title),
-      }));
-    });
   }, []);
 
   // The following is for calculating completion Percentage
