@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import {
   MenuOutlined,
 } from "@ant-design/icons";
-import { Drawer, Menu, Card} from "antd";
-const { Meta } = Card;
+import { Drawer, Menu} from "antd";
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
     const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
@@ -31,13 +29,21 @@ const NavBar = () => {
       </span>
       <Drawer
         placement="left"
-        visible={openMenu}
+        open={openMenu}
         onClose={() => {
           setOpenMenu(false);
         }}
         closable={false}
         style={{ backgroundColor: "white" }}
       >
+        <div className="navBox">
+          <div className="navLogoBox">
+            <img src="/logo.png" alt="CCHS's Logo" />
+          </div>
+          <div className="titleStyle">Your Name</div>
+          <div className="secondaryContent">example@gmail.com</div>
+        </div>
+        <div style={{marginTop:20}}></div>
         <AppMenu isInline={true} />
       </Drawer>
     </>

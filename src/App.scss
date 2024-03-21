@@ -201,6 +201,7 @@ $primaryColor: #9e2a2b;
   font-weight: bold;
   font-size: 18px;
   /* other styles */
+  font-family: Inter;
 }
 
 .contentStyle {
@@ -235,4 +236,24 @@ $primaryColor: #9e2a2b;
   width: 100%; /* This will make the image responsive */
   height: auto;
   object-fit: cover; /* This will cover the area without stretching the image */
+}
+.navBox{
+  border-bottom: 1px solid #F0F0F1;
+  padding: 20px 24px 40px 24px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap:10px;
+}
+.navLogoBox {
+  height: 72px; 
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  margin-bottom: 10px;
+}
+
+.navLogoBox img {
+  height: 100%; 
+  width: auto; 
 }
