@@ -8,7 +8,6 @@ import {
 } from "@ant-design/icons";
 import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 import { parse } from "yaml";
-import text from "../YamlContent/Modules.yml";
 
 // Import other icons here if needed and use them as intended
 function Home(props) {
@@ -22,7 +21,7 @@ function Home(props) {
   };
 
   useEffect(() => {
-    fetch(text)
+    fetch('/YamlContent/Modules.yml')
       .then(r => r.text())
       .then(texts => parse(texts))
       .then(cons => {
@@ -31,7 +30,7 @@ function Home(props) {
           return; // Don't set orientationModules if cons isn't an array
         }
         setOrientationModules(cons);
-        console.log(cons);
+        console.log(cons)
       })
       .catch(error => {
         console.error('Error fetching or parsing the YAML content:', error);
@@ -51,7 +50,7 @@ function Home(props) {
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">CCHS Online Orientation</h1>
         <div className="content paragraph">
-        
+          Hello, {props?.user.username} <br />
           Your current orientation progress:
         </div>
         <Progress strokeColor="#299E63" percent={completionPercentage} />
