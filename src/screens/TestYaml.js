@@ -1,38 +1,29 @@
 import { View } from "@aws-amplify/ui-react";
-import { parse } from 'yaml';
+// import { parse } from 'yaml';
+import { content as theYaml } from "../JSONs/Modules.js";
 // import fs from 'fs';
-
+import Quiz from "./Quiz.jsx"
 import { useEffect, useState } from "react";
 import NavBar from "../ui-components/NavBar";
+import { useLocation } from "react-router-dom";
 
 function TestYaml(props) {
-   const [content, setContent] =useState({})
-   // content = []
+   const [content, setContent] =useState({});
+   const location = useLocation();
+   
    useEffect(() => {
-      fetch(require('../YamlFiles/Modules.yml'))
-        .then(r => r.text())
-        .then(texts => parse(texts))
-        .then(cons => {
-          if (!Array.isArray(cons)) {
-            console.error('Parsed data is not an array:', cons);
-            return; // Don't set orientationModules if cons isn't an array
-          }
-         //  setOrientationModules(cons);
-          console.log(cons)
-        })
-        .catch(error => {
-          console.error('Error fetching or parsing the YAML content:', error);
-        });
+
     }, []);
    return (
       <>
       <View>
          <NavBar />
-         <h1>Here is a title.</h1>
+         <Quiz />
+
          <div>
             <h2>Header</h2>
             <p>I'm a paragraph!</p>
-            <p>{JSON.stringify(content)}</p>
+            {/* <p>{JSON.stringify(content)}</p> */}
          </div>
       </View>
       </>

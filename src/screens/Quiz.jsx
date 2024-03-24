@@ -12,12 +12,15 @@ import {
   Col
 } from "antd";
 
-const Quiz = () => {
+const Quiz = (props) => {
   // Assuming we're taking the quizList from the first module.
+  // const modID = props?.mod;
+
   const [answers, setAnswers] = useState({});
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
-  const moduleName = location.state?.moduleName;
+  const moduleName = location.state.module.title;
+  // console.log(location)
   const navigate = useNavigate(); // Instantiate useNavigate
 
   const onAnswerChange = (e, questionIndex) => {
@@ -39,11 +42,11 @@ const Quiz = () => {
   };
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div style={{ height: "100vh", backgroundColor: "white" }}>
       <NavBar />
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">Module Quiz</h1>
-        {moduleData[0].quizList.map((quizItem, index) => (
+        <h1 className="header1">{moduleName} Quiz</h1>
+        {location.state.module.quizList.map((quizItem, index) => (
           <Card key={index} style={{ margin: "20px 0px" }}>
             <h3 className="header3">Question {index + 1}</h3>
             <p className="content">{quizItem.question}</p>

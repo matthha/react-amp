@@ -19,16 +19,17 @@ import moduleData from "../orientationModules.json";
 const IntroductionVideo = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
-  const moduleName = location.state?.module.title;
+  const module = location.state.module;
+  const moduleName = location.state.module.title;
   const navigate = useNavigate();
   const handleStartQuiz = () => {
-    navigate("/quiz", { state: { moduleName } }); // Navigate to your quiz page route
+    navigate(`/quiz/${moduleName}`, { state: { module } }); // Navigate to your quiz page route
   };
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">Introduction Video</h1>
+        <h1 className="header1">{moduleName} Video</h1>
         <div className="secondaryContent" style={{ padding: "12px 0px" }}>
           <ClockCircleOutlined /> {moduleData[0].estimationTime}
         </div>
@@ -37,7 +38,7 @@ const IntroductionVideo = () => {
         </div>
         <div style={{ textAlign: "center", margin: "24px 0" }}>
           <video width="100%" controls>
-            <source src={moduleData[0].videoLink} type="video/mp4" />
+            <source src={module.videoLink} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

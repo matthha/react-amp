@@ -149,12 +149,12 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home user={user} />} />
                 <Route path="/home" element={<Home user={user} />} />
-                <Route path="/video" element={<Video/>} />
-                <Route path="/quiz" element={<Quiz/>} />
+                <Route path="/video/*" element={<Video />} />
+                <Route path="/quiz/*" element={<Quiz />} />
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
-                <Route path="/yaml" element={<TestYaml />} />
+                <Route path="/yaml/*" element={<TestYaml />} />
                 <Route path="/recapcontent" element={<RecapContentPage/>} />
               </Routes>
             </main>
