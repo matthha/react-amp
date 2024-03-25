@@ -21,6 +21,8 @@ function Home(props) {
   };
 
   useEffect(() => {
+// -- TODO -- We need to load user's progress and make sure it's synced with completedModules or initialize it -- 
+
 
   }, []);
   

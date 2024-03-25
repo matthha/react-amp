@@ -13,15 +13,12 @@ import {
 } from "antd";
 
 const Quiz = (props) => {
-  // Assuming we're taking the quizList from the first module.
-  // const modID = props?.mod;
-
   const [answers, setAnswers] = useState({});
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
   const moduleName = location.state.module.title;
-  // console.log(location)
-  const navigate = useNavigate(); // Instantiate useNavigate
+  // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
+  const navigate = useNavigate();
 
   const onAnswerChange = (e, questionIndex) => {
     setAnswers({
@@ -31,14 +28,16 @@ const Quiz = (props) => {
   };
 
   const handleSubmit = () => {
-    // Handle the submission logic here
+    // --TODO -- Handle the submission logic here --
     // console.log(answers);
     let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
     if (!completedModules.includes(moduleName)) {
       completedModules.push(moduleName);
+      // -- TODO -- We can add the updateProgress function here --
       localStorage.setItem("completedModules", JSON.stringify(completedModules));
     }
-    navigate("/home"); // Add the navigate call to redirect to the home page
+    // -- TODO -- Add other logic here for pass/fail --
+    navigate("/home");
   };
 
   return (
