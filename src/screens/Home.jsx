@@ -8,17 +8,30 @@ import {
 } from "@ant-design/icons";
 import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 import { content } from "../JSONs/Modules";
-// Import other icons here if needed and use them as intended
+import { generateClient } from "aws-amplify/api";
+import { createProgress, updateProgress } from "../graphql/mutations";
+
 const orientationModules = content;
 
 function Home(props) {
   // completedModules is an Array of title the user has passed
   let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
-
+  const client = generateClient();
   const navigate = useNavigate();
   const handleCardClick = (module) => {
     navigate(`/video/${module.title}`, { state: { module } });
   };
+
+  async function fetchProgress() {
+    const apiData = await client.graphql({ query: listProgresss });
+    const progressFromAPI = apiData.data.progress.items;
+    await Promise.all(
+      progressFromAPI.map(async (progress) => {
+        return progress;
+      })
+    );
+    setNotes(progressFromAPI);
+  }
 
   useEffect(() => {
 // -- TODO -- We need to load user's progress and make sure it's synced with completedModules or initialize it -- 
