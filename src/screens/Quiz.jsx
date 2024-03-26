@@ -16,7 +16,6 @@ import { updateProgress } from "../graphql/mutations";
 
 const Quiz = (props) => {
   const [answers, setAnswers] = useState({});
-  const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
   const client = generateClient();
   const variables = {
@@ -25,6 +24,7 @@ const Quiz = (props) => {
     }
   }
   const moduleName = location.state.module.title;
+  const module = location.state.module;
   const myRecord = location.state.myRecord;
   console.log(myRecord)
   // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
@@ -54,25 +54,41 @@ const Quiz = (props) => {
       [questionIndex]: e.target.value,
     });
   };
+  const calculateScore = (answers, module) => {
+    let score = 0;
+    // Loop through each question in the module's quizList
+    module.quizList.forEach((quiz, index) => {
+      // Check if the user's answer matches the correct answer
+      const correctAnswer = quiz.correctAnswer;
+      if (answers[index] === correctAnswer) {
+        score += 1; // Increment the score for each correct answer
+      }
+    });
+
+    return score;
+  };
 
   async function handleSubmit() {
     // --TODO -- Handle the submission logic here --
     // console.log(answers);
-    let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
-    // let themods = (completedModules)
-    // console.log('in quiz', typeof(completedModules))
-    if (!completedModules.includes(moduleName)) {
-      completedModules.push(moduleName);
-      // -- TODO -- We can add the updateProgress function here --
-      // console.log(typeof(completedModules))
-      // I had to add await here because otherwise when it goes back home it would load the previous data before the data is updated and effect how it shows progress.
-      await updateOurProgress(JSON.stringify(completedModules));
-      localStorage.setItem("completedModules", JSON.stringify(completedModules));
-
-      navigate("/home");
+    //calculate the total score
+    const score = calculateScore(answers, module);
+    //if the total score matches the total question number, it will mark as pass
+    if (score === module.quizList.length) {
+      let completedModules =
+        JSON.parse(localStorage.getItem("completedModules")) || [];
+      if (!completedModules.includes(moduleName)) {
+        completedModules.push(moduleName);
+        // -- TODO -- We can add the updateProgress function here --
+        await updateOurProgress(JSON.stringify(completedModules));
+        localStorage.setItem(
+          "completedModules",
+          JSON.stringify(completedModules)
+        );
+      }
     }
     // -- TODO -- Add other logic here for pass/fail --
-
+    navigate(`/result/${moduleName}`, { state: { module, answers } }); // Navigate to your quiz page route
   };
 
   return (
@@ -98,7 +114,12 @@ const Quiz = (props) => {
               >
                 <Space direction="vertical">
                   {quizItem.options.map((option, optionIndex) => (
-                    <Radio className="content" key={optionIndex} value={option} style={{margin:"6px 0px"}}>
+                    <Radio
+                      className="content"
+                      key={optionIndex}
+                      value={option}
+                      style={{ margin: "6px 0px" }}
+                    >
                       {option}
                     </Radio>
                   ))}

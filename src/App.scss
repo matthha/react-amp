@@ -257,3 +257,25 @@ $primaryColor: #9e2a2b;
   height: 100%; 
   width: auto; 
 }
+
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start
+}
+
+
+.alert-inline {
+  display: inline-flex; /* Makes the alert hug its content */
+  align-items: center;
+  margin-left: 16px; /* Adjust as needed for spacing */
+  padding: 4px 10px;
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 14-medium */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

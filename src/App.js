@@ -24,10 +24,11 @@ import FAQPage from './screens/FAQPage';
 import ProfilePage from './screens/ProfilePage'; 
 import TestYaml from "./screens/TestYaml";
 import RecapContentPage from './screens/RecapContentPage';
-
+import Result from "./screens/Result";
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react";
+
 Amplify.configure(config)
 
 // const client = generateClient();
@@ -156,6 +157,7 @@ export default function App() {
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
                 <Route path="/yaml/*" element={<TestYaml />} />
                 <Route path="/recapcontent" element={<RecapContentPage/>} />
+                <Route path="/result/*" element={<Result />} />
               </Routes>
             </main>
           );
