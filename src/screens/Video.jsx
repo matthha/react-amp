@@ -31,10 +31,10 @@ const IntroductionVideo = () => {
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">{moduleName} Video</h1>
         <div className="secondaryContent" style={{ padding: "12px 0px" }}>
-          <ClockCircleOutlined /> {moduleData[0].estimationTime}
+          <ClockCircleOutlined /> {module.estimationTime}
         </div>
         <div className="buttonText">
-          {moduleData[0].description}
+          {module.description}
         </div>
         <div style={{ textAlign: "center", margin: "24px 0" }}>
           <video width="100%" controls>

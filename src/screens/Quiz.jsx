@@ -4,19 +4,13 @@ import NavBar from "../ui-components/NavBar";
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import moduleData from "../orientationModules.json"; // path to your JSON file
-import {
-  Drawer,
-  Menu,
-  Progress,
-  Row,
-  Col
-} from "antd";
+import { Drawer, Menu, Progress, Row, Col } from "antd";
 
 const Quiz = (props) => {
   const [answers, setAnswers] = useState({});
-  const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
-  const moduleName = location.state.module.title;
+  const module = location.state?.module ?? {};
+  const moduleName = location.state?.module?.title ?? "Unknown Module";
   // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
   const navigate = useNavigate();
 
@@ -26,18 +20,40 @@ const Quiz = (props) => {
       [questionIndex]: e.target.value,
     });
   };
+  const calculateScore = (answers, module) => {
+    let score = 0;
+    // Loop through each question in the module's quizList
+    module.quizList.forEach((quiz, index) => {
+      // Check if the user's answer matches the correct answer
+      const correctAnswer = quiz.correctAnswer;
+      if (answers[index] === correctAnswer) {
+        score += 1; // Increment the score for each correct answer
+      }
+    });
+
+    return score;
+  };
 
   const handleSubmit = () => {
     // --TODO -- Handle the submission logic here --
     // console.log(answers);
-    let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
-    if (!completedModules.includes(moduleName)) {
-      completedModules.push(moduleName);
-      // -- TODO -- We can add the updateProgress function here --
-      localStorage.setItem("completedModules", JSON.stringify(completedModules));
+    //calculate the total score
+    const score = calculateScore(answers, module);
+    //if the total score matches the total question number, it will mark as pass
+    if (score === module.quizList.length) {
+      let completedModules =
+        JSON.parse(localStorage.getItem("completedModules")) || [];
+      if (!completedModules.includes(moduleName)) {
+        completedModules.push(moduleName);
+        // -- TODO -- We can add the updateProgress function here --
+        localStorage.setItem(
+          "completedModules",
+          JSON.stringify(completedModules)
+        );
+      }
     }
     // -- TODO -- Add other logic here for pass/fail --
-    navigate("/home");
+    navigate(`/result/${moduleName}`, { state: { module, answers } }); // Navigate to your quiz page route
   };
 
   return (
@@ -63,7 +79,12 @@ const Quiz = (props) => {
               >
                 <Space direction="vertical">
                   {quizItem.options.map((option, optionIndex) => (
-                    <Radio className="content" key={optionIndex} value={option} style={{margin:"6px 0px"}}>
+                    <Radio
+                      className="content"
+                      key={optionIndex}
+                      value={option}
+                      style={{ margin: "6px 0px" }}
+                    >
                       {option}
                     </Radio>
                   ))}

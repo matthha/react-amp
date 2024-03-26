@@ -10,45 +10,41 @@ import { Drawer, Menu, Progress, Row, Col } from "antd";
 //Delete this after
 import { content } from "../JSONs/Modules";
 
-const Result = () => {
-  const [answers, setAnswers] = useState({});
+const Result = (props) => {
   //TODO: change this to the quiz page passed value
   const location = useLocation();
-  const moduleName = content[0].title;
-  // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
-  const navigate = useNavigate();
-  const results = [
-    {
-      question: "When is a student first considered truant?",
-      options: [
-        "5th unexcused absence",
-        "3rd unexcused absence",
-        "Students are considered truant if they miss the first or last day of school",
-      ],
-      userAnswer: "3rd unexcused absence",
-      correctAnswer: "3rd unexcused absence",
-    },
-    {
-      question: "What is the capital of France?",
-      options: ["Rome", "Paris", "Madrid"],
-      userAnswer: "Paris",
-      correctAnswer: "Paris",
-    },
-    // ... more questions
-  ];
-  const score = results.reduce((acc, current) => {
-    return acc + (current.userAnswer === current.correctAnswer ? 1 : 0);
-  }, 0);
-  const totalQuestion = results.length;
-
-  const onAnswerChange = (e, questionIndex) => {
-    setAnswers({
-      ...answers,
-      [questionIndex]: e.target.value,
+  const module = location.state?.module ?? {};
+  const moduleName = location.state?.module?.title ?? "Unknown Module";
+  const answers = location.state?.answers || {};
+  const quizList = module.quizList;
+  console.log(answers);
+  console.log(module);
+  const calculateScore = (answers, module) => {
+    let score = 0;
+    // Loop through each question in the module's quizList
+    module.quizList.forEach((quiz, index) => {
+      // Check if the user's answer matches the correct answer
+      const correctAnswer = quiz.correctAnswer;
+      if (answers[index] === correctAnswer) {
+        score += 1; // Increment the score for each correct answer
+      }
     });
-  };
 
-  const handleTakeAgain = () => {};
+    return score;
+  };
+  const navigate = useNavigate();
+
+  const score = calculateScore(answers, module);
+  const totalQuestion = quizList.length;
+
+  const handleTakeAgain = () => {
+    navigate(`/quiz/${moduleName}`, { state: { module } }); // Navigate to your quiz page route
+  };
+  const handlebackhome = () => {
+    //TODO
+    //handle the logic to move to the next module
+    navigate(`/home`); 
+  };
 
   return (
     <div style={{ height: "100vh", backgroundColor: "white" }}>
@@ -96,10 +92,10 @@ const Result = () => {
                   padding: "8px 28px",
                   minWidth: 212,
                 }}
-                onClick={handleTakeAgain}
+                onClick={handlebackhome}
                 block
               >
-                <div className="buttonText">Next Module</div>
+                <div className="buttonText">Back to Home</div>
               </Button>
             </div>
           </div>
@@ -145,12 +141,12 @@ const Result = () => {
         )}
 
         <div>
-          {results.map((result, index) => (
+          {quizList.map((result, index) => (
             <ResultCard
               key={index}
               index={index}
               question={result.question}
-              userAnswer={result.userAnswer}
+              userAnswer={answers[index]}
               correctAnswer={result.correctAnswer}
               options={result.options}
             />

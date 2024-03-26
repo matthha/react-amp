@@ -14,12 +14,12 @@ export const content = [
           "3rd unexcused absence",
           "6th absence",
         ],
-        correctAnswer: 0,
+        correctAnswer: "5th unexcused absence",
       },
       {
         question: "Who can excuse a student for being absent?",
         options: ["Student", "Parent/Guardian", "Friends"],
-        correctAnswer: 1,
+        correctAnswer: "Parent/Guardian",
       },
     ],
   },
@@ -34,13 +34,13 @@ export const content = [
       {
         question: "What is type of clothing is required at school?",
         options: ["Casual", "Hoodies", "Business Casual"],
-        correctAnswer: 2,
+        correctAnswer: "Business Casual",
       },
       {
         question:
           "True or False: A student will be marked absent if they are not following the dress code.",
         options: ["True", "False"],
-        correctAnswer: 0,
+        correctAnswer: "True",
       },
     ],
   },
