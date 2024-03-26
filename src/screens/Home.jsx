@@ -10,32 +10,70 @@ import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
 import { createProgress, updateProgress } from "../graphql/mutations";
+import { listProgresses } from "../graphql/queries";
 
 const orientationModules = content;
 
 function Home(props) {
   // completedModules is an Array of title the user has passed
-  let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
+  let completedModules = JSON.parse(localStorage.getItem("completedModules")) || []; 
+  // console.log('saved modules are: ',completedModules)
+  const [myRecord, setMyRecord] = useState('');
   const client = generateClient();
+  // variables used so we only get our progress from listProgresses in fetchProgress
+  const variables = {
+    filter: {
+      userID: { eq: props.user.username}
+    }
+  }
+  // Used to initialize the user's progress
+  // AWS needs the stringified version of progress for AWSJSON object to store it
+  const newUser = { 'userID': `${props.user.username}`, 'progress': JSON.stringify([]) }
+
   const navigate = useNavigate();
   const handleCardClick = (module) => {
-    navigate(`/video/${module.title}`, { state: { module } });
+    navigate(`/video/${module.title}`, { state: { module, myRecord } });
   };
 
+
   async function fetchProgress() {
-    const apiData = await client.graphql({ query: listProgresss });
-    const progressFromAPI = apiData.data.progress.items;
-    await Promise.all(
-      progressFromAPI.map(async (progress) => {
-        return progress;
-      })
-    );
-    setNotes(progressFromAPI);
+    let tempUser = '';
+    // * Try to get the progress
+    try{
+    const apiData = await client.graphql({ query: listProgresses, variables: variables });
+
+    // console.log('We checked here for user data',apiData)
+      // * apiData should be a length of 1
+      // * if apiData not == 1, need to create user data
+    if (apiData.data.listProgresses.items.length == 0 ) {
+      // console.log('No data; making progress for ', props.user.username);
+      try {
+      const newerrr = await client.graphql({
+        query: createProgress,
+        variables: {
+            input: newUser
+        }
+      });
+      // console.log('new user is created', newerrr)
+      setMyRecord(newerrr.data.createProgress.id)
+    } catch (error) {
+      console.log(error)
+    }
+
+    } else {
+      setMyRecord(apiData.data.listProgresses.items[0].id)
+      console.log('my progress is',apiData.data.listProgresses.items[0].progress)
+      localStorage.setItem("completedModules", apiData.data.listProgresses.items[0].progress);
+    }
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   useEffect(() => {
 // -- TODO -- We need to load user's progress and make sure it's synced with completedModules or initialize it -- 
-
+    fetchProgress();
 
   }, []);
   

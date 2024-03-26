@@ -150,7 +150,7 @@ export default function App() {
                 <Route path="/" element={<Home user={user} />} />
                 <Route path="/home" element={<Home user={user} />} />
                 <Route path="/video/*" element={<Video />} />
-                <Route path="/quiz/*" element={<Quiz />} />
+                <Route path="/quiz/*" element={<Quiz user={user}/>} />
                 <Route path="/recap" element={<RecapPage/>} />
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />

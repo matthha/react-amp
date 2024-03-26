@@ -11,15 +11,43 @@ import {
   Row,
   Col
 } from "antd";
+import { generateClient } from "aws-amplify/api";
+import { updateProgress } from "../graphql/mutations";
 
 const Quiz = (props) => {
   const [answers, setAnswers] = useState({});
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
+  const client = generateClient();
+  const variables = {
+    filter: {
+      userID: { eq: props.user.username}
+    }
+  }
   const moduleName = location.state.module.title;
+  const myRecord = location.state.myRecord;
+  console.log(myRecord)
   // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
   const navigate = useNavigate();
 
+  async function updateOurProgress(newProgress) {
+    // console.log(newProgress)
+    try {
+
+    const updatedProgress = await client.graphql({
+      query: updateProgress,
+      variables: {
+        input: {
+          "id": `${myRecord}`,
+          "progress": `${newProgress}`
+        }
+          }
+      });
+      // console.log('updated is ', updatedProgress)
+    } catch (error) {
+      console.log('error is ', error)
+    }
+  }
   const onAnswerChange = (e, questionIndex) => {
     setAnswers({
       ...answers,
@@ -27,17 +55,24 @@ const Quiz = (props) => {
     });
   };
 
-  const handleSubmit = () => {
+  async function handleSubmit() {
     // --TODO -- Handle the submission logic here --
     // console.log(answers);
     let completedModules = JSON.parse(localStorage.getItem("completedModules")) || [];
+    // let themods = (completedModules)
+    // console.log('in quiz', typeof(completedModules))
     if (!completedModules.includes(moduleName)) {
       completedModules.push(moduleName);
       // -- TODO -- We can add the updateProgress function here --
+      // console.log(typeof(completedModules))
+      // I had to add await here because otherwise when it goes back home it would load the previous data before the data is updated and effect how it shows progress.
+      await updateOurProgress(JSON.stringify(completedModules));
       localStorage.setItem("completedModules", JSON.stringify(completedModules));
+
+      navigate("/home");
     }
     // -- TODO -- Add other logic here for pass/fail --
-    navigate("/home");
+
   };
 
   return (

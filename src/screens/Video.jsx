@@ -16,14 +16,16 @@ import {
 } from "@ant-design/icons";
 import moduleData from "../orientationModules.json";
 
-const IntroductionVideo = () => {
+const IntroductionVideo = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
   const module = location.state.module;
   const moduleName = location.state.module.title;
+  const myRecord = location.state.myRecord;
+  console.log(myRecord)
   const navigate = useNavigate();
   const handleStartQuiz = () => {
-    navigate(`/quiz/${moduleName}`, { state: { module } }); // Navigate to your quiz page route
+    navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route
   };
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
