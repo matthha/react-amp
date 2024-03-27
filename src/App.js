@@ -156,7 +156,8 @@ export default function App() {
                 <Route path="/faq" element={<FAQPage/>} />
                 <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
                 <Route path="/yaml/*" element={<TestYaml />} />
-                <Route path="/recapcontent" element={<RecapContentPage/>} />
+                {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
+                <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
                 <Route path="/result/*" element={<Result />} />
               </Routes>
             </main>
