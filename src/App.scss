@@ -163,6 +163,7 @@ $primaryColor: #9e2a2b;
   overflow: hidden;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: Inter;
 }
 
 /* Style for the collapse panel header */
@@ -171,6 +172,7 @@ $primaryColor: #9e2a2b;
   color: #9E2A2B;
   font-size: 16px; 
   font-weight: 600;
+  font-family: Inter;
 }
 
 
@@ -178,6 +180,7 @@ $primaryColor: #9e2a2b;
   font-size: 16px;
   padding-left: 20px;
   margin-left: 10px;
+  font-family: Inter;
 }
 
 /* CSS file */
@@ -205,6 +208,7 @@ $primaryColor: #9e2a2b;
 }
 
 .contentStyle {
+  font-family: Inter;
   flex-grow: 1;
   margin-left: 20px; /* Adjust spacing as needed */
   align-self: flex-start;
