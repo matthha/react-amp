@@ -16,6 +16,7 @@ const Result = (props) => {
   const module = location.state?.module ?? {};
   const moduleName = location.state?.module?.title ?? "Unknown Module";
   const answers = location.state?.answers || {};
+  const myRecord = location.state.myRecord;
   const quizList = module.quizList;
   console.log(answers);
   console.log(module);
@@ -38,7 +39,7 @@ const Result = (props) => {
   const totalQuestion = quizList.length;
 
   const handleTakeAgain = () => {
-    navigate(`/quiz/${moduleName}`, { state: { module } }); // Navigate to your quiz page route
+    navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route
   };
   const handlebackhome = () => {
     //TODO

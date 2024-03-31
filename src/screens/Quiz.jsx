@@ -26,8 +26,7 @@ const Quiz = (props) => {
   const moduleName = location.state.module.title;
   const module = location.state.module;
   const myRecord = location.state.myRecord;
-  console.log(myRecord)
-  // -- TODO -- We can instantiate an answer key here from ^module to use for scoring later --
+
   const navigate = useNavigate();
 
   async function updateOurProgress(newProgress) {
@@ -88,7 +87,7 @@ const Quiz = (props) => {
       }
     }
     // -- TODO -- Add other logic here for pass/fail --
-    navigate(`/result/${moduleName}`, { state: { module, answers } }); // Navigate to your quiz page route
+    navigate(`/result/${moduleName}`, { state: { module, answers, myRecord } }); // Navigate to your quiz page route
   };
 
   return (
