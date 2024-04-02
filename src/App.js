@@ -145,9 +145,11 @@ export default function App() {
         hideSignUp={true}
       >
         {({ signOut, user }) => {
+          console.log('user is', user)
           return (
             <main>
               <Routes>
+                
                 <Route path="/" element={<Home user={user} />} />
                 <Route path="/home" element={<Home user={user} />} />
                 <Route path="/video/*" element={<Video />} />

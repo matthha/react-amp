@@ -62,7 +62,7 @@ function Home(props) {
 
     } else {
       setMyRecord(apiData.data.listProgresses.items[0].id)
-      console.log('my progress is',apiData.data.listProgresses.items[0].progress)
+      // console.log('my progress is',apiData.data.listProgresses.items[0].progress)
       localStorage.setItem("completedModules", apiData.data.listProgresses.items[0].progress);
     }
     } catch (error) {
