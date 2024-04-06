@@ -78,7 +78,11 @@ function AppMenu({ isInline = false }) {
 
   return (
     <Menu
-      style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
+      style={{
+        backgroundColor: isInline ? "white" : "#9E2A2B",
+        fontSize: 20,
+        border: "none"
+      }}
       mode={isInline ? "inline" : "horizontal"}
       onClick={handleClick}
       items={[
@@ -98,11 +102,6 @@ function AppMenu({ isInline = false }) {
           label: "Profile",
           key: "profile",
         }
-        // ,
-        // {
-        //   label: "Yaml",
-        //   key: "yaml",
-        // }
       ]}
     ></Menu>
   );

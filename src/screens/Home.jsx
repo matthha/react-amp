@@ -84,7 +84,7 @@ function Home(props) {
   return (
     <div style={{ height: "100vh", backgroundColor: "white" }}>
       <NavBar />
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+      <div className="contentBody">
         <h1 className="header1">CCHS Online Orientation</h1>
 
         <div className="content paragraph">
@@ -100,13 +100,13 @@ function Home(props) {
           {/* This is where the modules are being loaded */}
           {Array.isArray(orientationModules) &&
             orientationModules.map((module, index) => (
-              <Col span={12} key={index}>
+              <Col xs={12} sm={12} md={12} lg={8} xl={8} key={index}>
                 <Card
                   hoverable
                   style={{ width: "100%" }}
                   cover={
                     <img
-                      style={{ height: 164, objectFit: "cover" }}
+                      className="coverImg"
                       alt="example"
                       src={module?.coverImg}
                     />
