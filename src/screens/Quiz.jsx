@@ -93,7 +93,7 @@ const Quiz = (props) => {
   return (
     <div style={{ height: "100vh", backgroundColor: "white" }}>
       <NavBar />
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+      <div className="contentBody">
         <h1 className="header1">{moduleName} Quiz</h1>
         {location.state.module.quizList.map((quizItem, index) => (
           <Card key={index} style={{ margin: "20px 0px" }}>

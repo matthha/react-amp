@@ -30,7 +30,7 @@ const IntroductionVideo = (props) => {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+      <div className="contentBody">
         <h1 className="header1">{moduleName} Video</h1>
         <div className="secondaryContent" style={{ padding: "12px 0px" }}>
           <ClockCircleOutlined /> {module.estimationTime}

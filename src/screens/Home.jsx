@@ -86,7 +86,6 @@ function Home(props) {
       <NavBar />
       <div className="contentBody">
         <h1 className="header1">CCHS Online Orientation</h1>
-
         <div className="content paragraph">
           Hello, {props?.user.username} <br />
           Your current orientation progress: 
