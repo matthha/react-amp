@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ProgressProvider } from './ProgressContext'; // Adjust the path if necessary
 
 import "./App.scss";
 import "@aws-amplify/ui-react/styles.css";
@@ -147,19 +148,21 @@ export default function App() {
         {({ signOut, user }) => {
           return (
             <main>
-              <Routes>
-                <Route path="/" element={<Home user={user} />} />
-                <Route path="/home" element={<Home user={user} />} />
-                <Route path="/video/*" element={<Video />} />
-                <Route path="/quiz/*" element={<Quiz user={user}/>} />
-                <Route path="/recap" element={<RecapPage/>} />
-                <Route path="/faq" element={<FAQPage/>} />
-                <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
-                <Route path="/yaml/*" element={<TestYaml />} />
-                {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
-                <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
-                <Route path="/result/*" element={<Result />} />
-              </Routes>
+              <ProgressProvider>
+                <Routes>
+                  <Route path="/" element={<Home user={user} />} />
+                  <Route path="/home" element={<Home user={user} />} />
+                  <Route path="/video/*" element={<Video />} />
+                  <Route path="/quiz/*" element={<Quiz user={user}/>} />
+                  <Route path="/recap" element={<RecapPage/>} />
+                  <Route path="/faq" element={<FAQPage/>} />
+                  <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
+                  <Route path="/yaml/*" element={<TestYaml />} />
+                  {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
+                  <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
+                  <Route path="/result/*" element={<Result />} />
+                </Routes>
+              </ProgressProvider>
             </main>
           );
         }}

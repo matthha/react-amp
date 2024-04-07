@@ -11,12 +11,13 @@ import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
 import { createProgress, updateProgress } from "../graphql/mutations";
 import { listProgresses } from "../graphql/queries";
+import { useProgress } from "../ProgressContext";
 
 const orientationModules = content;
 
 function Home(props) {
   // completedModules is an Array of title the user has passed
-  let completedModules = JSON.parse(localStorage.getItem("completedModules")) || []; 
+  const { completedModules } = useProgress();
   // console.log('saved modules are: ',completedModules)
   const [myRecord, setMyRecord] = useState('');
   const client = generateClient();
@@ -63,7 +64,6 @@ function Home(props) {
     } else {
       setMyRecord(apiData.data.listProgresses.items[0].id)
       console.log('my progress is',apiData.data.listProgresses.items[0].progress)
-      localStorage.setItem("completedModules", apiData.data.listProgresses.items[0].progress);
     }
     } catch (error) {
       console.log(error)
@@ -79,7 +79,7 @@ function Home(props) {
   
   // The following is for calculating completion Percentage
   const totalModules = orientationModules.length;
-  const completionPercentage = completedModules.length/totalModules * 100;
+  const completionPercentage = Math.round(completedModules.length/totalModules * 100);
 
   return (
     <div style={{ height: "100vh", backgroundColor: "white" }}>

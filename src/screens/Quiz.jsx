@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
+import { useProgress } from "../ProgressContext";
 import NavBar from "../ui-components/NavBar";
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -15,6 +16,7 @@ import { generateClient } from "aws-amplify/api";
 import { updateProgress } from "../graphql/mutations";
 
 const Quiz = (props) => {
+  const { completedModules, updateCompletedModules } = useProgress();
   const [answers, setAnswers] = useState({});
   const location = useLocation();
   const client = generateClient();
@@ -74,16 +76,11 @@ const Quiz = (props) => {
     const score = calculateScore(answers, module);
     //if the total score matches the total question number, it will mark as pass
     if (score === module.quizList.length) {
-      let completedModules =
-        JSON.parse(localStorage.getItem("completedModules")) || [];
       if (!completedModules.includes(moduleName)) {
-        completedModules.push(moduleName);
+        const newCompletedModules = [...completedModules, moduleName];
         // -- TODO -- We can add the updateProgress function here --
-        await updateOurProgress(JSON.stringify(completedModules));
-        localStorage.setItem(
-          "completedModules",
-          JSON.stringify(completedModules)
-        );
+        await updateOurProgress(JSON.stringify(newCompletedModules));
+        updateCompletedModules(newCompletedModules);
       }
     }
     // -- TODO -- Add other logic here for pass/fail --
