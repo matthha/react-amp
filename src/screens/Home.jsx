@@ -17,7 +17,7 @@ const orientationModules = content;
 
 function Home(props) {
   // completedModules is an Array of title the user has passed
-  const { completedModules } = useProgress();
+  const { completedModules, updateCompletedModules } = useProgress();
   // console.log('saved modules are: ',completedModules)
   const [myRecord, setMyRecord] = useState('');
   const client = generateClient();
@@ -63,7 +63,8 @@ function Home(props) {
 
     } else {
       setMyRecord(apiData.data.listProgresses.items[0].id)
-      console.log('my progress is',apiData.data.listProgresses.items[0].progress)
+      // console.log('my progress is',apiData.data.listProgresses.items[0].progress)
+      updateCompletedModules(apiData.data.listProgresses.items[0].progress)
     }
     } catch (error) {
       console.log(error)
