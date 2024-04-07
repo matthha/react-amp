@@ -3,7 +3,7 @@ export const content = [
     title: "Schedule & Attendance",
     estimationTime: "~10 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "http://cityhigh.org/files/content/Orientation/ScheduleAttendance.jpg",
     videoLink: "https://",
     description: "Understand how abscences contribute to truancy.",
     quizList: [
@@ -27,7 +27,7 @@ export const content = [
     title: "Dress Code",
     estimationTime: "~7 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "http://cityhigh.org/files/content/Orientation/DressCode.jpg",
     videoLink: "https://",
     description: "Know what students are expected to wear every day.",
     quizList: [
@@ -48,7 +48,7 @@ export const content = [
     title: "Code of Conduct",
     estimationTime: "~7 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.cityhigh.org/files/content/orientation/codeofconduct.jpg",
     videoLink: "https://",
     description: "Know what students are expected to wear every day.",
     quizList: [
@@ -69,7 +69,7 @@ export const content = [
     title: "Curriculum & Grading",
     estimationTime: "~7 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.cityhigh.org/files/content/orientation/curriculumgrading.jpg",
     videoLink: "https://",
     description: "Know what students are expected to wear every day.",
     quizList: [
@@ -90,7 +90,7 @@ export const content = [
     title: "Technology",
     estimationTime: "~7 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "http://cityhigh.org/files/content/Orientation/Technology.JPG",
     videoLink: "https://",
     description: "Know what students are expected to wear every day.",
     quizList: [
@@ -111,7 +111,7 @@ export const content = [
     title: "Transportation",
     estimationTime: "~7 mins",
     coverImg:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "http://cityhigh.org/files/content/Orientation/TRANSPORTATION.jpg",
     videoLink: "https://",
     description: "Know what students are expected to wear every day.",
     quizList: [
