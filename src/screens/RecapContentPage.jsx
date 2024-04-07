@@ -34,37 +34,7 @@ function RecapContentPage(props) {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      {/* <div
-        style={{
-          background: "#9E2A2B",
-          height: 60,
-          paddingLeft: 16,
-          paddingTop: 20,
-        }}
-        className="menuicon"
-      >
-        <MenuOutlined
-          style={{ color: "white", fontSize: 20 }}
-          onClick={() => {
-            setOpenMenu(true);
-          }}
-        />
-      </div> */}
-      <span className="headerMenu">
-        <AppMenu />
-      </span>
-      <Drawer
-        placement="left"
-        visible={openMenu}
-        onClose={() => {
-          setOpenMenu(false);
-        }}
-        closable={false}
-        style={{ backgroundColor: "white" }}
-      >
-        <AppMenu isInline={true} />
-      </Drawer>
-
+      <div className="contentBody">
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <p onClick={handleClick} style={{fontWeight:500, color:'#9E2A2B',fontFamily:'Inter'}}>&lt; Go Back</p>
         {/* <h2 className="header1">Dress Code</h2>
@@ -91,6 +61,7 @@ function RecapContentPage(props) {
             <li>Dress Pants: Full length or Ankle</li>
             <li>(No capri pants or shorts)</li>
         </ul> */}
+      </div>
       </div>
     </div>
   );

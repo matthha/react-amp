@@ -1,19 +1,23 @@
 [
     {
-      "name": "Introduction",
-      "content": "Description for Introduction"
+      "name": "Code of Conduct",
+      "content": "Description for Code of Conduct"
     },
     {
-      "name": "Curriculum",
-      "content": "Description for Curriculum"
-    },
-    {
-      "name": "Policy",
-      "content": "Description for Policy"
+      "name": "Curriculum & Grading",
+      "content": "Description for Curriculum & Grading"
     },
     {
       "name": "Dress Code",
       "content": "Description for Dress Code"
+    },
+    {
+      "name": "Schedule & Attendance",
+      "content": "Description for Schedule & Attendance"
+    },
+    {
+      "name": "Technology",
+      "content": "Description for Technology"
     },
     {
       "name": "Transportation",

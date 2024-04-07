@@ -42,7 +42,7 @@ function ProfilePage(props) {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-
+      <div className="contentBody">
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">Profile</h1>
         <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
@@ -65,7 +65,7 @@ function ProfilePage(props) {
         <div style={{paddingTop:'40px'}}>
           <button style={{
               backgroundColor: "#9E2A2B",
-              borderColor: "#9E2A2B",
+              border: "none",
               color: "white",
               height: "40px",
               borderRadius: "100px",
@@ -73,6 +73,7 @@ function ProfilePage(props) {
             }}
                   onClick={props.signOut}>Sign out
           </button>
+        </div>
         </div>
       </div>
     </div>

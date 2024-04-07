@@ -27,52 +27,22 @@ function RecapPage(props) {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      {/* <div
-        style={{
-          background: "#9E2A2B",
-          height: 60,
-          paddingLeft: 16,
-          paddingTop: 20,
-        }}
-        className="menuicon"
-      >
-        <MenuOutlined
-          style={{ color: "white", fontSize: 20 }}
-          onClick={() => {
-            setOpenMenu(true);
-          }}
-        />
-      </div> */}
-      <span className="headerMenu">
-        <AppMenu />
-      </span>
-      <Drawer
-        placement="left"
-        visible={openMenu}
-        onClose={() => {
-          setOpenMenu(false);
-        }}
-        closable={false}
-        style={{ backgroundColor: "white" }}
-      >
-        <AppMenu isInline={true} />
-      </Drawer>
-
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">Orientation Recap</h1>
-        {/* <div style={{paddingTop: 30}}>
-            <MenuCard title="Introduction" description="Description for Introduction" />
-            <MenuCard title="Curriculum" description="Description for Curriculum" />
-            <MenuCard title="Policy" description="Description for Policy" />
-            <MenuCard title="Dress Code" description="Description for Dress Code" />
-            <MenuCard title="Transportation" description="Description for Transportation" />
-        </div> */}
-        <div style={{paddingTop: 30}}>
-          {modules.map((module) => (
-            <MenuCard title={module.name} description={module.content} />
-          ))}
+      <div className="contentBody">
+        <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+          <h1 className="header1">Orientation Recap</h1>
+          <div className="recapCardContainer" style={{paddingTop: 30}}>
+            {modules.map((module, index) => (
+              <div
+                style={{
+                  marginRight: 20,
+                  marginBottom: 20,
+                }}
+              >
+                <MenuCard title={module.name} description={module.content} />
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
     </div>
   );
@@ -88,22 +58,17 @@ function MenuCard({ title, description }) {
       navigate(`/recapcontent/${title}`);  // Pass the module title as a parameter
     };
     return (
-      <Card className="cardStyle">
-        {/* <Meta
-          title={<div className="titleStyle">{title}</div>}
-          description={description}
-          style={{ fontWeight: 'bold' }}
-        /> */}
-        <div style={{ display: 'flex' , alignItems:"space-around", width: 300}}>
+        <div className="recapCardDisplay">
+          <div className="recapIconDisplay">
             <InfoCircleOutlined className="infoIconStyle" />
-            <div className="contentStyle">
-                <div className="titleStyle">{title}</div>
-                <div>{description}</div>
+            <div className="recapTitleDisplay">
+              <div className="header3">{title}</div>
+              <div className="header4">{description}</div>
+            </div>
             </div>
             <RightOutlined className="rightArrowStyle" onClick={onArrowClick} />
+            <button className="goButton" onClick={onArrowClick}>Explore Courses</button>
         </div>
-    
-      </Card>
     );
   }
 

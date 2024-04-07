@@ -63,48 +63,9 @@ function FAQPage(props) {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      {/* <div
-        style={{
-          background: "#9E2A2B",
-          height: 60,
-          paddingLeft: 16,
-          paddingTop: 20,
-        }}
-        className="menuicon"
-      >
-        <MenuOutlined
-          style={{ color: "white", fontSize: 20 }}
-          onClick={() => {
-            setOpenMenu(true);
-          }}
-        />
-      </div> */}
-      <span className="headerMenu">
-        <AppMenu />
-      </span>
-      <Drawer
-        placement="left"
-        visible={openMenu}
-        onClose={() => {
-          setOpenMenu(false);
-        }}
-        closable={false}
-        style={{ backgroundColor: "white" }}
-      >
-        <AppMenu isInline={true} />
-      </Drawer>
-
+      <div className="contentBody">
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
         <h1 className="header1">FAQ</h1>
-        {/* <Collapse
-          accordion
-          bordered={false}
-          expandIcon={({ isActive }) =>
-            isActive ? <MinusCircleFilled /> : <CheckCircleFilled />
-          }
-          className="site-collapse-custom-collapse"
-          items={panelItems} // Using items prop instead of children
-          /> */}
           <Collapse
             accordion
             bordered={false}
@@ -124,7 +85,7 @@ function FAQPage(props) {
             ))}
 
           </Collapse>
-
+        </div>
        </div>
     </div>
   );
