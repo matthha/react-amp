@@ -22,7 +22,7 @@ const IntroductionVideo = (props) => {
   const module = location.state.module;
   const moduleName = location.state.module.title;
   const myRecord = location.state.myRecord;
-  console.log(myRecord)
+  // console.log(myRecord)
   const navigate = useNavigate();
   const handleStartQuiz = () => {
     navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route

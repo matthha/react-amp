@@ -17,6 +17,7 @@ import {
 } from "@aws-amplify/ui-react";
 import { generateClient } from 'aws-amplify/api';
 import Home from "./screens/Home";
+import HomeAdmin from "./screens/HomeAdmin";
 import Video from "./screens/Video";
 import Quiz from "./screens/Quiz";
 import RecapPage from './screens/RecapPage'; 
@@ -60,7 +61,6 @@ const components = {
       </View>
     );
   },
-
   SignIn: {
     Header() {
       const { tokens } = useTheme();
@@ -144,26 +144,36 @@ export default function App() {
         components={components}
         hideSignUp={true}
       >
+
         {({ signOut, user }) => {
-          console.log('user is', user)
-          return (
+          // console.log('user is', user)
+          if (user?.username == 'matthha@umich.edu') {
+            return (
             <main>
               <Routes>
-                
-                <Route path="/" element={<Home user={user} />} />
-                <Route path="/home" element={<Home user={user} />} />
-                <Route path="/video/*" element={<Video />} />
-                <Route path="/quiz/*" element={<Quiz user={user}/>} />
-                <Route path="/recap" element={<RecapPage/>} />
-                <Route path="/faq" element={<FAQPage/>} />
-                <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
-                <Route path="/yaml/*" element={<TestYaml />} />
-                {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
-                <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
-                <Route path="/result/*" element={<Result />} />
+                <Route path='/' element={<HomeAdmin user={user}/>}/>
               </Routes>
             </main>
-          );
+            )
+          } else {
+            return (
+              <main>
+                <Routes>
+                  
+                  <Route path="/" element={<Home user={user} />} />
+                  <Route path="/home" element={<Home user={user} />} />
+                  <Route path="/video/*" element={<Video />} />
+                  <Route path="/quiz/*" element={<Quiz user={user}/>} />
+                  <Route path="/recap" element={<RecapPage/>} />
+                  <Route path="/faq" element={<FAQPage/>} />
+                  <Route path="/profile" element={<ProfilePage signOut={signOut}/>} />
+                  <Route path="/yaml/*" element={<TestYaml />} />
+                  {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
+                  <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
+                  <Route path="/result/*" element={<Result />} />
+                </Routes>
+              </main>
+            )};
         }}
       </Authenticator>
       </ThemeProvider>
