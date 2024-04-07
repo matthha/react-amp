@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ProgressProvider } from './ProgressContext'; // Adjust the path if necessary
 
 import "./App.scss";
 import "@aws-amplify/ui-react/styles.css";
@@ -146,20 +147,22 @@ export default function App() {
       >
 
         {({ signOut, user }) => {
-          // console.log('user is', user)
+          // * This is the current admin path and their username
           if (user?.username == 'matthha@umich.edu') {
             return (
             <main>
+
               <Routes>
                 <Route path='/' element={<HomeAdmin user={user}/>}/>
               </Routes>
+
             </main>
             )
           } else {
             return (
               <main>
+              <ProgressProvider>
                 <Routes>
-                  
                   <Route path="/" element={<Home user={user} />} />
                   <Route path="/home" element={<Home user={user} />} />
                   <Route path="/video/*" element={<Video />} />
@@ -172,6 +175,7 @@ export default function App() {
                   <Route path="/recapcontent/:moduleName" element={<RecapContentPage />} />
                   <Route path="/result/*" element={<Result />} />
                 </Routes>
+              </ProgressProvider>
               </main>
             )};
         }}

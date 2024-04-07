@@ -40,17 +40,11 @@ $primaryColor: #9e2a2b;
   }
 }
 
-@media (max-width: 500px) {
-  .headerMenu {
-    display: none;
-  }
+.contentBody {
+  background: white;
+  padding: 20px;
+  min-height: 100vh;
 }
-@media (min-width: 500px) {
-  .menuicon {
-    display: none;
-  }
-}
-
 .header1 {
   color: #000;
   font-feature-settings: "clig" off, "liga" off;
@@ -81,6 +75,17 @@ $primaryColor: #9e2a2b;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
+  line-height: 28px; /* 140% */
+  margin: 0;
+}
+.header4 {
+  color: #868686;
+  font-feature-settings: "clig" off, "liga" off;
+  /* 20-simibold-title2 */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 28px; /* 140% */
   margin: 0;
 }
@@ -153,9 +158,9 @@ $primaryColor: #9e2a2b;
   margin-bottom: 16px; /* Space between the inputs */
   border: 1px solid #ccc; /* Light grey border */
   border-radius: 4px; /* Slightly rounded borders */
+  font-size: 16px;
   /* Add other styles as needed */
 }
-
 
 .site-collapse-custom-panel {
   background: #fff;
@@ -169,12 +174,11 @@ $primaryColor: #9e2a2b;
 /* Style for the collapse panel header */
 .site-collapse-custom-panel > .ant-collapse-header {
   padding-left: 0 !important;
-  color: #9E2A2B;
-  font-size: 16px; 
+  color: #9e2a2b;
+  font-size: 16px;
   font-weight: 600;
   font-family: Inter;
 }
-
 
 .site-collapse-custom-panel .ant-collapse-content-box {
   font-size: 16px;
@@ -195,7 +199,7 @@ $primaryColor: #9e2a2b;
 }
 
 .infoIconStyle {
-  color: #9E2A2B;
+  color: #9e2a2b;
   font-size: 24px;
   /* other styles */
 }
@@ -215,8 +219,8 @@ $primaryColor: #9e2a2b;
 }
 
 .rightArrowStyle {
-  color: #9E2A2B; /* Adjust as needed */
-  font-size: 24px;
+  color: #9e2a2b; /* Adjust as needed */
+  font-size: 16px;
   cursor: pointer;
   /* other styles */
 }
@@ -241,33 +245,32 @@ $primaryColor: #9e2a2b;
   height: auto;
   object-fit: cover; /* This will cover the area without stretching the image */
 }
-.navBox{
-  border-bottom: 1px solid #F0F0F1;
+.navBox {
+  border-bottom: 1px solid #f0f0f1;
   padding: 20px 24px 40px 24px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  gap:10px;
+  gap: 10px;
 }
 .navLogoBox {
-  height: 72px; 
+  height: 72px;
   display: flex;
-  align-items: center; 
-  justify-content: flex-start; 
+  align-items: center;
+  justify-content: flex-start;
   margin-bottom: 10px;
 }
 
 .navLogoBox img {
-  height: 100%; 
-  width: auto; 
+  height: 100%;
+  width: auto;
 }
 
 .question-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
-
 
 .alert-inline {
   display: inline-flex; /* Makes the alert hug its content */
@@ -282,4 +285,144 @@ $primaryColor: #9e2a2b;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+.coverImg {
+  height: 164px;
+  object-fit: cover;
+}
+
+.goButton{
+  display: none;
+  background-color: #9e2a2b;
+  color: white;
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.recapCardDisplay{
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Changed from space-around to center for vertical alignment */
+  justify-content: space-between;
+  width: 300px;
+  background-color: #f0f0f1;
+}
+
+.recapIconDisplay{
+  display: flex;
+  flex-direction: row
+}
+
+.recapTitleDisplay{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 500px) {
+  .headerMenu {
+    display: none;
+  }
+}
+@media (min-width: 500px) {
+  .menuicon {
+    display: none;
+  }
+  .ant-menu-title-content {
+    color: #ffffff !important;
+  }
+  .contentBody {
+    padding: 44px 5vw;
+    max-width: 1840px;
+    margin: auto;
+  }
+  .header1 {
+    font-size: 32px;
+  }
+  .header3 {
+    font-size: 20px;
+  }
+  .header4 {
+    font-size: 16px;
+  }
+  .content {
+    font-size: 20px;
+  }
+  .secondaryContent {
+    font-size: 20px;
+  }
+  .paragraph {
+    margin-top: 28px;
+  }
+  .ant-card-body {
+    padding: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  .card-body {
+    gap: 8px;
+
+  }
+  .ant-col{
+    padding-right: 2vw !important;
+    padding-bottom: 1vw !important;
+  }
+  .coverImg {
+    height: 240px;
+  }
+  .recapCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .rightArrowStyle {
+    display: none;
+  }
+  .goButton{
+    display: flex;
+  }
+  .recapIconDisplay{
+    flex-direction: column;
+    align-items: center;
+  }
+  .recapTitleDisplay{
+    align-items: center;
+  }  
+  .recapCardDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    width: 350px;
+  }
+  .recapCardDisplay .infoIconStyle,
+  .recapCardDisplay .content,
+  .recapCardDisplay .secondaryContent,
+  .recapCardDisplay .rightArrowStyle {
+    margin-bottom: 20px; /* Adjust this value to increase or decrease the space between items */
+  }
+
+  .site-collapse-custom-panel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .site-collapse-custom-panel > .ant-collapse-header {
+    font-size: 20px;
+  }
+  
+  .site-collapse-custom-panel .ant-collapse-content-box {
+    font-size: 20px;
+  }
+
+  .profile-input {
+    font-size: 18px;
+  }
+  
 }
