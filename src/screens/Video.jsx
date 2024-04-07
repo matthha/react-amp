@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../ui-components/NavBar";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
-import {
-  Drawer,
-  Menu,
-  Card,
-  Progress,
-  Row,
-  Col, Button, Divider
-} from "antd";
+import { Drawer, Menu, Card, Progress, Row, Col, Button, Divider } from "antd";
 import {
   ClockCircleOutlined,
   PlayCircleOutlined,
@@ -35,23 +28,24 @@ const IntroductionVideo = (props) => {
         <div className="secondaryContent" style={{ padding: "12px 0px" }}>
           <ClockCircleOutlined /> {module.estimationTime}
         </div>
-        <div className="buttonText">
-          {module.description}
-        </div>
+        <div className="buttonText">{module.description}</div>
         <div style={{ textAlign: "center", margin: "24px 0" }}>
-          <video width="100%" controls>
-            <source src={module.videoLink} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="responsive-iframe-container">
+            <iframe
+              src={module.videoLink}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
-        {/* -- TODO -- Possibly add other learning content here on the same page -- */}
 
         <Button
           style={{
             backgroundColor: "#9E2A2B",
             borderColor: "#9E2A2B",
             color: "white",
-            margin: 10,
             height: "40px",
             borderRadius: "100px",
           }}

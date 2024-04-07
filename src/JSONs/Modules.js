@@ -4,7 +4,7 @@ export const content = [
     estimationTime: "~10 mins",
     coverImg:
       "http://cityhigh.org/files/content/Orientation/ScheduleAttendance.jpg",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI",
     description: "Understand how abscences contribute to truancy.",
     quizList: [
       {
@@ -28,7 +28,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "http://cityhigh.org/files/content/Orientation/DressCode.jpg",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     quizList: [
       {
@@ -49,7 +49,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "https://www.cityhigh.org/files/content/orientation/codeofconduct.jpg",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     quizList: [
       {
@@ -70,7 +70,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "https://www.cityhigh.org/files/content/orientation/curriculumgrading.jpg",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     quizList: [
       {
@@ -91,7 +91,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "http://cityhigh.org/files/content/Orientation/Technology.JPG",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     quizList: [
       {
@@ -112,7 +112,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "http://cityhigh.org/files/content/Orientation/TRANSPORTATION.jpg",
-    videoLink: "https://",
+    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     quizList: [
       {
