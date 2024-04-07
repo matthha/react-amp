@@ -30,6 +30,7 @@ import Result from "./screens/Result";
 import config from './aws-exports'
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react";
+import ProfileAdmin from "./screens/ProfileAdmin";
 
 Amplify.configure(config)
 
@@ -148,12 +149,14 @@ export default function App() {
 
         {({ signOut, user }) => {
           // * This is the current admin path and their username
-          if (user?.username == 'matthha@umich.edu') {
+          if (user?.username == 'matthha') {
             return (
             <main>
 
               <Routes>
                 <Route path='/' element={<HomeAdmin user={user}/>}/>
+                <Route path='/home' element={<HomeAdmin user={user}/>}/>
+                <Route path='/profile' element={<ProfileAdmin signOut={signOut} />}/>
               </Routes>
 
             </main>
