@@ -6,11 +6,6 @@ import NavBar from "../ui-components/NavBar";
 import { useNavigate } from 'react-router-dom';
 
 import {
-  MenuOutlined,
-  CheckCircleFilled,
-  MinusCircleFilled,
-} from "@ant-design/icons";
-import {
   Drawer,
   Menu,
   Card,
