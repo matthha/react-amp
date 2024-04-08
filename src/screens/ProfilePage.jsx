@@ -69,7 +69,7 @@ function ProfilePage(props) {
               color: "white",
               height: "40px",
               borderRadius: "100px",
-              width: "350px"
+              width: "310px"
             }}
                   onClick={props.signOut}>Sign out
           </button>
