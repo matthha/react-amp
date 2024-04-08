@@ -23,13 +23,13 @@ const IntroductionVideo = (props) => {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      <div className="contentBody">
+      <div className="contentBody quizBody">
         <h1 className="header1">{moduleName} Video</h1>
         <div className="secondaryContent" style={{ padding: "12px 0px" }}>
           <ClockCircleOutlined /> {module.estimationTime}
         </div>
         <div className="buttonText">{module.description}</div>
-        <div style={{ textAlign: "center", margin: "24px 0" }}>
+        <div className="videoContainer">
           <div className="responsive-iframe-container">
             <iframe
               src={module.videoLink}
@@ -40,20 +40,15 @@ const IntroductionVideo = (props) => {
             ></iframe>
           </div>
         </div>
-
-        <Button
-          style={{
-            backgroundColor: "#9E2A2B",
-            borderColor: "#9E2A2B",
-            color: "white",
-            height: "40px",
-            borderRadius: "100px",
-          }}
-          block
-          onClick={handleStartQuiz} // Attach the navigate function here
-        >
-          <div className="buttonText">Start the quiz</div>
-        </Button>
+        <div className="buttonContainer">
+          <Button
+            className="actionButton"
+            block
+            onClick={handleStartQuiz} // Attach the navigate function here
+          >
+            <div className="buttonText">Start the quiz</div>
+          </Button>
+        </div>
       </div>
     </div>
   );

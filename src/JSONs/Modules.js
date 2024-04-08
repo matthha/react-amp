@@ -22,6 +22,7 @@ export const content = [
         correctAnswer: "Parent/Guardian",
       },
     ],
+    scoreForPassing: 2,
   },
   {
     title: "Dress Code",
@@ -43,6 +44,7 @@ export const content = [
         correctAnswer: "True",
       },
     ],
+    scoreForPassing: 2,
   },
   {
     title: "Code of Conduct",
@@ -64,6 +66,7 @@ export const content = [
         correctAnswer: "True",
       },
     ],
+    scoreForPassing: 2,
   },
   {
     title: "Curriculum & Grading",
@@ -85,6 +88,7 @@ export const content = [
         correctAnswer: "True",
       },
     ],
+    scoreForPassing: 2,
   },
   {
     title: "Technology",
@@ -106,6 +110,7 @@ export const content = [
         correctAnswer: "True",
       },
     ],
+    scoreForPassing: 2,
   },
   {
     title: "Transportation",
@@ -127,5 +132,6 @@ export const content = [
         correctAnswer: "True",
       },
     ],
+    scoreForPassing: 2,
   },
 ];

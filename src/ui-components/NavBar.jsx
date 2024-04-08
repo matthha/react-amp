@@ -42,9 +42,11 @@ const NavBar = ({ user }) => {
           }}
         />
       </div>
-      <span className="headerMenu">
+      <div style={{backgroundColor:"#9e2a2b"}}>
+      <div className="headerMenu">
         <AppMenu />
-      </span>
+      </div>
+      </div>
       <Drawer
         placement="left"
         open={openMenu}
