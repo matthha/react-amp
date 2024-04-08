@@ -1,27 +1,32 @@
 [
-    {
-      "name": "Code of Conduct",
-      "content": "Description for Code of Conduct"
-    },
-    {
-      "name": "Curriculum & Grading",
-      "content": "Description for Curriculum & Grading"
-    },
-    {
-      "name": "Dress Code",
-      "content": "Description for Dress Code"
-    },
-    {
-      "name": "Schedule & Attendance",
-      "content": "City High School has a strict attendance policy. A student is considered truant with their 3rd unexcused absence in a year. Once truant they will have to attend Student Attendance Improvement Conference and repercussions will become more severe with more absences."
-    },
-    {
-      "name": "Technology",
-      "content": "Description for Technology"
-    },
-    {
-      "name": "Transportation",
-      "content": "Description for Transportation"
-    }
-  ]
-  
+  {
+    "name": "Code of Conduct",
+    "content": "Description for Code of Conduct",
+    "icon": "FaHandshake"
+  },
+  {
+    "name": "Curriculum & Grading",
+    "content": "Description for Curriculum & Grading",
+    "icon": "FaBook"
+  },
+  {
+    "name": "Dress Code",
+    "content": "Description for Dress Code",
+    "icon": "FaTshirt"
+  },
+  {
+    "name": "Schedule & Attendance",
+    "content": "Description for Schedule & Attendance",
+    "icon": "FaClock"
+  },
+  {
+    "name": "Technology",
+    "content": "Description for Technology",
+    "icon": "FaLaptop"
+  },
+  {
+    "name": "Transportation",
+    "content": "Description for Transportation",
+    "icon": "FaBus"
+  }
+]
