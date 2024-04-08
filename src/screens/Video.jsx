@@ -8,6 +8,7 @@ import {
   MenuOutlined,
 } from "@ant-design/icons";
 import moduleData from "../orientationModules.json";
+import Content from "../ui-components/Content";
 
 const IntroductionVideo = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -40,6 +41,7 @@ const IntroductionVideo = (props) => {
             ></iframe>
           </div>
         </div>
+        <Content content={module.content}/>
         <div className="buttonContainer">
           <Button
             className="actionButton"

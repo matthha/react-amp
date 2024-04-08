@@ -3,9 +3,15 @@ export const content = [
     title: "Schedule & Attendance",
     estimationTime: "~10 mins",
     coverImg:
-      "http://cityhigh.org/files/content/Orientation/ScheduleAttendance.jpg",
+      "https://cityhigh.org/files/content/Orientation/ScheduleAttendance.jpg",
     videoLink: "https://www.youtube.com/embed/OQdwqhMClTI",
     description: "Understand how abscences contribute to truancy.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "When is a student first considered truant?",
@@ -28,9 +34,15 @@ export const content = [
     title: "Dress Code",
     estimationTime: "~7 mins",
     coverImg:
-      "http://cityhigh.org/files/content/Orientation/DressCode.jpg",
+      "https://cityhigh.org/files/content/Orientation/DressCode.jpg",
     videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "What is type of clothing is required at school?",
@@ -53,6 +65,12 @@ export const content = [
       "https://www.cityhigh.org/files/content/orientation/codeofconduct.jpg",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "What is type of clothing is required at school?",
@@ -75,6 +93,12 @@ export const content = [
       "https://www.cityhigh.org/files/content/orientation/curriculumgrading.jpg",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "What is type of clothing is required at school?",
@@ -94,9 +118,15 @@ export const content = [
     title: "Technology",
     estimationTime: "~7 mins",
     coverImg:
-      "http://cityhigh.org/files/content/Orientation/Technology.JPG",
+      "https://cityhigh.org/files/content/Orientation/Technology.JPG",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "What is type of clothing is required at school?",
@@ -116,9 +146,15 @@ export const content = [
     title: "Transportation",
     estimationTime: "~7 mins",
     coverImg:
-      "http://cityhigh.org/files/content/Orientation/TRANSPORTATION.jpg",
+      "https://cityhigh.org/files/content/Orientation/TRANSPORTATION.jpg",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
+    content: [
+      {regular:"This is the first sentence."},
+      {bold:"This is a bolded sentence."},
+      {underline:"Look at me, I'm underlined!"},
+      {danger:"I'm very important."}
+    ],
     quizList: [
       {
         question: "What is type of clothing is required at school?",
