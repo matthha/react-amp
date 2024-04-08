@@ -6,17 +6,8 @@ import { InfoCircleOutlined, RightOutlined } from '@ant-design/icons';
 import NavBar from "../ui-components/NavBar";
 
 import {
-  MenuOutlined,
-  CheckCircleFilled,
-  MinusCircleFilled,
-} from "@ant-design/icons";
-import {
-  Drawer,
-  Menu,
+
   Card,
-  Progress,
-  Row,
-  Col,
 } from "antd";
 const { Meta } = Card;
 // Import other icons here if needed and use them as intended
@@ -38,7 +29,7 @@ function RecapPage(props) {
                   marginBottom: 20,
                 }}
               >
-                <MenuCard title={module.name} description={module.content} />
+                <MenuCard title={module.name} description={<></>} />
               </div>
             ))}
           </div>
@@ -67,43 +58,10 @@ function MenuCard({ title, description }) {
             </div>
             </div>
             <RightOutlined className="rightArrowStyle" onClick={onArrowClick} />
-            <button className="goButton" onClick={onArrowClick}>Explore Courses</button>
+            <button className="goButton" onClick={onArrowClick}>Review Content</button>
         </div>
     );
   }
 
-function AppMenu({ isInline = false }) {
-  // Corrected parameter destructuring
-  const navigate = useNavigate();
-  const handleClick = (e) => {
-    // navigate to the route corresponding to the menu item key
-    navigate(`/${e.key}`);
-  };
-  return (
-    <Menu
-      style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
-      mode={isInline ? "inline" : "horizontal"}
-      onClick={handleClick}
-      items={[
-        {
-          label: "CCHS Online Orientation",
-          key: "home", // Corrected property name to lowercase
-        },
-        {
-          label: "Orientation Recap",
-          key: "recap",
-        },
-        {
-          label: "FAQ",
-          key: "faq",
-        },
-        {
-          label: "Profile",
-          key: "profile",
-        },
-      ]}
-    ></Menu>
-  );
-}
 
 export default RecapPage;
