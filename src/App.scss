@@ -327,6 +327,15 @@ $primaryColor: #9e2a2b;
   padding-right: 10px;
 }
 
+.congratsTitle{
+  font-weight:600;
+  font-size:'16px'
+}
+
+.congratsContent{
+  font-size:'16px'
+}
+
 @media (max-width: 500px) {
   .headerMenu {
     display: none;
@@ -412,6 +421,14 @@ $primaryColor: #9e2a2b;
   
   .profile-input {
     font-size: 18px;
+  }
+
+  .congratsTitle{
+    font-size: 20px
+  }
+  
+  .congratsContent{
+    font-size: 20px
   }
   
 }
