@@ -72,20 +72,24 @@ function ProfilePage(props) {
         </div>
         <div>
           <h3 className="header3" style={{paddingTop:25}}>COMPLETION STATUS</h3>
-          <div style={{paddingTop:25}}>
+          <div style={{paddingTop:20}}>
               {completionPercentage >= 100 ? (
                 <div>
-                  <CheckCircleFilled style={{ color: "#299E63", fontSize: "24px" }} />
-                  <span style={{ marginLeft: "10px" }}>Completed</span>
-                  <div>
+                  {/* <CheckCircleFilled style={{ color: "#299E63", fontSize: "24px" }} /> */}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
                     <img src="https://media.istockphoto.com/id/1353254487/vector/complete-stamp-imprint-seal-template-vector-stock-illustration.jpg?s=612x612&w=0&k=20&c=WTGSZJSVsMoSyge9UhZz71HQoU0TB4ugcV4BSXtPYWU=" alt="Completed" 
-                    style={{ width: "180px", height: "150px" }} />
+                    style={{ width: "160px", height: "135px" }} />
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start',paddingTop:'20px' }}>
+                      <span className='congratsTitle' style={{ marginLeft: "10px"}}>Congratulations!</span>
+                      <span className='congratsContent' style={{ marginLeft: "10px"}}> You have completed all the modules!</span>
+                    </div>
                   </div>
+                  
                 </div>
               ) : (
                 <div>
                   <MinusCircleFilled style={{ color: "#C51C00", fontSize: "24px" }} />
-                  <span style={{ marginLeft: "10px" }}>Incomplete</span>
+                  <span style={{ marginLeft: "10px" }}>You have not completed all the modules yet.</span>
                 </div>
               )}
             </div>
