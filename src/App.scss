@@ -377,6 +377,15 @@ $primaryColor: #9e2a2b;
   min-width: 212px;
 }
 
+.congratsTitle{
+  font-weight:600;
+  font-size:'16px'
+}
+
+.congratsContent{
+  font-size:'16px'
+}
+
 @media (max-width: 500px) {
   .headerMenu {
     display: none;
@@ -516,5 +525,13 @@ $primaryColor: #9e2a2b;
     width: 40vw;
     margin-bottom: 32px;
     max-width: 800px;
+  }
+  
+  .congratsTitle{
+    font-size: 20px
+  }
+
+  .congratsContent{
+    font-size: 20px
   }
 }
