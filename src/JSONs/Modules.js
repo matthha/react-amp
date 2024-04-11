@@ -35,7 +35,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "https://cityhigh.org/files/content/Orientation/DressCode.jpg",
-    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/evD3K0iV4yQ", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     content: [
       {regular:"This is the first sentence."},
@@ -63,7 +63,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "https://www.cityhigh.org/files/content/orientation/codeofconduct.jpg",
-    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/fovLtQyYPIg", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     content: [
       {regular:"This is the first sentence."},
