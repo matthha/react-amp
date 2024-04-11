@@ -151,7 +151,7 @@ export default function App() {
           >
             {({ signOut, user }) => {
               // * This is the current admin path and their username
-              if (user?.username == "matthhas") {
+              if (user?.username == "matthha") {
                 return (
                   <main>
                     <Routes>

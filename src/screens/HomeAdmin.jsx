@@ -26,14 +26,14 @@ function HomeAdmin(props) {
     function CheckFinished(obj) {
       let progress = JSON.parse(obj?.progress).length/totalModules*100;
 
-      if (Number(progress) === '100') {
+      if (Number(progress) === 100) {
 
       return true } else { return false}
     }
     function CheckInProgress(obj) {
       let progress = JSON.parse(obj?.progress).length/totalModules*100;
 
-      if (Number(progress) !== '100') {
+      if (Number(progress) !== 100) {
 
       return true } else { return false }
     }
