@@ -111,7 +111,7 @@ const components = {
         );
       },
       Footer() {
-        return <Text>Footer Information</Text>;
+        return (<Text>Footer Information</Text>);
       },
     },
   },
@@ -132,6 +132,7 @@ const earthyTheme = {
   },
 };
 
+
 export default function App() {
   return (
     <Router>
@@ -142,16 +143,17 @@ export default function App() {
           },
         }}
       >
-        <ThemeProvider theme={earthyTheme}>
+        <ThemeProvider theme={earthyTheme}>      
           <Authenticator
             style={{ backgroundColor: "blue" }}
             formFields={formFields}
             components={components}
             hideSignUp={true}
           >
+
             {({ signOut, user }) => {
               // * This is the current admin path and their username
-              if (user?.username == "matthha") {
+              if (user?.username === "matthha") {
                 return (
                   <main>
                     <Routes>

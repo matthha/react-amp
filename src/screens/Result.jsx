@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import NavBar from "../ui-components/NavBar";
 import ResultCard from "../ui-components/ResultCard";
@@ -13,6 +13,7 @@ import { content } from "../JSONs/Modules";
 const Result = (props) => {
   //TODO: change this to the quiz page passed value
   const location = useLocation();
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   const module = location.state?.module ?? {};
   const moduleName = location.state?.module?.title ?? "Unknown Module";
   const answers = location.state?.answers || {};

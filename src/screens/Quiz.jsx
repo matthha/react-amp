@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import { useProgress } from "../ProgressContext";
 import NavBar from "../ui-components/NavBar";
@@ -13,6 +13,7 @@ const Quiz = (props) => {
   const { completedModules, updateCompletedModules } = useProgress();
   const [answers, setAnswers] = useState({});
   const location = useLocation();
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   const client = generateClient();
   const variables = {
     filter: {

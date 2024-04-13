@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import modules from '../JSONs/modules.json';  // Adjust the path according to your file structure
 
 import { useNavigate } from 'react-router-dom';
@@ -42,7 +42,7 @@ const iconMapping = {
 function RecapPage(props) {
   const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
-
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />

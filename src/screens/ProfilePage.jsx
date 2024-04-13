@@ -32,6 +32,7 @@ function ProfilePage(props) {
   const completionPercentage = Math.round(completedModules.length/totalModules * 100);
   console.log(completionPercentage)
   useEffect(() => {
+    window.scrollTo(0, 0)
     const fetchUserInfo = async () => {
       try {
         const user = await getCurrentUser();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../ui-components/NavBar";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import { Drawer, Menu, Card, Progress, Row, Col, Button, Divider } from "antd";
@@ -16,7 +16,7 @@ const IntroductionVideo = (props) => {
   const module = location.state.module;
   const moduleName = location.state.module.title;
   const myRecord = location.state.myRecord;
-  // console.log(myRecord)
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   const navigate = useNavigate();
   const handleStartQuiz = () => {
     navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route

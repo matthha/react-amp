@@ -27,6 +27,7 @@ function ProfileAdmin(props) {
   const [email, setUserEmail] = useState('');
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     const fetchUserInfo = async () => {
       try {
         const user = await getCurrentUser();

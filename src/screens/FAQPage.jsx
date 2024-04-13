@@ -1,6 +1,6 @@
 import faqs from '../JSONs/faqs.json';  // Adjust the path according to your file structure
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Collapse } from "antd";
 import NavBar from "../ui-components/NavBar";
@@ -26,6 +26,7 @@ const { Panel } = Collapse;
 
 // Import other icons here if needed and use them as intended
 function FAQPage(props) {
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />

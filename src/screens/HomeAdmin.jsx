@@ -63,7 +63,7 @@ function HomeAdmin(props) {
   useEffect(() => {
 
     fetchProgress();
-
+    window.scrollTo(0, 0)
   }, []);
   
   // The following is for calculating completion Percentage

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import modules from '../JSONs/modules.json';  // Adjust the path according to your file structure
 import { useParams } from 'react-router-dom';
 import NavBar from "../ui-components/NavBar";
@@ -17,6 +17,7 @@ const { Meta } = Card;
 // Import other icons here if needed and use them as intended
 function RecapContentPage(props) {
   const [openMenu, setOpenMenu] = useState(false);
+  useEffect(()=> {window.scrollTo(0, 0)},[])
   const navigate = useNavigate();
   const handleClick = (e) => {
     // navigate to the route corresponding to the menu item key
