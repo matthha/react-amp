@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import modules from '../JSONs/modules.json';  // Adjust the path according to your file structure
+import { recaps } from '../JSONs/recaps';
 
 import { useNavigate } from 'react-router-dom';
 import { InfoCircleOutlined, RightOutlined } from '@ant-design/icons';
@@ -14,19 +14,7 @@ import {
   faBus
 } from "@fortawesome/free-solid-svg-icons";
 
-import {
-  MenuOutlined,
-  CheckCircleFilled,
-  MinusCircleFilled,
-} from "@ant-design/icons";
-import {
-  Drawer,
-  Menu,
-  Card,
-  Progress,
-  Row,
-  Col,
-} from "antd";
+import {Card} from "antd";
 const { Meta } = Card;
 // Import other icons here if needed and use them as intended
 const iconMapping = {
@@ -38,19 +26,17 @@ const iconMapping = {
   FaBus: faBus // Correct as is
 };
 
-
 function RecapPage(props) {
   const navigate = useNavigate();
-  const [openMenu, setOpenMenu] = useState(false);
   useEffect(()=> {window.scrollTo(0, 0)},[])
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div style={{ height: "100vh", backgroundColor: "white" }}>
       <NavBar />
       <div className="contentBody">
         <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
           <h1 className="header1">Orientation Recap</h1>
           <div className="recapCardContainer" style={{paddingTop: 30}}>
-            {modules.map((module, index) => (
+            {recaps.map((recap, index) => (
               <div
                 key={index}
                 style={{
@@ -58,9 +44,10 @@ function RecapPage(props) {
                   marginBottom: 20,
                 }}
               >
-                <MenuCard title={module.name} description={module.content} icon={iconMapping[module.icon]}/>
+                <MenuCard title={recap.title} description={recap.description} icon={iconMapping[recap.icon]}/>
               </div>
             ))}
+            
           </div>
         </div>
       </div>
@@ -70,10 +57,6 @@ function RecapPage(props) {
 
 function MenuCard({ title, description, icon }) {
     const navigate = useNavigate();
-    // const onArrowClick = () => {
-    //     // Assuming `navigateTo` is the path to which you want to navigate
-    //     navigate('/recapcontent');
-    //   };
     const onArrowClick = () => {
       navigate(`/recapcontent/${title}`);  // Pass the module title as a parameter
     };
@@ -92,38 +75,6 @@ function MenuCard({ title, description, icon }) {
     );
   }
 
-function AppMenu({ isInline = false }) {
-  // Corrected parameter destructuring
-  const navigate = useNavigate();
-  const handleClick = (e) => {
-    // navigate to the route corresponding to the menu item key
-    navigate(`/${e.key}`);
-  };
-  return (
-    <Menu
-      style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
-      mode={isInline ? "inline" : "horizontal"}
-      onClick={handleClick}
-      items={[
-        {
-          label: "CCHS Online Orientation",
-          key: "home", // Corrected property name to lowercase
-        },
-        {
-          label: "Orientation Recap",
-          key: "recap",
-        },
-        {
-          label: "FAQ",
-          key: "faq",
-        },
-        {
-          label: "Profile",
-          key: "profile",
-        },
-      ]}
-    ></Menu>
-  );
-}
+
 
 export default RecapPage;
