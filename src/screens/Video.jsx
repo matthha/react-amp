@@ -24,10 +24,10 @@ const IntroductionVideo = (props) => {
   return (
     <div style={{ height: "100vh", backgroundColor: "whit" }}>
       <NavBar />
-      <div className="contentBody quizBody">
+      <div className="contentBody quizBody videoBody">
         <h1 className="header1">{moduleName} Video</h1>
-        <div className="secondaryContent" style={{ padding: "12px 0px" }}>
-          <ClockCircleOutlined /> {module.estimationTime}
+        <div className="secondaryContent videoTimeContainer">
+          <ClockCircleOutlined className="secondaryContent" /> {module.estimationTime}
         </div>
         <div className="buttonText">{module.description}</div>
         <div className="videoContainer">

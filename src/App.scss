@@ -54,7 +54,7 @@ $primaryColor: #9e2a2b;
   width: 100%;
   height: 100%;
 }
-.resultImg{
+.resultImg {
   width: 100%;
   margin-bottom: 12px;
 }
@@ -77,6 +77,7 @@ $primaryColor: #9e2a2b;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 900px !important;
 }
 .header1 {
   color: #000;
@@ -122,6 +123,9 @@ $primaryColor: #9e2a2b;
   line-height: 28px; /* 140% */
   margin: 0;
 }
+.quizQuestion{
+  padding: 14px 0;
+}
 .content {
   color: #000;
   font-feature-settings: "clig" off, "liga" off;
@@ -131,6 +135,12 @@ $primaryColor: #9e2a2b;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 .secondaryContent {
   color: #868686;
@@ -142,6 +152,7 @@ $primaryColor: #9e2a2b;
   font-weight: 400;
   line-height: normal;
 }
+
 .buttonText {
   font-feature-settings: "clig" off, "liga" off;
   font-family: Inter;
@@ -365,9 +376,9 @@ $primaryColor: #9e2a2b;
   text-align: center;
   margin: 12px 0;
 }
-.resultpageButton{
-  background-color: #9E2A2B;
-  border-color: #9E2A2B;
+.resultpageButton {
+  background-color: #9e2a2b;
+  border-color: #9e2a2b;
   color: white;
   height: 40px;
   border-radius: 100px;
@@ -377,13 +388,13 @@ $primaryColor: #9e2a2b;
   min-width: 212px;
 }
 
-.congratsTitle{
-  font-weight:600;
-  font-size:'16px'
+.congratsTitle {
+  font-weight: 600;
+  font-size: "16px";
 }
 
-.congratsContent{
-  font-size:'16px'
+.congratsContent {
+  font-size: "16px";
 }
 
 @media (max-width: 500px) {
@@ -477,6 +488,9 @@ $primaryColor: #9e2a2b;
     height: 200px;
     width: 350px;
   }
+  .videoTimeContainer {
+    padding: 10px 0;
+  }
   .recapCardDisplay .infoIconStyle,
   .recapCardDisplay .content,
   .recapCardDisplay .secondaryContent,
@@ -502,14 +516,14 @@ $primaryColor: #9e2a2b;
   }
 
   .buttonContainer {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: flex-end;
   }
-  .ant-alert-message{
+  .ant-alert-message {
     font-size: 16px;
   }
-  .resultpageButton{
+  .resultpageButton {
     height: 50px;
     border-radius: 100px;
     width: 30vw !important;
@@ -518,20 +532,20 @@ $primaryColor: #9e2a2b;
     min-width: 280px;
     max-width: 500px;
   }
-  .divMargin{
+  .divMargin {
     margin-bottom: 10px;
   }
-  .resultImg{
+  .resultImg {
     width: 40vw;
     margin-bottom: 32px;
     max-width: 800px;
   }
-  
-  .congratsTitle{
-    font-size: 20px
+
+  .congratsTitle {
+    font-size: 20px;
   }
 
-  .congratsContent{
-    font-size: 20px
+  .congratsContent {
+    font-size: 20px;
   }
 }

@@ -24,7 +24,7 @@ const ResultCard = ({ index, question, userAnswer, correctAnswer, options }) => 
           />
         )}
       </div>
-      <p className="content">{question}</p>
+      <p className="content quizQuestion">{question}</p>
       <Radio.Group value={userAnswer} disabled>
         {/* Map over the options here */}
         <Space direction="vertical">

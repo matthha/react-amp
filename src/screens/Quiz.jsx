@@ -89,7 +89,7 @@ const Quiz = (props) => {
         {location.state.module.quizList.map((quizItem, index) => (
           <Card key={index} style={{ margin: "20px 0px" }}>
             <h3 className="header3">Question {index + 1}</h3>
-            <p className="content">{quizItem.question}</p>
+            <p className="content quizQuestion">{quizItem.question}</p>
             <ConfigProvider
               theme={{
                 token: {

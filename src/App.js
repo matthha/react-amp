@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProgressProvider } from "./ProgressContext"; // Adjust the path if necessary
-
+import "./reset.css";
 import "./App.scss";
 import "@aws-amplify/ui-react/styles.css";
 import {
