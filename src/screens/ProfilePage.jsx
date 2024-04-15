@@ -54,20 +54,18 @@ function ProfilePage(props) {
         <h1 className="header1">Profile</h1>
         <div>
           <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
-          <div style={{paddingTop:25}}>
-              <div>
+          <div style={{paddingTop:20}}>
+              <div style={{paddingBottom:15}}>
                   <h4 className="header4" style={{paddingBottom:5}}>NAME</h4>
-                  <input 
-                      defaultValue={username}
-                      className="profile-input" 
-                  />
+                  <div className="profile-display">
+                      {username}
+                  </div>
               </div>
               <div>
                   <h4 className="header4" style={{paddingBottom:5}}>EMAIL</h4>
-                  <input 
-                      defaultValue={email}
-                      className="profile-input" 
-                  />
+                  <div className="profile-display">
+                      {email}
+                  </div>
               </div>
           </div>
         </div>

@@ -133,7 +133,7 @@ $primaryColor: #9e2a2b;
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
 }
 .contentBox {
@@ -198,15 +198,12 @@ $primaryColor: #9e2a2b;
   gap: 6px;
 }
 
-.profile-input {
-  width: 100%; /* Match the width in the screenshot */
-  padding: 10px; /* Adjust the padding to match the design */
-  margin-bottom: 16px; /* Space between the inputs */
-  border: 1px solid #ccc; /* Light grey border */
-  border-radius: 4px; /* Slightly rounded borders */
-  font-size: 16px;
-  /* Add other styles as needed */
+.profile-display {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  color: black;
 }
+
 
 .site-collapse-custom-panel {
   background: #fff;
@@ -440,13 +437,13 @@ $primaryColor: #9e2a2b;
     font-size: 16px;
   }
   .content {
-    font-size: 20px;
+    font-size: 18px;
   }
   .buttonText {
     font-size: 20px;
   }
   .secondaryContent {
-    font-size: 20px;
+    font-size: 16px;
   }
   .paragraph {
     margin-top: 28px;
@@ -487,8 +484,8 @@ $primaryColor: #9e2a2b;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
-    width: 350px;
+    height: 220px;
+    width: 360px;
   }
   .videoTimeContainer {
     padding: 10px 0;
@@ -497,7 +494,7 @@ $primaryColor: #9e2a2b;
   .recapCardDisplay .content,
   .recapCardDisplay .secondaryContent,
   .recapCardDisplay .rightArrowStyle {
-    margin-bottom: 20px; /* Adjust this value to increase or decrease the space between items */
+    margin-bottom: 15px; /* Adjust this value to increase or decrease the space between items */
   }
 
   .site-collapse-custom-panel {

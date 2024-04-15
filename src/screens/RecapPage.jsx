@@ -57,22 +57,49 @@ function RecapPage(props) {
 
 function MenuCard({ title, description, icon }) {
     const navigate = useNavigate();
-    const onArrowClick = () => {
-      navigate(`/recapcontent/${title}`);  // Pass the module title as a parameter
+    // const onArrowClick = () => {
+    //   navigate(`/recapcontent/${title}`);  // Pass the module title as a parameter
+    // };
+    const handleNavigation = (e, isButton = false) => {
+      // 检查屏幕宽度
+      const isMobile = window.innerWidth <= 500; // 假定768px作为移动端和桌面端的分界线
+      if (isMobile || isButton) { // 在移动端或点击按钮时执行导航
+        navigate(`/recapcontent/${title}`);
+      }
     };
+    
+    
+    // return (
+    //     <div className="recapCardDisplay">
+    //       <div className="recapIconDisplay">
+    //       <FontAwesomeIcon icon={icon} className="infoIconStyle" />
+    //         <div className="recapTitleDisplay">
+    //           <div className="header3" >{title}</div>
+    //           <div className="header4">{description}</div>
+    //         </div>
+    //         </div>
+    //         <RightOutlined className="rightArrowStyle" onClick={onArrowClick} />
+    //         <button className="goButton" onClick={onArrowClick}>Explore Courses</button>
+    //     </div>
+    // );
     return (
-        <div className="recapCardDisplay">
-          <div className="recapIconDisplay">
-          <FontAwesomeIcon icon={icon} className="infoIconStyle" />
-            <div className="recapTitleDisplay">
-              <div className="header3">{title}</div>
-              <div className="header4">{description}</div>
-            </div>
-            </div>
-            <RightOutlined className="rightArrowStyle" onClick={onArrowClick} />
-            <button className="goButton" onClick={onArrowClick}>Explore Courses</button>
+      <div className="recapCardDisplay" onClick={(e) => handleNavigation(e)}>
+        <div className="recapIconDisplay">
+        <FontAwesomeIcon icon={icon} className="infoIconStyle" />
+          <div className="recapTitleDisplay">
+            <div className="header3" >{title}</div>
+            <div className="header4">{description}</div>
+          </div>
         </div>
+        <RightOutlined className="rightArrowStyle" />
+        <button className="goButton" onClick={(e) => {
+            e.stopPropagation(); // 阻止事件冒泡
+            handleNavigation(e, true); // 明确传递 isButton 为 true
+        }}>Explore Courses</button>
+      </div>
     );
+  
+  
   }
 
 
