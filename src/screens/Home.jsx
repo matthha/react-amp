@@ -115,7 +115,7 @@ function Home(props) {
                   onClick={() => handleCardClick(module)}
                 >
                   <div className="card-body">
-                    <div className="content">{module.title}</div>
+                    <div className="content semibold">{module.title}</div>
                     <div className="secondaryContent">
                       {module.estimationTime}
                     </div>
