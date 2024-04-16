@@ -5,8 +5,12 @@ export const content = [
     coverImg:
       "https://cityhigh.org/files/content/Orientation/ScheduleAttendance.jpg",
     videoLink: "https://www.youtube.com/embed/Du-E0dQE6gM?si=eVryxRspxUF6tOQp",
-    description: "Understand how abscences contribute to truancy.",
+    description: "Understand how absences contribute to truancy.",
     content: [
+      {tab:true},
+      {regular:"This paragraph is regular."}, 
+      {bold:"This line is bold."},
+      {link:"http://www.cityhigh.org"} 
       {tab:true},
       {regular:"City High School has a strict attendance policy unlike other schools. A student is considered truant with their 3rd unexcused absence in a year. Once truant they will have to attend Student Attendance Improvement Conference and repercussions will become more severe with more absences."},
       {bold:"Truancy starts at the 3rd unexcussed absence."}, 
@@ -46,7 +50,7 @@ export const content = [
     coverImg:
       "https://cityhigh.org/files/content/Orientation/DressCode.jpg",
     videoLink: "https://www.youtube.com/embed/evD3K0iV4yQ", //TODO change the example here later
-    description: "Know what students are expected to wear every day.",
+    description: "Learn more about what students can wear.",
     content: [
       {regular:"This is the first sentence."},
       {bold:"This is a bolded sentence."},
