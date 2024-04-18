@@ -6,10 +6,10 @@ import {
   CheckCircleFilled,
   MinusCircleFilled,
 } from "@ant-design/icons";
-import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
+import { Drawer, Menu, Card, Progress, Row, Col, Button } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
-import { createProgress, updateProgress } from "../graphql/mutations";
+import { createProgress, updateProgress, deleteProgress } from "../graphql/mutations";
 import { listProgresses } from "../graphql/queries";
 import { useProgress } from "../ProgressContext";
 
@@ -35,10 +35,17 @@ function Home(props) {
   const handleCardClick = (module) => {
     navigate(`/video/${module.title}`, { state: { module, myRecord } });
   };
-
-
+  async function tempDelete(theID) {
+      const deletedProgress = await client.graphql({
+        query: deleteProgress,
+        variables: {
+            input: {
+                id: theID
+            }
+        }
+    });
+  }
   async function fetchProgress() {
-    let tempUser = '';
     // * Try to get the progress
     try{
     const apiData = await client.graphql({ query: listProgresses, variables: variables });
@@ -130,6 +137,7 @@ function Home(props) {
                 </Card>
               </Col>
             ))}
+            <Button className="actionButton" onClick={() => {tempDelete(myRecord); window.location.reload()}}>!! Temp Delete Progress !!</Button>
         </Row>
       </div>
     </div>
