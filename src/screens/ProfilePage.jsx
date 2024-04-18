@@ -55,13 +55,13 @@ function ProfilePage(props) {
         <div>
           <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
           <div style={{paddingTop:20}}>
-              <div style={{paddingBottom:15}}>
+              <div className="profile-card" style={{marginBottom:25}}>
                   <h4 className="header4" style={{paddingBottom:5}}>NAME</h4>
                   <div className="profile-display">
                       {username}
                   </div>
               </div>
-              <div>
+              <div className="profile-card" >
                   <h4 className="header4" style={{paddingBottom:5}}>EMAIL</h4>
                   <div className="profile-display">
                       {email}
