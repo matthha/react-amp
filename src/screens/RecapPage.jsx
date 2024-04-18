@@ -95,7 +95,7 @@ function MenuCard({ title, description, icon }) {
         <button className="goButton" onClick={(e) => {
             e.stopPropagation(); // 阻止事件冒泡
             handleNavigation(e, true); // 明确传递 isButton 为 true
-        }}>Explore Courses</button>
+        }}>See Content</button>
       </div>
     );
   

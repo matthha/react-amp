@@ -202,9 +202,15 @@ $primaryColor: #9e2a2b;
 }
 
 .profile-display {
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
   padding: 10px 0;
   color: black;
+}
+
+.profile-card{
+  padding: 15px;
+  background-color: #f0f0f1;
+  border-radius: 8px;
 }
 
 
