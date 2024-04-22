@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../ui-components/NavBar";
+import { adminInfo } from "../JSONs/adminInfo";
 import { getCurrentUser } from "aws-amplify/auth";
 
 function ContactPage() {
-  const contactName = "Michelle Fossum";
-  const contactEmail = "fossum@cityhigh.org";
-  const contactNumber = "412-690-2489";
+  const contactName = adminInfo.contactName;
+  const contactEmail = adminInfo.contactEmail;
+  const contactNumber = adminInfo.contactNumber;
 
   return (
     <div style={{ height: "100vh", backgroundColor: "white" }}>

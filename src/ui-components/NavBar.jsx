@@ -4,6 +4,7 @@ import { getCurrentUser } from "aws-amplify/auth";
 import { MenuOutlined } from "@ant-design/icons";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { Drawer, Menu } from "antd";
+import { adminInfo } from "../JSONs/adminInfo";
 
 const NavBar = ({ user }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -83,46 +84,93 @@ function AppMenu({ signOut, isInline = false }) {
     } else navigate(`/${e.key}`);
   };
 
-  return (
-    <Authenticator>
-      {({ signOut, user }) => (
-        <Menu
-          style={{
-            backgroundColor: isInline ? "white" : "#9E2A2B",
-            fontSize: 20,
-            border: "none",
-          }}
-          mode={isInline ? "inline" : "horizontal"}
-          onClick={handleClick}
-          items={[
-            {
-              label: "Online Orientation",
-              key: "home", // Corrected property name to lowercase
-            },
-            {
-              label: "Orientation Recap",
-              key: "recap",
-            },
-            {
-              label: "FAQ",
-              key: "faq",
-            },
-            {
-              label: "Profile",
-              key: "profile",
-            },
-            {
-              label: "Contact Us",
-              key: "contact",
-            },
-            {
-              label: "Log out",
-              key: "logout",
-            },
-          ]}
-        ></Menu>
-      )}
-    </Authenticator>
-  );
+return (
+  <Authenticator>
+    {({ user }) => {
+      if (user?.username === adminInfo.adminUsername) {
+        return (
+          <Menu
+            style={{
+              backgroundColor: isInline ? "white" : "#9E2A2B",
+              fontSize: 20,
+              border: "none",
+            }}
+            mode={isInline ? "inline" : "horizontal"}
+            onClick={handleClick}
+            items={[
+              {
+                label: "Admin Dashboard",
+                key: "admin",
+              },
+              {
+                label: "Online Orientation",
+                key: "home",
+              },
+              {
+                label: "Information Recap",
+                key: "recap",
+              },
+              {
+                label: "FAQ",
+                key: "faq",
+              },
+              {
+                label: "Profile",
+                key: "profile",
+              },
+              {
+                label: "Contact Us",
+                key: "contact",
+              },
+              {
+                label: "Log out",
+                key: "logout",
+              },
+            ]}
+          />
+        );
+      } else {
+        return (
+          <Menu
+            style={{
+              backgroundColor: isInline ? "white" : "#9E2A2B",
+              fontSize: 20,
+              border: "none",
+            }}
+            mode={isInline ? "inline" : "horizontal"}
+            onClick={handleClick}
+            items={[
+              {
+                label: "Online Orientation",
+                key: "home",
+              },
+              {
+                label: "Information Recap",
+                key: "recap",
+              },
+              {
+                label: "FAQ",
+                key: "faq",
+              },
+              {
+                label: "Profile",
+                key: "profile",
+              },
+              {
+                label: "Contact Us",
+                key: "contact",
+              },
+              {
+                label: "Log out",
+                key: "logout",
+              },
+            ]}
+          />
+        );
+      }
+    }}
+  </Authenticator>
+);
+
 }
 export default NavBar;

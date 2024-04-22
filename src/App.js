@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProgressProvider } from "./ProgressContext"; // Adjust the path if necessary
 import "./reset.css";
 import "./App.scss";
+import { adminInfo } from "./JSONs/adminInfo";
 import "@aws-amplify/ui-react/styles.css";
 import {
   Button,
@@ -154,18 +155,33 @@ export default function App() {
 
             {({ signOut, user }) => {
               // * This is the current admin path and their username
-              if (user?.username === "yiting") {
+              if (user?.username === adminInfo.adminUsername) {
                 return (
-                  <main>
-                    <Routes>
-                      <Route path="/" element={<HomeAdmin user={user} />} />
-                      <Route path="/home" element={<HomeAdmin user={user} />} />
-                      <Route
-                        path="/profile"
-                        element={<ProfileAdmin />}
-                      />
-                    </Routes>
-                  </main>
+                   <main>
+                   <ProgressProvider>
+                     <Routes>
+                       <Route path="/" element={<HomeAdmin user={user} />} />
+                       <Route path="/admin" element={<HomeAdmin user={user} />} />
+                       <Route path="/home" element={<Home user={user} />} />
+                       <Route path="/video/*" element={<Video />} />
+                       <Route path="/quiz/*" element={<Quiz user={user} />} />
+                       <Route path="/recap" element={<RecapPage />} />
+                       <Route path="/faq" element={<FAQPage />} />
+                       <Route path="/contact" element={<ContactPage />} />
+                       <Route
+                         path="/profile"
+                         element={<ProfilePage />}
+                       />
+                       <Route path="/yaml/*" element={<TestYaml />} />
+                       {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
+                       <Route
+                         path="/recapcontent/:moduleName"
+                         element={<RecapContentPage />}
+                       />
+                       <Route path="/result/*" element={<Result />} />
+                     </Routes>
+                   </ProgressProvider>
+                 </main>
                 );
               } else {
                 return (
