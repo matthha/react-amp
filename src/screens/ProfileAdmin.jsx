@@ -42,7 +42,7 @@ function ProfileAdmin(props) {
   }, []);
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div style={{ height: "100vh", backgroundColor: "white" }}>
       <NavAdmin />
       <div className="contentBody">
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
