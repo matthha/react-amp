@@ -106,7 +106,7 @@ function HomeAdmin(props) {
                 key: "2",
                 label: `Completed (${thePassed.length})`,
                 children: thePassed.map((person, index) => (
-                  <div key={index} className="content paragraph">
+                  <div key={index} className="content">
                     <h3>{person.userID}</h3>
                     <p>
                       Completed {JSON.parse(person?.progress).length} out of{" "}
