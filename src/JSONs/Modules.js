@@ -3,7 +3,7 @@ export const content = [
     title: "Schedule & Attendance",
     estimationTime: "~10 mins",
     coverImg:
-      "/coverImages/scheduleattendance.webp",
+      "/coverImages/scheduleattendance.png",
     videoLink: "https://www.youtube.com/embed/Du-E0dQE6gM?si=eVryxRspxUF6tOQp",
     description: "Understand how absences contribute to truancy.",
     content: [
@@ -48,7 +48,7 @@ export const content = [
     title: "Dress Code",
     estimationTime: "~7 mins",
     coverImg:
-      "/coverImages/dresscode.webp",
+      "/coverImages/dresscode.png",
     videoLink: "https://www.youtube.com/embed/evD3K0iV4yQ", //TODO change the example here later
     description: "Learn more about what students can wear.",
     content: [
@@ -77,7 +77,7 @@ export const content = [
     title: "Code of Conduct",
     estimationTime: "~7 mins",
     coverImg:
-      "/coverImages/codeofconduct.webp",
+      "/coverImages/codeofconduct.png",
     videoLink: "https://www.youtube.com/embed/fovLtQyYPIg", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     content: [
@@ -161,7 +161,7 @@ export const content = [
     title: "Transportation",
     estimationTime: "~7 mins",
     coverImg:
-      "/images/Congrats.png",
+      "/coverImages/transportation.jpg",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Understand transportation to and from school.",
     content: [
