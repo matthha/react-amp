@@ -27,6 +27,7 @@ import ProfilePage from "./screens/ProfilePage";
 import TestYaml from "./screens/TestYaml";
 import RecapContentPage from "./screens/RecapContentPage";
 import Result from "./screens/Result";
+import ContactPage from "./screens/ContactPage";
 import config from "./aws-exports";
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react";
@@ -177,6 +178,7 @@ export default function App() {
                         <Route path="/quiz/*" element={<Quiz user={user} />} />
                         <Route path="/recap" element={<RecapPage />} />
                         <Route path="/faq" element={<FAQPage />} />
+                        <Route path="/contact" element={<ContactPage />} />
                         <Route
                           path="/profile"
                           element={<ProfilePage signOut={signOut} />}

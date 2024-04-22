@@ -89,7 +89,7 @@ function AppMenu({ isInline = false }) {
       onClick={handleClick}
       items={[
         {
-          label: "CCHS Online Orientation",
+          label: "Online Orientation",
           key: "home", // Corrected property name to lowercase
         },
         {
@@ -103,6 +103,10 @@ function AppMenu({ isInline = false }) {
         {
           label: "Profile",
           key: "profile",
+        },
+        {
+          label: "Contact Us",
+          key: "contact",
         }
       ]}
     ></Menu>
