@@ -23,8 +23,6 @@ function HomeAdmin(props) {
   async function fetchProgress() {
     function CheckFinished(obj) {
       let progress = (JSON.parse(obj?.progress).length / totalModules) * 100;
-      console.log(obj);
-      console.log(adminInfo.adminUsername);
       //filter out if this is admin's progress
       return Number(progress) === 100 && obj.userID !== adminInfo.adminUsername;
     }
@@ -75,7 +73,7 @@ function HomeAdmin(props) {
       <NavBar />
       <div className="contentBody">
         <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-          <h1 className="header1">CCHS Online Orientation</h1>
+          <h1 className="header1">Orientation Dashboard</h1>
 
           <div className="content paragraph">
             Hello, {props?.user.username} <br />

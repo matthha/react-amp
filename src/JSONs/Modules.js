@@ -105,7 +105,7 @@ export const content = [
     title: "Curriculum & Grading",
     estimationTime: "~7 mins",
     coverImg:
-      "/coverImages/curriculumgrading.webp",
+      "/coverImages/curriculumgrading.png",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Know what students are expected to wear every day.",
     content: [
@@ -161,7 +161,7 @@ export const content = [
     title: "Transportation",
     estimationTime: "~7 mins",
     coverImg:
-      "/coverImages/transportation.webp",
+      "/images/Congrats.png",
     videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
     description: "Understand transportation to and from school.",
     content: [
