@@ -40,7 +40,7 @@ Amplify.configure(config);
 // const client = generateClient();
 const formFields = {
   signIn: {
-    Email: {
+    username: {
       placeholder: "Enter your email",
     },
   },
