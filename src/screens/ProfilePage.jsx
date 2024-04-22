@@ -51,7 +51,7 @@ function ProfilePage() {
       <NavBar />
       <div className="contentBody">
       <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1">Profile</h1>
+        <h1 className="header1">Certification</h1>
         <div>
           <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
           <div style={{paddingTop:20}}>
