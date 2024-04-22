@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "orientation",
+  "projectName": "reactamp",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
