@@ -126,7 +126,7 @@ $primaryColor: #9e2a2b;
 .quizQuestion{
   padding: 14px 0;
 }
-.content {
+.content, .ant-tabs-tab-btn {
   color: #000;
   font-feature-settings: "clig" off, "liga" off;
   /* 14-medium */
@@ -445,7 +445,7 @@ $primaryColor: #9e2a2b;
   .header4 {
     font-size: 16px;
   }
-  .content {
+  .content, .ant-tabs-tab-btn {
     font-size: 18px;
   }
   .buttonText {

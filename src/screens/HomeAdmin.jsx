@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Progress, Tabs } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
+import { adminInfo } from "../JSONs/adminInfo";
 
 import { listProgresses } from "../graphql/queries";
 import NavBar from "../ui-components/NavBar";
@@ -22,34 +23,36 @@ function HomeAdmin(props) {
   async function fetchProgress() {
     function CheckFinished(obj) {
       let progress = (JSON.parse(obj?.progress).length / totalModules) * 100;
-
-      if (Number(progress) === 100) {
-        return true;
-      } else {
-        return false;
-      }
+      console.log(obj);
+      console.log(adminInfo.adminUsername);
+      //filter out if this is admin's progress
+      return Number(progress) === 100 && obj.userID !== adminInfo.adminUsername;
     }
+  
     function CheckInProgress(obj) {
       let progress = (JSON.parse(obj?.progress).length / totalModules) * 100;
-
-      if (Number(progress) !== 100) {
-        return true;
-      } else {
-        return false;
-      }
+      //filter out if this is admin's progress
+      return Number(progress) !== 100 && obj.userID !== adminInfo.adminUsername;
     }
-
-    // * Try to get the progress
+  
+    function calculateProgress(obj) {
+      return (JSON.parse(obj?.progress).length / totalModules) * 100;
+    }
+  
+    // Try to get the progress
     try {
       const apiData = await client.graphql({ query: listProgresses });
-
-      if (apiData.data.listProgresses.items.length === 0) {
-      } else {
+  
+      if (apiData.data.listProgresses.items.length !== 0) {
         setMyRecords(apiData.data.listProgresses.items);
-
+  
         const comp = apiData.data.listProgresses.items.filter(CheckFinished);
         const prog = apiData.data.listProgresses.items.filter(CheckInProgress);
-
+  
+        // Sorting based on progress
+        comp.sort((a, b) => calculateProgress(a) - calculateProgress(b));
+        prog.sort((a, b) => calculateProgress(a) - calculateProgress(b));
+  
         setThePassed(comp);
         setTheInProgress(prog);
       }
@@ -57,6 +60,7 @@ function HomeAdmin(props) {
       console.log(error);
     }
   }
+  
 
   useEffect(() => {
     fetchProgress();
@@ -75,16 +79,17 @@ function HomeAdmin(props) {
 
           <div className="content paragraph">
             Hello, {props?.user.username} <br />
-            Current enrollments are below:
+            Current user progress are below:
           </div>
           <Tabs
             defaultActiveKey="1"
+            className="content"
             items={[
               {
                 key: "1",
                 label: `In Progress (${theInProgress.length})`,
                 children: theInProgress.map((person, index) => (
-                  <div key={index} className="content paragraph">
+                  <div key={index} className="content">
                     <h3>{person.userID}</h3>
                     <p>
                       Completed {JSON.parse(person?.progress).length} out of{" "}
