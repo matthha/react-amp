@@ -115,7 +115,7 @@ return (
                 key: "faq",
               },
               {
-                label: "Profile",
+                label: "Certification",
                 key: "profile",
               },
               {
