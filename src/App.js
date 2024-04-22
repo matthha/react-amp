@@ -32,7 +32,6 @@ import ContactPage from "./screens/ContactPage";
 import config from "./aws-exports";
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react";
-import ProfileAdmin from "./screens/ProfileAdmin";
 
 import { ConfigProvider } from "antd";
 
