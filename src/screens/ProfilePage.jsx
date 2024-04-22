@@ -23,7 +23,7 @@ const { Meta } = Card;
 
 
 const orientationModules = content;
-function ProfilePage(props) {
+function ProfilePage() {
   const [openMenu, setOpenMenu] = useState(false);
   const [username, setUserName] = useState('');
   const [email, setUserEmail] = useState('');
@@ -94,16 +94,6 @@ function ProfilePage(props) {
             </div>
         </div>
         <div style={{paddingTop:'30px'}}>
-          <button style={{
-              backgroundColor: "#9E2A2B",
-              border: "none",
-              color: "white",
-              height: "40px",
-              borderRadius: "100px",
-              width: "310px"
-            }}
-                  onClick={props.signOut}>Sign out
-          </button>
         </div>
         </div>
       </div>

@@ -162,7 +162,7 @@ export default function App() {
                       <Route path="/home" element={<HomeAdmin user={user} />} />
                       <Route
                         path="/profile"
-                        element={<ProfileAdmin signOut={signOut} />}
+                        element={<ProfileAdmin />}
                       />
                     </Routes>
                   </main>
@@ -181,7 +181,7 @@ export default function App() {
                         <Route path="/contact" element={<ContactPage />} />
                         <Route
                           path="/profile"
-                          element={<ProfilePage signOut={signOut} />}
+                          element={<ProfilePage />}
                         />
                         <Route path="/yaml/*" element={<TestYaml />} />
                         {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}

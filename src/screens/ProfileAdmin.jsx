@@ -65,16 +65,6 @@ function ProfileAdmin(props) {
             </div>
         </div>
         <div style={{paddingTop:'40px'}}>
-          <button style={{
-              backgroundColor: "#9E2A2B",
-              border: "none",
-              color: "white",
-              height: "40px",
-              borderRadius: "100px",
-              width: "350px"
-            }}
-                  onClick={props.signOut}>Sign out
-          </button>
         </div>
         </div>
       </div>
