@@ -56,15 +56,9 @@ function ProfilePage() {
           <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
           <div style={{paddingTop:20}}>
               <div className="profile-card" style={{marginBottom:25}}>
-                  <h4 className="header4" style={{paddingBottom:5}}>NAME</h4>
+                  <h4 className="header4" style={{paddingBottom:5}}>USERNAME</h4>
                   <div className="profile-display">
                       {username}
-                  </div>
-              </div>
-              <div className="profile-card" >
-                  <h4 className="header4" style={{paddingBottom:5}}>EMAIL</h4>
-                  <div className="profile-display">
-                      {email}
                   </div>
               </div>
           </div>
