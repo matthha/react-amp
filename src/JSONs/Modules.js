@@ -8,7 +8,7 @@ export const content = [
     description: "Understand how absences contribute to truancy.",
     content: [ 
       {tab:true},
-      {regular:"City High School has a strict attendance policy unlike other schools. A student is considered truant with their 3rd unexcused absence in a year. Once truant they will have to attend Student Attendance Improvement Conference and repercussions will become more severe with more absences."},
+      {regular:"The City High School has a strict attendance policy unlike other schools. A student is considered truant with their 3rd unexcused absence in a year. Once truant they will have to attend Student Attendance Improvement Conference and repercussions will become more severe with more absences."},
       {bold:"Truancy starts at the 3rd unexcussed absence."}, 
       {regular:"It is important to avoid truancy."},
       {break:true},
