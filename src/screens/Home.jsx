@@ -97,7 +97,7 @@ function Home(props) {
       <NavBar />
       <div className="contentBody">
         <h1 className="header1">CCHS Online Orientation</h1>
-        <div className="content paragraph">
+        <div className="bodyText2 paragraph">
           Hello, {props?.user.username} <br />
           Your current orientation progress:
         </div>
@@ -125,15 +125,16 @@ function Home(props) {
                   onClick={() => handleCardClick(module)}
                 >
                   <div className="card-body">
-                    <div className="content semibold">{module.title}</div>
-                    <div className="secondaryContent">
+                    <div className="bodyText2 semibold">{module.title}</div>
+                    <div className="bodyText3 secondaryText">
                       {module.estimationTime}
                     </div>
 
-                    <div className="status-card content">
+                    <div className="status-card bodyText3">
                       {completedModules.includes(module.title) ? (
                         <>
-                          <CheckCircleFilled style={{ color: "#299E63" }} />
+                          <CheckCircleFilled 
+                          style={{ color: "#299E63" }} />
                           Completed
                         </>
                       ) : (

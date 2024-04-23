@@ -1,6 +1,8 @@
 :root {
   --primary-color-1: #9e2a2b;
   --primary-color-2: #000;
+  --secondary-color-1: #f4f4f4;
+  --secondary-color-2: #868686;
   --font-feature-settings: "clig" off, "liga" off;
   --font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
   --line-height: 140%;
@@ -24,7 +26,7 @@ body {
   font-family: var(--font-family);
   font-size: 24px;
   font-weight: 600;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
   /* 20-simibold-header2 */
 .header2 {
@@ -33,7 +35,7 @@ body {
   font-family: var(--font-family);
   font-size: 20px;
   font-weight: 600;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
   /* 16-simibold-header3 */
 .header3 {
@@ -42,7 +44,7 @@ body {
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 600;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
   /* 16-medium-bodyText1 */
 .bodyText1 {
@@ -51,7 +53,7 @@ body {
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 500;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
  /* 14-regular-bodyText2 */
 .bodyText2 {
@@ -60,7 +62,7 @@ body {
   font-family: var(--font-family);
   font-size: 14px;
   font-weight: 400;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
  /* 12-regular-bodyText3 */
 .bodyText3 {
@@ -69,7 +71,10 @@ body {
   font-family: var(--font-family);
   font-size: 12px;
   font-weight: 400;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
+}
+.secondaryText{
+  color: var(--secondary-color-2);
 }
 
 //TODO change it
@@ -81,8 +86,9 @@ body {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: var(--line-heigh);
+  line-height: var(--line-height);
 }
+
 
 // @media (prefers-reduced-motion: no-preference) {
 //   .App-logo {
@@ -221,7 +227,7 @@ body {
   font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
   font-style: normal;
   font-weight: 500;
-  line-height: 22px; /* 137.5% */
+  line-height: var(--line-height)
 }
 
 .ant-card-body {
@@ -239,7 +245,6 @@ body {
 }
 
 .profile-display {
-  // border-bottom: 1px solid #ccc;
   padding: 10px 0;
   color: black;
 }
@@ -260,20 +265,20 @@ body {
   font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
 }
 
-/* Style for the collapse panel header */
+/* Style for the collapse panel header in nav bar*/
 .site-collapse-custom-panel > .ant-collapse-header {
   padding-left: 0 !important;
   color: #9e2a2b;
   font-size: 16px;
   font-weight: 600;
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-family: var(--font-family);
 }
-
+/* Style for the content box in nav ba*/
 .site-collapse-custom-panel .ant-collapse-content-box {
   font-size: 16px;
   padding-left: 20px;
   margin-left: 10px;
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-family: var(--font-family);
 }
 
 /* CSS file */
