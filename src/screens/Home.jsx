@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../ui-components/NavBar";
 import {
-  MenuOutlined,
   CheckCircleFilled,
   MinusCircleFilled,
 } from "@ant-design/icons";
-import { Drawer, Menu, Card, Progress, Row, Col, Button } from "antd";
+import { Card, Progress, Row, Col } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
 import {
   createProgress,
-  updateProgress,
-  deleteProgress,
 } from "../graphql/mutations";
 import { listProgresses } from "../graphql/queries";
 import { useProgress } from "../ProgressContext";
@@ -90,7 +87,7 @@ function Home(props) {
   );
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "white" }}>
+    <div className="pageBody">
       <NavBar />
       <div className="contentBody">
         <h1 className="header1">CCHS Online Orientation</h1>
@@ -130,8 +127,7 @@ function Home(props) {
                     <div className="status-card bodyText3">
                       {completedModules.includes(module.title) ? (
                         <>
-                          <CheckCircleFilled 
-                          style={{ color: "#299E63" }} />
+                          <CheckCircleFilled style={{ color: "#299E63" }} />
                           Completed
                         </>
                       ) : (

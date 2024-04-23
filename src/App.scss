@@ -1,6 +1,7 @@
 :root {
   --primary-color-1: #9e2a2b;
   --primary-color-2: #000;
+  --primary-color-3: #ffffff;
   --secondary-color-1: #f0f0f0;
   --secondary-color-2: #868686;
   --semantic-color-green: #299e63;
@@ -173,6 +174,10 @@ body {
   padding: 20px;
   min-height: 100vh;
   padding-bottom: 100px;
+}
+.pageBody{
+  height: 100vh;
+  background-color:var(--primary-color-3)
 }
 
 //this is the content body style for quiz, video, and quiz result pages to make it not take up the whole screen
