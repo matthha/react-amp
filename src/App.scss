@@ -24,7 +24,7 @@ body {
   pointer-events: none;
 }
 
-  /* 24-simibold-header1 */
+/* 24-simibold-header1 */
 .header1 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
@@ -33,7 +33,7 @@ body {
   font-weight: 600;
   line-height: var(--line-height);
 }
-  /* 20-simibold-header2 */
+/* 20-simibold-header2 */
 .header2 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
@@ -42,7 +42,7 @@ body {
   font-weight: 600;
   line-height: var(--line-height);
 }
-  /* 16-simibold-header3 */
+/* 16-simibold-header3 */
 .header3 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
@@ -51,7 +51,7 @@ body {
   font-weight: 600;
   line-height: var(--line-height);
 }
-  /* 16-medium-body-text-1 */
+/* 16-medium-body-text-1 */
 .body-text-1 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
@@ -60,8 +60,8 @@ body {
   font-weight: 500;
   line-height: var(--line-height);
 }
- /* 14-regular-body-text-2 */
-.body-text-2 {
+/* 14-regular-body-text-2 */
+.body-text-2, .ant-tabs-tab-btn {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
   font-family: var(--font-family);
@@ -69,7 +69,7 @@ body {
   font-weight: 400;
   line-height: var(--line-height);
 }
- /* 12-regular-body-text-3 */
+/* 12-regular-body-text-3 */
 .body-text-3 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
@@ -78,35 +78,45 @@ body {
   font-weight: 400;
   line-height: var(--line-height);
 }
-.secondary-text{
+.secondary-text {
   color: var(--secondary-color-2);
 }
-.margin-bottom-medium{
+.margin-bottom-medium {
   margin-bottom: 12px;
 }
-.margin-top-medium{
+.margin-top-medium {
   margin-top: 12px;
 }
-
-//TODO change it
-.header4 {
-  color: #868686;
-  font-feature-settings: "clig" off, "liga" off;
-  /* 20-simibold-title2 */
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--line-height);
-}
-
-
-.semibold{
+.semibold {
   font-weight: 500;
 }
-.colorPrimary1{
+.color-primary-1 {
   color: var(--primary-color-1);
 }
+.color-primary-3 {
+  color: var(--primary-color-3);
+}
+
+//This is the page body style for all the pages
+.page-body {
+  height: 100vh;
+  background-color: var(--primary-color-3);
+}
+//this is the content body style for all the pages
+.content-body {
+  background: white;
+  padding: 20px;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+//this is the content body style for quiz, video, and quiz result pages to make it not take up the whole screen
+.quiz-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 900px !important;
+}
+
 // @media (prefers-reduced-motion: no-preference) {
 //   .App-logo {
 //     animation: App-logo-spin infinite 20s linear;
@@ -168,38 +178,8 @@ body {
   border-radius: 100px;
 }
 
-//this is the content body style for all the pages
-.content-body {
-  background: white;
-  padding: 20px;
-  min-height: 100vh;
-  padding-bottom: 100px;
-}
-.page-body{
-  height: 100vh;
-  background-color:var(--primary-color-3)
-}
-
-//this is the content body style for quiz, video, and quiz result pages to make it not take up the whole screen
-.quizBody {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 900px !important;
-}
-
-.quizQuestion{
+.quizQuestion {
   padding: 14px 0;
-}
-.content, .ant-tabs-tab-btn {
-  color: #000;
-  font-feature-settings: "clig" off, "liga" off;
-  /* 14-medium */
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: '1.6em';
 }
 
 .contentBox {
@@ -208,26 +188,8 @@ body {
   gap: 10px;
   margin-bottom: 10px;
 }
-.secondaryContent {
-  color: #868686;
-  font-feature-settings: "clig" off, "liga" off;
-  /* 14-regular */
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 .recap-content{
   padding: 20px 0;
-}
-.buttonText {
-  font-feature-settings: "clig" off, "liga" off;
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 125% */
 }
 
 .paragraph {
@@ -246,7 +208,7 @@ body {
   font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
   font-style: normal;
   font-weight: 500;
-  line-height: var(--line-height)
+  line-height: var(--line-height);
 }
 
 .ant-card-body {
@@ -289,12 +251,11 @@ body {
   color: black;
 }
 
-.profile-card{
+.profile-card {
   padding: 15px;
   background-color: #f0f0f1;
   border-radius: 8px;
 }
-
 
 .site-collapse-custom-panel {
   background: #fff;
@@ -423,10 +384,6 @@ body {
 .ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
   border-bottom-color: white !important;
 }
-.videoContainer {
-  text-align: center;
-  margin: 12px 0;
-}
 .resultpageButton {
   background-color: #9e2a2b;
   border-color: #9e2a2b;
@@ -445,39 +402,46 @@ body {
   }
 }
 @media (min-width: 500px) {
-
   /* 32-simibold-header1 */
-.header1 {
-  font-size: 32px;
-}
+  .header1 {
+    font-size: 32px;
+  }
   /* 24-simibold-header2 */
-.header2 {
-  font-size: 24px;
-}
+  .header2 {
+    font-size: 24px;
+  }
   /* 20-simibold-header3 */
-.header3 {
-  font-size: 20px;
-}
+  .header3 {
+    font-size: 20px;
+  }
   /* 20-medium-body-text-1 */
-.body-text-1 {
-  font-size: 20px;
-}
- /* 18-regular-body-text-2 */
-.body-text-2 {
-  font-size: 18px;
-}
- /* 16-regular-body-text-3 */
-.body-text-3 {
-  font-size: 16px;
-}
+  .body-text-1 {
+    font-size: 20px;
+  }
+  /* 18-regular-body-text-2 */
+  .body-text-2 {
+    font-size: 18px;
+  }
+  /* 16-regular-body-text-3 */
+  .body-text-3 {
+    font-size: 16px;
+  }
 
-.margin-bottom-medium{
-  margin-bottom: 28px;
-}
-.margin-top-medium{
-  margin-top: 28px;
-}
-
+  .margin-bottom-medium {
+    margin-bottom: 28px;
+  }
+  .margin-top-medium {
+    margin-top: 28px;
+  }
+  .margin-vertical-small{
+    margin: 8px 0;
+  }
+  .content-body {
+    padding: 44px 44px;
+    max-width: 90rem;
+    margin: auto;
+    padding-bottom: 100px;
+  }
   .actionButton {
     margin-left: 10rem;
     margin-right: 10rem;
@@ -497,18 +461,9 @@ body {
     padding-left: 28px; /* Adjust as needed */
     padding-right: 28px; /* Adjust as needed */
   }
-  .contentBody {
-    padding: 44px 44px;
-    max-width: 90rem;
-    margin: auto;
-    padding-bottom: 100px;
-  }
 
   .content, .ant-tabs-tab-btn {
     font-size: 18px;
-  }
-  .buttonText {
-    font-size: 20px;
   }
   .secondaryContent {
     font-size: 16px;
@@ -555,7 +510,8 @@ body {
     height: 220px;
     width: 360px;
   }
-  .videoTimeContainer {
+  //Container for the
+  .video-time-container {
     padding: 10px 0;
   }
   .recapCardDisplay .infoIconStyle,

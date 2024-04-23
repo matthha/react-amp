@@ -22,15 +22,15 @@ const IntroductionVideo = (props) => {
     navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route
   };
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody quizBody videoBody">
+      <div className="content-body quiz-body">
         <h1 className="header1">{moduleName} Video</h1>
-        <div className="secondaryContent videoTimeContainer">
-          <ClockCircleOutlined className="secondaryContent" /> {module.estimationTime}
+        <div className="secondary-text body-text-2 video-time-container">
+          <ClockCircleOutlined /> {module.estimationTime}
         </div>
-        <div className="buttonText">{module.description}</div>
-        <div className="videoContainer">
+        <div className="body-text-1">{module.description}</div>
+        <div className="margin-vertical-small">
           <div className="responsive-iframe-container">
             <iframe
               src={module.videoLink}
@@ -48,7 +48,7 @@ const IntroductionVideo = (props) => {
             block
             onClick={handleStartQuiz} // Attach the navigate function here
           >
-            <div className="buttonText">Start the quiz</div>
+            <div className="body-text-1 color-primary-3">Start the quiz</div>
           </Button>
         </div>
       </div>

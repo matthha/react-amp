@@ -63,7 +63,7 @@ const components = {
         padding={tokens.space.xxxl}
         backgroundColor={tokens.colors.brand.primary[20]}
       >
-        <Image alt="CCHS Logo" src="./cclogo.png" />
+        <Image alt="CCHS Logo" src="/cclogo.png" />
       </View>
     );
   },
