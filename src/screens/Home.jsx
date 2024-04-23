@@ -87,11 +87,11 @@ function Home(props) {
   );
 
   return (
-    <div className="pageBody">
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody">
+      <div className="content-body">
         <h1 className="header1">CCHS Online Orientation</h1>
-        <div className="bodyText2 marginTopMedium">
+        <div className="body-text-2 margin-top-medium">
           Hello, {props?.user.username} <br />
           Your current orientation progress:
         </div>
@@ -110,8 +110,8 @@ function Home(props) {
                   style={{ width: "100%" }}
                   cover={
                     <img
-                      className="coverImg"
-                      alt="example"
+                      className="cover-img"
+                      alt="cover image for each learning modules"
                       src={module?.coverImg}
                       loading="lazy"
                     />
@@ -119,12 +119,12 @@ function Home(props) {
                   onClick={() => handleCardClick(module)}
                 >
                   <div className="card-body">
-                    <div className="bodyText2 semibold">{module.title}</div>
-                    <div className="bodyText3 secondaryText">
+                    <div className="body-text-2 semibold">{module.title}</div>
+                    <div className="body-text-3 secondary-text">
                       {module.estimationTime}
                     </div>
 
-                    <div className="status-card bodyText3">
+                    <div className="status-card body-text-3">
                       {completedModules.includes(module.title) ? (
                         <>
                           <CheckCircleFilled style={{ color: "#299E63" }} />

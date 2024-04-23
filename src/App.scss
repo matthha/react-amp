@@ -51,8 +51,8 @@ body {
   font-weight: 600;
   line-height: var(--line-height);
 }
-  /* 16-medium-bodyText1 */
-.bodyText1 {
+  /* 16-medium-body-text-1 */
+.body-text-1 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
   font-family: var(--font-family);
@@ -60,8 +60,8 @@ body {
   font-weight: 500;
   line-height: var(--line-height);
 }
- /* 14-regular-bodyText2 */
-.bodyText2 {
+ /* 14-regular-body-text-2 */
+.body-text-2 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
   font-family: var(--font-family);
@@ -69,8 +69,8 @@ body {
   font-weight: 400;
   line-height: var(--line-height);
 }
- /* 12-regular-bodyText3 */
-.bodyText3 {
+ /* 12-regular-body-text-3 */
+.body-text-3 {
   color: var(--primary-color-2);
   font-feature-settings: var(--font-feature-settings);
   font-family: var(--font-family);
@@ -78,13 +78,13 @@ body {
   font-weight: 400;
   line-height: var(--line-height);
 }
-.secondaryText{
+.secondary-text{
   color: var(--secondary-color-2);
 }
-.marginBottomMedium{
+.margin-bottom-medium{
   margin-bottom: 12px;
 }
-.marginTopMedium{
+.margin-top-medium{
   margin-top: 12px;
 }
 
@@ -169,13 +169,13 @@ body {
 }
 
 //this is the content body style for all the pages
-.contentBody {
+.content-body {
   background: white;
   padding: 20px;
   min-height: 100vh;
   padding-bottom: 100px;
 }
-.pageBody{
+.page-body{
   height: 100vh;
   background-color:var(--primary-color-3)
 }
@@ -399,7 +399,7 @@ body {
   font-weight: 500;
   line-height: normal;
 }
-.coverImg {
+.cover-img {
   height: 164px;
   object-fit: cover;
 }
@@ -485,23 +485,23 @@ body {
 .header3 {
   font-size: 20px;
 }
-  /* 20-medium-bodyText1 */
-.bodyText1 {
+  /* 20-medium-body-text-1 */
+.body-text-1 {
   font-size: 20px;
 }
- /* 18-regular-bodyText2 */
-.bodyText2 {
+ /* 18-regular-body-text-2 */
+.body-text-2 {
   font-size: 18px;
 }
- /* 16-regular-bodyText3 */
-.bodyText3 {
+ /* 16-regular-body-text-3 */
+.body-text-3 {
   font-size: 16px;
 }
 
-.marginBottomMedium{
+.margin-bottom-medium{
   margin-bottom: 28px;
 }
-.marginTopMedium{
+.margin-top-medium{
   margin-top: 28px;
 }
 
@@ -557,7 +557,7 @@ body {
     padding-right: 2vw !important;
     padding-bottom: 1vw !important;
   }
-  .coverImg {
+  .cover-img {
     height: 240px;
   }
   .recapCardContainer {
