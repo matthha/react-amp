@@ -51,7 +51,7 @@ function FAQAccordion({ question, answer }) {
 
   return (
     <div style={{ marginBottom: '10px', 
-                  borderBottom: '1px solid #e8e8e8',
+                  // borderBottom: '1px solid #e8e8e8',
                   paddingTop:'10px',
                   background: '#f0f0f1', 
                   border: 'none',
@@ -59,11 +59,7 @@ function FAQAccordion({ question, answer }) {
                   display:'flex',
                   flexDirection:'row',
                    }}>
-      <FontAwesomeIcon
-          icon={isOpen ? faChevronUp : faChevronDown}
-          style={{ marginRight: '10px', padding: '18px 0 0 20px'}}
-          size= '2xs'
-        />
+      
         <div style={{ 
           width: '100%'}}>
         <button
@@ -71,20 +67,24 @@ function FAQAccordion({ question, answer }) {
         style={{ 
           width: '100%', 
           textAlign: 'left', 
-          // background: 'none', 
           border: 'none', 
           padding: '10px 10px', 
           fontSize: '18px',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'flex-start',
-          // borderRadius:'10px'
+          background:'none'
         }}
       >
+        <FontAwesomeIcon
+          icon={isOpen ? faChevronUp : faChevronDown}
+          style={{ marginRight: '10px', padding: '8px 0 0 15px'}}
+          size= '2xs'
+        />
         <p className='header3'>{question}</p>
       </button>
       {isOpen && (
-        <div style={{ padding: '0 0 10px 10px' }}>
+        <div style={{ padding: '0 10px 20px 45px' }}>
           <p className='content'>{answer}</p>
         </div>
       )}
