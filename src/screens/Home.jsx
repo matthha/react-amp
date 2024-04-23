@@ -55,7 +55,6 @@ function Home(props) {
       // * apiData should be a length of 1
       // * if apiData not == 1, need to create user data
       if (apiData.data.listProgresses.items.length == 0) {
-        // console.log('No data; making progress for ', props.user.username);
         try {
           const newerrr = await client.graphql({
             query: createProgress,
@@ -70,7 +69,6 @@ function Home(props) {
         }
       } else {
         setMyRecord(apiData.data.listProgresses.items[0].id);
-        // console.log('my progress is',typeof(apiData.data.listProgresses.items[0].progress))
         updateCompletedModules(
           JSON.parse(apiData.data.listProgresses.items[0].progress)
         );
@@ -81,7 +79,6 @@ function Home(props) {
   }
 
   useEffect(() => {
-    // -- TODO -- We need to load user's progress and make sure it's synced with completedModules or initialize it --
     window.scrollTo(0, 0);
     fetchProgress();
   }, []);
@@ -97,7 +94,7 @@ function Home(props) {
       <NavBar />
       <div className="contentBody">
         <h1 className="header1">CCHS Online Orientation</h1>
-        <div className="bodyText2 paragraph">
+        <div className="bodyText2 marginTopMedium">
           Hello, {props?.user.username} <br />
           Your current orientation progress:
         </div>

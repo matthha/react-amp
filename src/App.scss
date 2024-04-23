@@ -1,8 +1,12 @@
 :root {
   --primary-color-1: #9e2a2b;
   --primary-color-2: #000;
-  --secondary-color-1: #f4f4f4;
+  --secondary-color-1: #f0f0f0;
   --secondary-color-2: #868686;
+  --semantic-color-green: #299e63;
+  --semantic-color-gree-secondary: #daf0cd;
+  --semantic-color-red: #c51c00;
+  --semantic-color-red-secondary: #f7dfdb;
   --font-feature-settings: "clig" off, "liga" off;
   --font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
   --line-height: 140%;
@@ -76,6 +80,12 @@ body {
 .secondaryText{
   color: var(--secondary-color-2);
 }
+.marginBottomMedium{
+  margin-bottom: 12px;
+}
+.marginTopMedium{
+  margin-top: 12px;
+}
 
 //TODO change it
 .header4 {
@@ -90,6 +100,12 @@ body {
 }
 
 
+.semibold{
+  font-weight: 500;
+}
+.colorPrimary1{
+  color: var(--primary-color-1);
+}
 // @media (prefers-reduced-motion: no-preference) {
 //   .App-logo {
 //     animation: App-logo-spin infinite 20s linear;
@@ -180,9 +196,7 @@ body {
   font-weight: 400;
   line-height: '1.6em';
 }
-.semibold{
-  font-weight: 500;
-}
+
 .contentBox {
   display: flex;
   flex-direction: column;
@@ -477,6 +491,13 @@ body {
  /* 16-regular-bodyText3 */
 .bodyText3 {
   font-size: 16px;
+}
+
+.marginBottomMedium{
+  margin-bottom: 28px;
+}
+.marginTopMedium{
+  margin-top: 28px;
 }
 
   .actionButton {
