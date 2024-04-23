@@ -25,24 +25,20 @@ function RecapContentPage(props) {
   )?.content;
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody">
-        <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+      <div className="content-body">
           <p
             onClick={handleClick}
-            style={{ fontWeight: 500, color: "#9E2A2B", fontFamily: "Inter" }}
+            className="body-text-3 semibold color-primary-1 margin-bottom-medium"
           >
             &lt; Go Back
           </p>
-
           <h2 className="header1">{moduleName}</h2>
-          <div className="recapContent">
-          <Content content={moduleContent} />
+          <div className="recap-content">
+            <Content content={moduleContent} />
           </div>
-          
         </div>
-      </div>
     </div>
   );
 }

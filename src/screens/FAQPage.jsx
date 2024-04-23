@@ -28,16 +28,14 @@ const { Panel } = Collapse;
 function FAQPage(props) {
   useEffect(()=> {window.scrollTo(0, 0)},[])
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody">
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
-        <h1 className="header1" style={{paddingBottom:'20px'}}>FAQ</h1>
+      <div className="content-body">
+        <h1 className="header1 margin-bottom-medium">FAQ</h1>
           {faqs.map((faq, index) => (
           <FAQAccordion key={index} question={faq.question} answer={faq.answer} />
         ))}
         </div>
-       </div>
     </div>
   );
 }
@@ -50,44 +48,25 @@ function FAQAccordion({ question, answer }) {
   };
 
   return (
-    <div style={{ marginBottom: '10px', 
-                  // borderBottom: '1px solid #e8e8e8',
-                  paddingTop:'10px',
-                  background: '#f0f0f1', 
-                  border: 'none',
-                  borderRadius:'10px',
-                  display:'flex',
-                  flexDirection:'row',
-                   }}>
-      
+    <div className='faq-box'> 
         <div style={{ 
           width: '100%'}}>
         <button
         onClick={toggleAccordion}
-        style={{ 
-          width: '100%', 
-          textAlign: 'left', 
-          border: 'none', 
-          padding: '10px 10px', 
-          fontSize: '18px',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'flex-start',
-          background:'none'
-        }}
+        className='faq-button'
       >
         <FontAwesomeIcon
           icon={isOpen ? faChevronUp : faChevronDown}
-          style={{ marginRight: '10px', padding: '8px 0 0 15px'}}
+          style={{ marginRight: '10px', padding: '8px 0 0 16px'}}
           size= '2xs'
         />
         <p className='header3'>{question}</p>
-      </button>
-      {isOpen && (
-        <div style={{ padding: '0 10px 20px 45px' }}>
-          <p className='content'>{answer}</p>
-        </div>
-      )}
+        </button>
+        {isOpen && (
+          <div style={{ padding: '0 10px 20px 45px' }}>
+            <p className='body-text-2'>{answer}</p>
+          </div>
+        )}
         </div>
       
     </div>

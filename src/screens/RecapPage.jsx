@@ -30,12 +30,12 @@ function RecapPage(props) {
   const navigate = useNavigate();
   useEffect(()=> {window.scrollTo(0, 0)},[])
   return (
-    <div style={{ height: "100vh", backgroundColor: "white" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody">
+      <div className="content-body">
         <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
           <h1 className="header1">Orientation Recap</h1>
-          <div className="recapCardContainer" style={{paddingTop: 30}}>
+          <div className="recap-card-container" style={{paddingTop: 30}}>
             {recaps.map((recap, index) => (
               <div
                 key={index}
@@ -61,45 +61,28 @@ function MenuCard({ title, description, icon }) {
     //   navigate(`/recapcontent/${title}`);  // Pass the module title as a parameter
     // };
     const handleNavigation = (e, isButton = false) => {
-      // 检查屏幕宽度
-      const isMobile = window.innerWidth <= 500; // 假定768px作为移动端和桌面端的分界线
-      if (isMobile || isButton) { // 在移动端或点击按钮时执行导航
+      const isMobile = window.innerWidth <= 500;
+      if (isMobile || isButton) {
         navigate(`/recapcontent/${title}`);
       }
     };
     
-    
-    // return (
-    //     <div className="recapCardDisplay">
-    //       <div className="recapIconDisplay">
-    //       <FontAwesomeIcon icon={icon} className="infoIconStyle" />
-    //         <div className="recapTitleDisplay">
-    //           <div className="header3" >{title}</div>
-    //           <div className="header4">{description}</div>
-    //         </div>
-    //         </div>
-    //         <RightOutlined className="rightArrowStyle" onClick={onArrowClick} />
-    //         <button className="goButton" onClick={onArrowClick}>Explore Courses</button>
-    //     </div>
-    // );
     return (
-      <div className="recapCardDisplay" onClick={(e) => handleNavigation(e)}>
-        <div className="recapIconDisplay">
-        <FontAwesomeIcon icon={icon} className="infoIconStyle" />
-          <div className="recapTitleDisplay">
+      <div className="recap-card-display" onClick={(e) => handleNavigation(e)}>
+        <div className="recap-icon-display">
+        <FontAwesomeIcon icon={icon} className="color-primary-1" />
+          <div className="recap-title-display">
             <div className="header3" >{title}</div>
-            <div className="header4">{description}</div>
+            <div className="body-text-3 secondary-text">{description}</div>
           </div>
         </div>
-        <RightOutlined className="rightArrowStyle" />
-        <button className="goButton" onClick={(e) => {
-            e.stopPropagation(); // 阻止事件冒泡
-            handleNavigation(e, true); // 明确传递 isButton 为 true
+        <RightOutlined className="right-arrow-style" />
+        <button className="go-button body-text-3" onClick={(e) => {
+            e.stopPropagation();
+            handleNavigation(e, true);
         }}>See Content</button>
       </div>
     );
-  
-  
   }
 
 

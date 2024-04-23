@@ -218,7 +218,7 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-.recapContent{
+.recap-content{
   padding: 20px 0;
 }
 .buttonText {
@@ -261,6 +261,27 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.faq-box {
+  margin-bottom: 8px;
+  padding: 8px 0;
+  background-color: var(--secondary-color-1);
+  border: none;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: row;
+}
+
+.faq-button{
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  background: none;
 }
 
 .profile-display {
@@ -311,53 +332,15 @@ body {
   /* other styles */
 }
 
-.infoIconStyle {
-  color: #9e2a2b;
-  font-size: 24px;
-  /* other styles */
-}
 
-.titleStyle {
-  font-weight: bold;
-  font-size: 18px;
-  /* other styles */
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-}
-
-.contentStyle {
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  flex-grow: 1;
-  margin-left: 20px; /* Adjust spacing as needed */
-  align-self: flex-start;
-}
-
-.rightArrowStyle {
+.right-arrow-style {
   color: #9e2a2b; /* Adjust as needed */
   font-size: 16px;
   cursor: pointer;
   /* other styles */
 }
 
-.dressCodeList {
-  padding-left: 10px;
-  font-size: 16px;
-  line-height: 1.5;
-}
 
-.dressCodeList li {
-  padding: 5px 0;
-}
-
-.imageRow {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.dressCodeImage {
-  width: 100%; /* This will make the image responsive */
-  height: auto;
-  object-fit: cover; /* This will cover the area without stretching the image */
-}
 .navBox {
   border-bottom: 1px solid #f0f0f1;
   padding: 20px 24px 40px 24px;
@@ -404,7 +387,7 @@ body {
   object-fit: cover;
 }
 
-.goButton {
+.go-button {
   display: none;
   background-color: #9e2a2b;
   color: white;
@@ -413,10 +396,9 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 8px;
-  font-size: 16px;
 }
 
-.recapCardDisplay {
+.recap-card-display {
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -426,12 +408,12 @@ body {
   background-color: #f0f0f1;
 }
 
-.recapIconDisplay {
+.recap-icon-display {
   display: flex;
   flex-direction: row;
 }
 
-.recapTitleDisplay {
+.recap-title-display {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -455,15 +437,6 @@ body {
   align-items: center;
   padding: 8px 28px;
   min-width: 212px;
-}
-
-.congratsTitle {
-  font-weight: 600;
-  font-size: "16px";
-}
-
-.congratsContent {
-  font-size: "16px";
 }
 
 @media (max-width: 500px) {
@@ -530,10 +503,7 @@ body {
     margin: auto;
     padding-bottom: 100px;
   }
-//TODO delete this
-  .header4 {
-    font-size: 16px;
-  }
+
   .content, .ant-tabs-tab-btn {
     font-size: 18px;
   }
@@ -560,25 +530,25 @@ body {
   .cover-img {
     height: 240px;
   }
-  .recapCardContainer {
+  .recap-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .rightArrowStyle {
+  .right-arrow-style {
     display: none;
   }
-  .goButton {
+  .go-button {
     display: flex;
   }
-  .recapIconDisplay {
+  .recap-icon-display {
     flex-direction: column;
     align-items: center;
   }
-  .recapTitleDisplay {
+  .recap-title-display {
     align-items: center;
   }
-  .recapCardDisplay {
+  .recap-card-display {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -636,13 +606,5 @@ body {
     width: 40vw;
     margin-bottom: 32px;
     max-width: 800px;
-  }
-
-  .congratsTitle {
-    font-size: 20px;
-  }
-
-  .congratsContent {
-    font-size: 20px;
   }
 }

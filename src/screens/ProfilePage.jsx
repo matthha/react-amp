@@ -47,16 +47,15 @@ function ProfilePage() {
   }, []);
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "whit" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody">
-      <div style={{ background: "white", padding: 20, minHeight: "100vh" }}>
+      <div className="content-body">
         <h1 className="header1">Certification</h1>
         <div>
           <h3 className="header3" style={{paddingTop:25}}>GENERAL INFORMATION</h3>
-          <div style={{paddingTop:20}}>
+          <div className="margin-top-medium">
               <div className="profile-card" style={{marginBottom:25}}>
-                  <h4 className="header4" style={{paddingBottom:5}}>USERNAME</h4>
+                  <h4 className="body-text-3 secondary-text" style={{paddingBottom:5}}>USERNAME</h4>
                   <div className="profile-display">
                       {username}
                   </div>
@@ -65,16 +64,15 @@ function ProfilePage() {
         </div>
         <div>
           <h3 className="header3" style={{paddingTop:25}}>COMPLETION STATUS</h3>
-          <div style={{paddingTop:20}}>
+          <div className="margin-top-medium">
               {completionPercentage >= 100 ? (
                 <div>
-                  {/* <CheckCircleFilled style={{ color: "#299E63", fontSize: "24px" }} /> */}
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
                     <img src="/images/badge.jpg" alt="Completed" 
                     style={{ width: "160px", height: "135px" }} />
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start',paddingTop:'20px' }}>
-                      <span className='congratsTitle' style={{ marginLeft: "10px"}}>Congratulations!</span>
-                      <span className='congratsContent' style={{ marginLeft: "10px"}}> You have completed all the modules!</span>
+                      <span className='body-text-2 semibold' style={{ marginLeft: "10px"}}>Congratulations!</span>
+                      <span className='body-text-2' style={{ marginLeft: "10px"}}> You have completed all the modules!</span>
                     </div>
                   </div>
                   
@@ -90,7 +88,6 @@ function ProfilePage() {
         <div style={{paddingTop:'30px'}}>
         </div>
         </div>
-      </div>
     </div>
   );
 }
