@@ -70,7 +70,7 @@ function ProfilePage() {
                 <div>
                   {/* <CheckCircleFilled style={{ color: "#299E63", fontSize: "24px" }} /> */}
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
-                    <img src="https://media.istockphoto.com/id/1353254487/vector/complete-stamp-imprint-seal-template-vector-stock-illustration.jpg?s=612x612&w=0&k=20&c=WTGSZJSVsMoSyge9UhZz71HQoU0TB4ugcV4BSXtPYWU=" alt="Completed" 
+                    <img src="/images/badge.jpg" alt="Completed" 
                     style={{ width: "160px", height: "135px" }} />
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start',paddingTop:'20px' }}>
                       <span className='congratsTitle' style={{ marginLeft: "10px"}}>Congratulations!</span>

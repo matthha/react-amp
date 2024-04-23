@@ -69,8 +69,7 @@ const Result = (props) => {
               Congras! You have completed this Module!
             </p>
             <div style={{ width: "100%", display:"flex", justifyContent:"center" }}>
-              <img
-              className="resultImg"
+              <img className="resultImg"
                 src="/images/Congrats.png"
                 alt="congrats on finishing the module!"
               />
