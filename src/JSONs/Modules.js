@@ -6,11 +6,7 @@ export const content = [
       "/coverImages/scheduleattendance.png",
     videoLink: "https://www.youtube.com/embed/Du-E0dQE6gM?si=eVryxRspxUF6tOQp",
     description: "Understand how absences contribute to truancy.",
-    content: [
-      {tab:true},
-      {regular:"This paragraph is regular."}, 
-      {bold:"This line is bold."},
-      {link:"http://www.cityhigh.org"}, 
+    content: [ 
       {tab:true},
       {regular:"City High School has a strict attendance policy unlike other schools. A student is considered truant with their 3rd unexcused absence in a year. Once truant they will have to attend Student Attendance Improvement Conference and repercussions will become more severe with more absences."},
       {bold:"Truancy starts at the 3rd unexcussed absence."}, 
