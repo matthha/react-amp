@@ -9,7 +9,7 @@ export const recaps = [
       {underline:"The following may count towards their truancy absences unless a parent note is submitted within 3 days or it will be unexcused: Oversleeping, Missing the bus, Confusion about whether or not there was school, Vacations, Parent/Sibling illness, other responsibilities like work or childcare."},
       {danger:"A student may only have 7 unexcused absences before they fail a class. Family vacation is unexcused and counts towards this limit."}
     ],
-    icon: "FaHandshake",
+    icon: "faHandshake",
   },
   {
     title: "Dress Code",
@@ -20,7 +20,7 @@ export const recaps = [
       {underline:"Look at me, I'm underlined!"},
       {danger:"I'm very important."}
     ],
-    icon: "FaBook",
+    icon: "faBook",
   },
   {
     title: "Code of Conduct",
@@ -31,7 +31,7 @@ export const recaps = [
       {underline:"Look at me, I'm underlined!"},
       {danger:"I'm very important."}
     ],
-    icon: "FaTshirt",
+    icon: "faTshirt",
   },
   {
     title: "Curriculum & Grading",
@@ -42,7 +42,7 @@ export const recaps = [
       {underline:"Look at me, I'm underlined!"},
       {danger:"I'm very important."}
     ],
-    icon: "FaClock",
+    icon: "faClock",
   },
   {
     title: "Technology",
@@ -53,7 +53,7 @@ export const recaps = [
       {underline:"Look at me, I'm underlined!"},
       {danger:"I'm very important."}
     ],
-    icon: "FaLaptop",
+    icon: "faLaptop",
   },
   {
     title: "Transportation",
@@ -64,6 +64,6 @@ export const recaps = [
       {underline:"Look at me, I'm underlined!"},
       {danger:"I'm very important."}
     ],
-    icon: "FaBus",
+    icon: "faBus",
   },
 ];

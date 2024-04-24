@@ -5,28 +5,9 @@ import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import RecapCard from "../components/RecapCard";
 
-// Icon imports for various recap topics
-import {
-  faHandshake,
-  faBook,
-  faTshirt,
-  faClock,
-  faLaptop,
-  faBus,
-} from "@fortawesome/free-solid-svg-icons";
-
 // Recap data import
 import { recaps } from "../JSONs/recaps";
 
-// Mapping of icon names to actual icon components
-const iconMapping = {
-  FaHandshake: faHandshake,
-  FaBook: faBook,
-  FaTshirt: faTshirt,
-  FaClock: faClock,
-  FaLaptop: faLaptop,
-  FaBus: faBus,
-};
 
 // RecapPage component definition
 function RecapPage() {
@@ -48,7 +29,7 @@ function RecapPage() {
               <RecapCard
                 title={recap.title}
                 description={recap.description}
-                icon={iconMapping[recap.icon]}
+                icon={recap.icon}
               />
             </div>
           ))}
