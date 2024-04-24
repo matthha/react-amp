@@ -136,6 +136,22 @@
   max-width: 900px !important;
 }
 
+/* Button Styles */
+//This is the style for button container
+.button-container {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+//This is the style for all the buttons
+.action-button {
+  background-color: #9e2a2b;
+  border-color: #9e2a2b;
+  color: white;
+  height: 40px;
+  border-radius: 100px;
+}
+
 
 /* FAQ page styles */
 //This is the style for the faq container on the faq page
@@ -190,7 +206,7 @@
   font-size: 16px;
 }
 
-
+/* Video page styles */
 //This is the style for the youtube container in module video page
 .responsive-iframe-container {
   position: relative;
@@ -211,20 +227,6 @@
 .resultImg {
   width: 100%;
   margin-bottom: 12px;
-}
-//This is the style for button container
-.button-container {
-  margin-top: 12px;
-  display: flex;
-  justify-content: flex-end;
-}
-//This is the style for all the buttons
-.action-button {
-  background-color: #9e2a2b;
-  border-color: #9e2a2b;
-  color: white;
-  height: 40px;
-  border-radius: 100px;
 }
 
 .contentBox {
@@ -491,6 +493,7 @@
     padding: 8px 28px;
     border-radius: 100px;
   }
+  /* Video page styles */
 
   .action-button {
     margin-left: 10rem;
@@ -531,10 +534,7 @@
 
  
 
-  //Container for the
-  .video-time-container {
-    padding: 10px 0;
-  }
+  
 
   .site-collapse-custom-panel {
     padding-top: 20px;
