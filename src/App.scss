@@ -1,3 +1,4 @@
+/* root style vairables */
 :root {
   --primary-color-1: #9e2a2b;
   --primary-color-2: #000;
@@ -13,17 +14,17 @@
   --line-height: 140%;
 }
 
-.App {
-  text-align: center;
-}
-body {
-  margin: 0 !important;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+// .App {
+//   text-align: center;
+// }
+// body {
+//   margin: 0 !important;
+// }
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+/* Styles for fonts */
 /* 24-simibold-header1 */
 .header1 {
   font-feature-settings: var(--font-feature-settings);
@@ -57,7 +58,8 @@ body {
   line-height: var(--line-height);
 }
 /* 14-regular-body-text-2 */
-.body-text-2, .ant-tabs-tab-btn {
+.body-text-2,
+.ant-tabs-tab-btn {
   font-feature-settings: var(--font-feature-settings);
   font-family: var(--font-family);
   font-size: 14px;
@@ -72,32 +74,41 @@ body {
   font-weight: 400;
   line-height: var(--line-height);
 }
-.secondary-text {
-  color: var(--secondary-color-2);
-}
+
+/* styles for margins */
 .margin-bottom-medium {
   margin-bottom: 12px;
+}
+.margin-bottom-large {
+  margin-bottom: 16px;
 }
 .margin-top-small {
   margin-top: 8px;
 }
-.m {
+.margin-top-medium {
   margin-top: 12px;
 }
-.margin-vertical-large{
+.margin-vertical-large {
   margin: 40px 0;
 }
 .padding-vertical-medium {
   padding: 14px 0;
 }
+
+/* styles for font weight */
 .semibold {
   font-weight: 500;
 }
+
+/* styles for colors */
 .color-primary-1 {
   color: var(--primary-color-1);
 }
 .color-primary-3 {
   color: var(--primary-color-3);
+}
+.secondary-text {
+  color: var(--secondary-color-2);
 }
 
 //This is the page body style for all the pages
@@ -186,15 +197,13 @@ body {
   border-radius: 100px;
 }
 
-
-
 .contentBox {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 10px;
 }
-.recap-content{
+.recap-content {
   padding: 20px 0;
 }
 
@@ -230,18 +239,19 @@ body {
   flex-direction: column;
   gap: 6px;
 }
-
+/* FAQ page styles */
+//This is the style for the faq container on the faq page
 .faq-box {
   margin-bottom: 8px;
   padding: 8px 0;
   background-color: var(--secondary-color-1);
   border: none;
   border-radius: 10px;
-  display:flex;
+  display: flex;
   flex-direction: row;
 }
-
-.faq-button{
+//This is the style for the clickable area on the faq page
+.faq-button {
   width: 100%;
   text-align: left;
   border: none;
@@ -299,14 +309,12 @@ body {
   /* other styles */
 }
 
-
 .right-arrow-style {
   color: #9e2a2b; /* Adjust as needed */
   font-size: 16px;
   cursor: pointer;
   /* other styles */
 }
-
 
 .navBox {
   border-bottom: 1px solid #f0f0f1;
@@ -432,22 +440,30 @@ body {
   .body-text-3 {
     font-size: 16px;
   }
-
+  /* styles for margins */
   .margin-bottom-medium {
     margin-bottom: 16px;
   }
+  .margin-bottom-large {
+    margin-bottom: 20px;
+  }
   .margin-top-small {
-    margin-top: 16px;
+    margin-top: 12px;
   }
   .margin-top-medium {
     margin-top: 16px;
   }
-  .margin-vertical-small{
-    margin: 8px 0;
+  .margin-vertical-large {
+    margin: 48px 0;
+  }
+  .padding-vertical-medium {
+    padding: 18px 0;
   }
 
-  .margin-vertical-large{
-    margin: 20px 0;
+  /* FAQ page styles */
+  //This is the style for the faq container on the faq page
+  .faq-box {
+    margin-bottom: 12px;
   }
 
   .content-body {
@@ -474,7 +490,8 @@ body {
     padding-right: 28px; /* Adjust as needed */
   }
 
-  .content, .ant-tabs-tab-btn {
+  .content,
+  .ant-tabs-tab-btn {
     font-size: 18px;
   }
   .secondaryContent {

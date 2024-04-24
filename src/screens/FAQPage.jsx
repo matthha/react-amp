@@ -1,110 +1,32 @@
-import faqs from '../JSONs/faqs.json';  // Adjust the path according to your file structure
+// Importing the FAQ data from a JSON file located in a specific directory
+import faqs from '../JSONs/faqs.json';  
 
-import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { Collapse } from "antd";
-import NavBar from "../components/NavBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+// Importing necessary React elements and custom components
+import React, { useEffect } from "react";
+import NavBar from "../components/NavBar";  // Navigation bar component
+import FAQAccordion from "../components/FAQAccordion";  // Accordion component for displaying FAQs
 
+// FAQPage functional component definition
+function FAQPage() {
+  // useEffect hook to scroll to the top of the page on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-import {
-  MenuOutlined,
-  CheckCircleFilled,
-  MinusCircleFilled,
-} from "@ant-design/icons";
-import {
-  Drawer,
-  Menu,
-  Card,
-  Progress,
-  Row,
-  Col,
-} from "antd";
-const { Meta } = Card;
-const { Panel } = Collapse;
-
-// Import other icons here if needed and use them as intended
-function FAQPage(props) {
-  useEffect(()=> {window.scrollTo(0, 0)},[])
+  // Render method of the FAQPage component
   return (
     <div className="page-body">
-      <NavBar />
+      <NavBar /> {/*  Navigation bar at the top of the page */}
       <div className="content-body">
-        <h1 className="header1 margin-bottom-medium">FAQ</h1>
-          {faqs.map((faq, index) => (
+        <h1 className="header1 margin-bottom-medium">FAQ</h1>  {/* FAQ Section Heading */}
+        {faqs.map((faq, index) => (
+          // Mapping over each FAQ item and rendering it using the FAQAccordion component
           <FAQAccordion key={index} question={faq.question} answer={faq.answer} />
         ))}
-        </div>
+      </div>
     </div>
   );
 }
 
-function FAQAccordion({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <div className='faq-box'> 
-        <div style={{ 
-          width: '100%'}}>
-        <button
-        onClick={toggleAccordion}
-        className='faq-button'
-      >
-        <FontAwesomeIcon
-          icon={isOpen ? faChevronUp : faChevronDown}
-          style={{ marginRight: '10px', padding: '8px 0 0 16px'}}
-          size= '2xs'
-        />
-        <p className='header3'>{question}</p>
-        </button>
-        {isOpen && (
-          <div style={{ padding: '0 10px 20px 45px' }}>
-            <p className='body-text-2'>{answer}</p>
-          </div>
-        )}
-        </div>
-      
-    </div>
-  );
-}
-
-function AppMenu({ isInline = false }) {
-  // Corrected parameter destructuring
-  const navigate = useNavigate();
-  const handleClick = (e) => {
-    // navigate to the route corresponding to the menu item key
-    navigate(`/${e.key}`);
-  };
-  return (
-    <Menu
-      style={{ backgroundColor: "white", fontSize: 20, border: "none" }}
-      mode={isInline ? "inline" : "horizontal"}
-      onClick={handleClick}
-      items={[
-        {
-          label: "CCHS Online Orientation",
-          key: "home", // Corrected property name to lowercase
-        },
-        {
-          label: "Orientation Recap",
-          key: "recap",
-        },
-        {
-          label: "FAQ",
-          key: "faq",
-        },
-        {
-          label: "Profile",
-          key: "profile",
-        },
-      ]}
-    ></Menu>
-  );
-}
-
+// Exporting FAQPage as the default export of this module
 export default FAQPage;
