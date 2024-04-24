@@ -14,16 +14,6 @@
   --line-height: 140%;
 }
 
-// .App {
-//   text-align: center;
-// }
-// body {
-//   margin: 0 !important;
-// }
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
 /* Styles for fonts */
 /* 24-simibold-header1 */
 .header1 {
@@ -111,6 +101,7 @@
   color: var(--secondary-color-2);
 }
 
+/* styles for page bodies */
 //This is the page body style for all the pages
 .page-body {
   height: 100vh;
@@ -131,35 +122,60 @@
   max-width: 900px !important;
 }
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
 
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
+/* FAQ page styles */
+//This is the style for the faq container on the faq page
+.faq-box {
+  margin-bottom: 8px;
+  padding: 8px 0;
+  background-color: var(--secondary-color-1);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+//This is the style for the clickable area on the faq page
+.faq-button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  background: none;
+}
 
-// .App-link {
-//   color: #61dafb;
-// }
+/* Recap page styles */
+.recap-card-display {
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Changed from space-around to center for vertical alignment */
+  justify-content: space-between;
+  width: 100%;
+  background-color: #f0f0f1;
+}
+.recap-icon-display {
+  margin-top: 2px;
+}
+.recap-card-icon-text-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.recap-text-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.right-arrow-style {
+  color: var(--primary-color-1); 
+  font-size: 16px;
+}
 
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
 
 //This is the style for the youtube container in module video page
 .responsive-iframe-container {
@@ -239,28 +255,8 @@
   flex-direction: column;
   gap: 6px;
 }
-/* FAQ page styles */
-//This is the style for the faq container on the faq page
-.faq-box {
-  margin-bottom: 8px;
-  padding: 8px 0;
-  background-color: var(--secondary-color-1);
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-}
-//This is the style for the clickable area on the faq page
-.faq-button {
-  width: 100%;
-  text-align: left;
-  border: none;
-  padding: 10px 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-  background: none;
-}
+
+
 
 .profile-display {
   padding: 10px 0;
@@ -309,12 +305,7 @@
   /* other styles */
 }
 
-.right-arrow-style {
-  color: #9e2a2b; /* Adjust as needed */
-  font-size: 16px;
-  cursor: pointer;
-  /* other styles */
-}
+
 
 .navBox {
   border-bottom: 1px solid #f0f0f1;
@@ -362,39 +353,8 @@
   object-fit: cover;
 }
 
-.go-button {
-  display: none;
-  background-color: #9e2a2b;
-  color: white;
-  border: none;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 8px;
-}
 
-.recap-card-display {
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  align-items: center; /* Changed from space-around to center for vertical alignment */
-  justify-content: space-between;
-  width: 300px;
-  background-color: #f0f0f1;
-}
 
-.recap-icon-display {
-  display: flex;
-  flex-direction: row;
-}
-
-.recap-title-display {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
   border-bottom-color: white !important;
 }
@@ -410,12 +370,18 @@
   min-width: 212px;
 }
 
+/* styles to hide certain class for mobile version with maximum width of 500px*/
 @media (max-width: 500px) {
   .headerMenu {
     display: none;
   }
+  .recap-button {
+    display: none;
+  }
 }
+/* styles for Desktop verion with minimum width of 500px */
 @media (min-width: 500px) {
+  /* styles for fonts */
   /* 32-simibold-header1 */
   .header1 {
     font-size: 32px;
@@ -440,6 +406,7 @@
   .body-text-3 {
     font-size: 16px;
   }
+
   /* styles for margins */
   .margin-bottom-medium {
     margin-bottom: 16px;
@@ -460,18 +427,60 @@
     padding: 18px 0;
   }
 
+  /* styles for page bodies */
+  .content-body {
+    padding: 44px 44px;
+    max-width: 90rem;
+    margin: auto;
+  }
+
   /* FAQ page styles */
   //This is the style for the faq container on the faq page
   .faq-box {
     margin-bottom: 12px;
   }
-
-  .content-body {
-    padding: 44px 44px;
-    max-width: 90rem;
-    margin: auto;
-    padding-bottom: 100px;
+  /* Recap page styles */
+  .recap-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
   }
+  .recap-card-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 410px;
+    width: 27vw;
+    margin: 16px;
+    gap: 16px;
+    padding: 24px;
+  }
+  .recap-icon-display{
+    font-size: 30px;
+  }
+  .recap-card-icon-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .recap-text-display {
+    align-items: center;
+    gap: 6px;
+  }
+  .right-arrow-style {
+    display: none;
+  }
+  .recap-button {
+    background-color: var(--primary-color-1);
+    color: var(--primary-color-3);
+    border: none;
+    padding: 8px 28px;
+    border-radius: 100px;
+  }
+
   .action-button {
     margin-left: 10rem;
     margin-right: 10rem;
@@ -494,12 +503,6 @@
   .ant-tabs-tab-btn {
     font-size: 18px;
   }
-  .secondaryContent {
-    font-size: 16px;
-  }
-  .paragraph {
-    margin-top: 28px;
-  }
   .ant-card-body {
     padding: 20px !important;
     padding-bottom: 20px !important;
@@ -514,40 +517,12 @@
   .cover-img {
     height: 240px;
   }
-  .recap-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .right-arrow-style {
-    display: none;
-  }
-  .go-button {
-    display: flex;
-  }
-  .recap-icon-display {
-    flex-direction: column;
-    align-items: center;
-  }
-  .recap-title-display {
-    align-items: center;
-  }
-  .recap-card-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 220px;
-    width: 360px;
-  }
+
+ 
+
   //Container for the
   .video-time-container {
     padding: 10px 0;
-  }
-  .recapCardDisplay .infoIconStyle,
-  .recapCardDisplay .content,
-  .recapCardDisplay .secondaryContent,
-  .recapCardDisplay .rightArrowStyle {
-    margin-bottom: 15px; /* Adjust this value to increase or decrease the space between items */
   }
 
   .site-collapse-custom-panel {
