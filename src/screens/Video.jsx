@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import { Button } from "antd";
@@ -7,8 +7,7 @@ import {
 } from "@ant-design/icons";
 import Content from "../components/Content";
 
-const IntroductionVideo = (props) => {
-  const [openMenu, setOpenMenu] = useState(false);
+const IntroductionVideo = () => {
   const location = useLocation();
   const module = location.state.module;
   const moduleName = location.state.module.title;
@@ -32,7 +31,6 @@ const IntroductionVideo = (props) => {
             <iframe
               src={module.videoLink}
               title="YouTube video player"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>

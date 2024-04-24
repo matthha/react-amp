@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import {
-  CheckCircleFilled,
-  MinusCircleFilled,
-} from "@ant-design/icons";
+import { CheckCircleFilled, MinusCircleFilled } from "@ant-design/icons";
 import { Card, Progress, Row, Col } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
-import {
-  createProgress,
-} from "../graphql/mutations";
+import { createProgress } from "../graphql/mutations";
 import { listProgresses } from "../graphql/queries";
 import { useProgress } from "../ProgressContext";
 

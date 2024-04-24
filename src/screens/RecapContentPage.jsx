@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { recaps } from "../JSONs/recaps";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import { useNavigate } from "react-router-dom";
 import Content from "../components/Content";
-import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 
-const { Meta } = Card;
 // Import other icons here if needed and use them as intended
-function RecapContentPage(props) {
-  const [openMenu, setOpenMenu] = useState(false);
+function RecapContentPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,17 +24,16 @@ function RecapContentPage(props) {
     <div className="page-body">
       <NavBar />
       <div className="content-body">
-          <p
-            onClick={handleClick}
-            className="body-text-3 semibold color-primary-1 margin-bottom-medium"
-          >
-            &lt; Go Back
-          </p>
-          <h2 className="header1">{moduleName}</h2>
-          <div className="recap-content">
-            <Content content={moduleContent} />
-          </div>
-        </div>
+        <button
+          onClick={handleClick}
+          className="body-text-2 semibold color-primary-1 margin-bottom-medium"
+          style={{ border: "none", backgroundColor: "white" }}
+        >
+          &lt; Go Back
+        </button>
+        <h2 className="header1 margin-bottom-medium">{moduleName}</h2>
+        <Content content={moduleContent} />
+      </div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "/coverImages/dresscode.png",
-    videoLink: "https://www.youtube.com/embed/evD3K0iV4yQ", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/evD3K0iV4yQ", 
     description: "Learn more about what students can wear.",
     content: [
       {regular:"This is the first sentence."},
@@ -74,7 +74,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "/coverImages/codeofconduct.png",
-    videoLink: "https://www.youtube.com/embed/fovLtQyYPIg", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/fovLtQyYPIg", 
     description: "Know what students are expected to wear every day.",
     content: [
       {regular:"This is the first sentence."},
@@ -102,7 +102,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "/coverImages/curriculumgrading.png",
-    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", 
     description: "Know what students are expected to wear every day.",
     content: [
       {regular:"This is the first sentence."},
@@ -130,7 +130,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "https://cityhigh.org/files/content/Orientation/Technology.JPG",
-    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", 
     description: "Know what students are expected to wear every day.",
     content: [
       {regular:"This is the first sentence."},
@@ -158,7 +158,7 @@ export const content = [
     estimationTime: "~7 mins",
     coverImg:
       "/coverImages/transportation.jpg",
-    videoLink: "https://www.youtube.com/watch?v=OQdwqhMClTI", //TODO change the example here later
+    videoLink: "https://www.youtube.com/embed/OQdwqhMClTI", 
     description: "Understand transportation to and from school.",
     content: [
       {tab:true}, {regular:"School districts provide transportation for students who live at least two miles but less than 10 miles from City Charter High School."},
