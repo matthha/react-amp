@@ -25,7 +25,6 @@ import Quiz from "./screens/Quiz";
 import RecapPage from "./screens/RecapPage";
 import FAQPage from "./screens/FAQPage";
 import ProfilePage from "./screens/ProfilePage";
-import TestYaml from "./screens/TestYaml";
 import RecapContentPage from "./screens/RecapContentPage";
 import Result from "./screens/Result";
 import ContactPage from "./screens/ContactPage";
@@ -171,8 +170,6 @@ export default function App() {
                          path="/profile"
                          element={<ProfilePage />}
                        />
-                       <Route path="/yaml/*" element={<TestYaml />} />
-                       {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
                        <Route
                          path="/recapcontent/:moduleName"
                          element={<RecapContentPage />}
@@ -198,8 +195,6 @@ export default function App() {
                           path="/profile"
                           element={<ProfilePage />}
                         />
-                        <Route path="/yaml/*" element={<TestYaml />} />
-                        {/* <Route path="/recapcontent" element={<RecapContentPage/>} /> */}
                         <Route
                           path="/recapcontent/:moduleName"
                           element={<RecapContentPage />}

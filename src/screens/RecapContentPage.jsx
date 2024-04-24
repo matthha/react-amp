@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { recaps } from "../JSONs/recaps";
 import { useParams } from "react-router-dom";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
-import Content from "../ui-components/Content";
+import Content from "../components/Content";
 import { Drawer, Menu, Card, Progress, Row, Col } from "antd";
 
 const { Meta } = Card;

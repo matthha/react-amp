@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
-import NavBar from "../ui-components/NavBar";
-import ResultCard from "../ui-components/ResultCard";
+import NavBar from "../components/NavBar";
+import ResultCard from "../components/ResultCard";
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import moduleData from "../orientationModules.json"; // path to your JSON file

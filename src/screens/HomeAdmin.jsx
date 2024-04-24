@@ -7,7 +7,7 @@ import { generateClient } from "aws-amplify/api";
 import { adminInfo } from "../JSONs/adminInfo";
 
 import { listProgresses } from "../graphql/queries";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 
 const orientationModules = content;
 

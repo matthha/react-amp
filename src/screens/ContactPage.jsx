@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { adminInfo } from "../JSONs/adminInfo";
 import { getCurrentUser } from "aws-amplify/auth";
 

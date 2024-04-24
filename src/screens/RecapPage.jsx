@@ -3,7 +3,7 @@ import { recaps } from '../JSONs/recaps';
 
 import { useNavigate } from 'react-router-dom';
 import { InfoCircleOutlined, RightOutlined } from '@ant-design/icons';
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faHandshake,

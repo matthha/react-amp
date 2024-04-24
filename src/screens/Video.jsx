@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
-import { Drawer, Menu, Card, Progress, Row, Col, Button, Divider } from "antd";
+import { Button } from "antd";
 import {
   ClockCircleOutlined,
-  PlayCircleOutlined,
-  MenuOutlined,
 } from "@ant-design/icons";
-import moduleData from "../orientationModules.json";
-import Content from "../ui-components/Content";
+import Content from "../components/Content";
 
 const IntroductionVideo = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -42,9 +39,9 @@ const IntroductionVideo = (props) => {
           </div>
         </div>
         <Content content={module.content}/>
-        <div className="buttonContainer">
+        <div className="button-container">
           <Button
-            className="actionButton"
+            className="action-button"
             block
             onClick={handleStartQuiz} // Attach the navigate function here
           >

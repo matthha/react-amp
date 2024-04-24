@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from "aws-amplify/auth";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import {
   MenuOutlined,
   CheckCircleFilled,

@@ -3,7 +3,7 @@ import faqs from '../JSONs/faqs.json';  // Adjust the path according to your fil
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Collapse } from "antd";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 

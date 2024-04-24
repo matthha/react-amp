@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 import { useProgress } from "../ProgressContext";
-import NavBar from "../ui-components/NavBar";
+import NavBar from "../components/NavBar";
 import { Card, Radio, Button, Space, ConfigProvider } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import moduleData from "../orientationModules.json"; // path to your JSON file
-import { Drawer, Menu, Progress, Row, Col } from "antd";
 import { generateClient } from "aws-amplify/api";
 import { updateProgress } from "../graphql/mutations";
 
@@ -13,7 +10,9 @@ const Quiz = (props) => {
   const { completedModules, updateCompletedModules } = useProgress();
   const [answers, setAnswers] = useState({});
   const location = useLocation();
-  useEffect(()=> {window.scrollTo(0, 0)},[])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const client = generateClient();
   const variables = {
     filter: {
@@ -27,7 +26,6 @@ const Quiz = (props) => {
   const navigate = useNavigate();
 
   async function updateOurProgress(newProgress) {
-    // console.log(newProgress)
     try {
       const updatedProgress = await client.graphql({
         query: updateProgress,
@@ -38,7 +36,6 @@ const Quiz = (props) => {
           },
         },
       });
-      // console.log('updated is ', updatedProgress)
     } catch (error) {
       console.log("error is ", error);
     }
@@ -64,32 +61,30 @@ const Quiz = (props) => {
   };
 
   async function handleSubmit() {
-    // --TODO -- Handle the submission logic here --
-    // console.log(answers);
     //calculate the total score
     const score = calculateScore(answers, module);
     //if the total score matches the total question number, it will mark as pass
     if (score >= module.scoreForPassing) {
       if (!completedModules.includes(moduleName)) {
         const newCompletedModules = [...completedModules, moduleName];
-        // -- TODO -- We can add the updateProgress function here --
         await updateOurProgress(JSON.stringify(newCompletedModules));
         updateCompletedModules(newCompletedModules);
       }
     }
-    // -- TODO -- Add other logic here for pass/fail --
     navigate(`/result/${moduleName}`, { state: { module, answers, myRecord } }); // Navigate to your quiz page route
   }
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "white" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody quizContent quizBody">
+      <div className="content-body quiz-body">
         <h1 className="header1">{moduleName} Quiz</h1>
         {location.state.module.quizList.map((quizItem, index) => (
-          <Card key={index} style={{ margin: "20px 0px" }}>
+          <Card key={index} className="margin-top-medium">
             <h3 className="header3">Question {index + 1}</h3>
-            <p className="content quizQuestion">{quizItem.question}</p>
+            <p className="body-text-2 padding-vertical-medium">
+              {quizItem.question}
+            </p>
             <ConfigProvider
               theme={{
                 token: {
@@ -98,17 +93,13 @@ const Quiz = (props) => {
                 },
               }}
             >
-              <Radio.Group
-                onChange={(e) => onAnswerChange(e, index)}
-                className="radio-custom"
-              >
+              <Radio.Group onChange={(e) => onAnswerChange(e, index)}>
                 <Space direction="vertical">
                   {quizItem.options.map((option, optionIndex) => (
                     <Radio
-                      className="content"
+                      className="body-text-2 margin-top-small"
                       key={optionIndex}
                       value={option}
-                      style={{ margin: "6px 0px" }}
                     >
                       {option}
                     </Radio>
@@ -119,9 +110,9 @@ const Quiz = (props) => {
           </Card>
         ))}
 
-        <div className="buttonContainer">
-          <Button className="actionButton" onClick={handleSubmit} block>
-            <div className="buttonText">Submit</div>
+        <div className="button-container">
+          <Button className="action-button" onClick={handleSubmit} block>
+            <div className="body-text-1">Submit</div>
           </Button>
         </div>
       </div>
