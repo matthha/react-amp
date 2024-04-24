@@ -84,10 +84,20 @@
 .padding-vertical-medium {
   padding: 14px 0;
 }
+.tab{
+  padding-left: 1.5em;
+}
 
-/* styles for font weight */
+
+/* styles for fonts properties*/
 .semibold {
   font-weight: 500;
+}
+.bold {
+  font-weight: 600;
+}
+.text-underline{
+  text-decoration: "underline";
 }
 
 /* styles for colors */
@@ -97,6 +107,10 @@
 .color-primary-3 {
   color: var(--primary-color-3);
 }
+.color-semantic-red{
+  color: var(--semantic-color-red);
+}
+
 .secondary-text {
   color: var(--secondary-color-2);
 }
