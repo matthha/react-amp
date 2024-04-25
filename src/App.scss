@@ -90,10 +90,9 @@
 .padding-vertical-medium {
   padding: 14px 0;
 }
-.tab{
+.tab {
   padding-left: 1.5em;
 }
-
 
 /* styles for fonts properties*/
 .semibold {
@@ -102,7 +101,7 @@
 .bold {
   font-weight: 600;
 }
-.text-underline{
+.text-underline {
   text-decoration: "underline";
 }
 
@@ -113,10 +112,10 @@
 .color-primary-3 {
   color: var(--primary-color-3);
 }
-.color-semantic-red{
+.color-semantic-red {
   color: var(--semantic-color-red);
 }
-.color-semantic-green{
+.color-semantic-green {
   color: var(--semantic-color-green);
 }
 .secondary-text {
@@ -196,7 +195,7 @@
 .recap-icon-display {
   margin-top: 2px;
 }
-.recap-card-icon-text-wrapper{
+.recap-card-icon-text-wrapper {
   display: flex;
   flex-direction: row;
   gap: 4px;
@@ -209,7 +208,7 @@
   padding-right: 10px;
 }
 .right-arrow-style {
-  color: var(--primary-color-1); 
+  color: var(--primary-color-1);
   font-size: 16px;
 }
 
@@ -231,6 +230,11 @@
 }
 
 /* result page styles */
+//This is the congrats image on the quiz result page
+.result-img {
+  width: 100%;
+  margin-bottom: 12px;
+}
 /* result card component styles*/
 .question-header {
   display: flex;
@@ -248,11 +252,36 @@
   border-radius: 100px;
 }
 
-//This is the congrats image on the quiz result page
-.resultImg {
-  width: 100%;
-  margin-bottom: 12px;
+/* Nav bar component styles*/
+.menu-icon {
+  background: var(--primary-color-1);
+  height: auto;
+  padding: 20px 16px;
+  color: var(--primary-color-3);
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
 }
+.nav-box {
+  border-bottom: 1px solid #f0f0f1;
+  padding: 20px 24px 40px 24px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-logo-box {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.nav-logo-box img {
+  height: 100%;
+  width: auto;
+}
+
 
 .contentBox {
   display: flex;
@@ -280,7 +309,6 @@
   line-height: var(--line-height);
 }
 
-
 .status-card {
   display: flex;
   gap: 4px;
@@ -290,8 +318,6 @@
   flex-direction: column;
   gap: 6px;
 }
-
-
 
 .profile-display {
   padding: 10px 0;
@@ -340,46 +366,18 @@
   /* other styles */
 }
 
-
-.navBox {
-  border-bottom: 1px solid #f0f0f1;
-  padding: 20px 24px 40px 24px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 10px;
-}
-.navLogoBox {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-}
-
-.navLogoBox img {
-  height: 100%;
-  width: auto;
-}
-
-
-
-
 .cover-img {
   height: 164px;
   object-fit: cover;
 }
 
-
-
 .ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
   border-bottom-color: white !important;
 }
 
-
 /* styles to hide certain class for mobile version with maximum width of 500px*/
 @media (max-width: 500px) {
-  .headerMenu {
+  .header-menu {
     display: none;
   }
   .recap-button {
@@ -450,12 +448,12 @@
     margin: auto;
   }
   /* Button Styles */
-//This is the style for all the buttons
-.action-button {
-  margin-left: 10rem;
-  margin-right: 10rem;
-  height: 50px;
-}
+  //This is the style for all the buttons
+  .action-button {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    height: 50px;
+  }
 
   /* FAQ page styles */
   //This is the style for the faq container on the faq page
@@ -480,10 +478,10 @@
     gap: 16px;
     padding: 24px;
   }
-  .recap-icon-display{
+  .recap-icon-display {
     font-size: 30px;
   }
-  .recap-card-icon-text-wrapper{
+  .recap-card-icon-text-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -503,29 +501,31 @@
     padding: 8px 28px;
     border-radius: 100px;
   }
- 
-  /* result card component styles*/
+  /* Result page component styles*/
+  .result-img {
+    width: 40vw;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+  /* Result card component styles*/
   .ant-card-body {
     padding: 20px !important;
   }
   .alert-inline {
     padding: 4px 16px;
   }
-
-
-
-
-  .menuicon {
+  /* Nav bar component styles*/
+  .menu-icon {
     display: none;
   }
   .ant-menu-title-content {
     color: #ffffff !important;
   }
-  .headerMenu {
+  .header-menu {
     max-width: 90rem;
     margin: auto;
-    padding-left: 28px; /* Adjust as needed */
-    padding-right: 28px; /* Adjust as needed */
+    padding-left: 28px; 
+    padding-right: 28px; 
   }
 
   .content,
@@ -543,10 +543,6 @@
   .cover-img {
     height: 240px;
   }
-
- 
-
-  
 
   .site-collapse-custom-panel {
     padding-top: 20px;
@@ -574,9 +570,5 @@
   .divMargin {
     margin-bottom: 10px;
   }
-  .resultImg {
-    width: 40vw;
-    margin-bottom: 32px;
-    max-width: 800px;
-  }
+
 }

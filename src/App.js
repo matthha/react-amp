@@ -76,7 +76,7 @@ const components = {
           level={3}
           color={tokens.colors.red[80]}
         >
-          Orientation Dashboard
+          City High Orientation
         </Heading>
       );
     },
@@ -111,7 +111,7 @@ const components = {
         );
       },
       Footer() {
-        return (<Text>Footer Information</Text>);
+        return <Text>Footer Information</Text>;
       },
     },
   },
@@ -132,7 +132,6 @@ const earthyTheme = {
   },
 };
 
-
 export default function App() {
   return (
     <Router>
@@ -143,41 +142,40 @@ export default function App() {
           },
         }}
       >
-        <ThemeProvider theme={earthyTheme}>      
+        <ThemeProvider theme={earthyTheme}>
           <Authenticator
             style={{ backgroundColor: "blue" }}
             formFields={formFields}
             components={components}
             hideSignUp={true}
           >
-
             {({ signOut, user }) => {
               // * This is the current admin path and their username
               if (user?.username === adminInfo.adminUsername) {
                 return (
-                   <main>
-                   <ProgressProvider>
-                     <Routes>
-                       <Route path="/" element={<HomeAdmin user={user} />} />
-                       <Route path="/admin" element={<HomeAdmin user={user} />} />
-                       <Route path="/home" element={<Home user={user} />} />
-                       <Route path="/video/*" element={<Video />} />
-                       <Route path="/quiz/*" element={<Quiz user={user} />} />
-                       <Route path="/recap" element={<RecapPage />} />
-                       <Route path="/faq" element={<FAQPage />} />
-                       <Route path="/contact" element={<ContactPage />} />
-                       <Route
-                         path="/profile"
-                         element={<ProfilePage />}
-                       />
-                       <Route
-                         path="/recapcontent/:moduleName"
-                         element={<RecapContentPage />}
-                       />
-                       <Route path="/result/*" element={<Result />} />
-                     </Routes>
-                   </ProgressProvider>
-                 </main>
+                  <main>
+                    <ProgressProvider>
+                      <Routes>
+                        <Route path="/" element={<HomeAdmin user={user} />} />
+                        <Route
+                          path="/admin"
+                          element={<HomeAdmin user={user} />}
+                        />
+                        <Route path="/home" element={<Home user={user} />} />
+                        <Route path="/video/*" element={<Video />} />
+                        <Route path="/quiz/*" element={<Quiz user={user} />} />
+                        <Route path="/recap" element={<RecapPage />} />
+                        <Route path="/faq" element={<FAQPage />} />
+                        <Route path="/contact" element={<ContactPage />} />
+                        <Route path="/profile" element={<ProfilePage />} />
+                        <Route
+                          path="/recapcontent/:moduleName"
+                          element={<RecapContentPage />}
+                        />
+                        <Route path="/result/*" element={<Result />} />
+                      </Routes>
+                    </ProgressProvider>
+                  </main>
                 );
               } else {
                 return (
@@ -191,10 +189,7 @@ export default function App() {
                         <Route path="/recap" element={<RecapPage />} />
                         <Route path="/faq" element={<FAQPage />} />
                         <Route path="/contact" element={<ContactPage />} />
-                        <Route
-                          path="/profile"
-                          element={<ProfilePage />}
-                        />
+                        <Route path="/profile" element={<ProfilePage />} />
                         <Route
                           path="/recapcontent/:moduleName"
                           element={<RecapContentPage />}

@@ -68,7 +68,7 @@ const Result = () => {
               }}
             >
               <img
-                className="resultImg"
+                className="result-img"
                 src="/images/Congrats.png"
                 alt="congrats on finishing the module!"
               />
