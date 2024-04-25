@@ -5,8 +5,7 @@ import "./reset.css";
 import "./App.scss";
 import { adminInfo } from "./JSONs/adminInfo"; // Contains admin specific information
 import "@aws-amplify/ui-react/styles.css";
-import { Button, Flex, Heading, Text, TextField, Image, View, withAuthenticator, Authenticator, useTheme } from "@aws-amplify/ui-react";
-import { generateClient } from "aws-amplify/api";
+import { Heading, Text, Image, View, Authenticator, useTheme, ThemeProvider } from "@aws-amplify/ui-react";
 import Home from "./screens/Home";
 import HomeAdmin from "./screens/HomeAdmin";
 import Video from "./screens/Video";
@@ -19,7 +18,6 @@ import Result from "./screens/Result";
 import ContactPage from "./screens/ContactPage";
 import config from "./aws-exports";
 import { Amplify } from "aws-amplify";
-import { ThemeProvider } from "@aws-amplify/ui-react";
 import { ConfigProvider } from "antd";
 
 Amplify.configure(config); // Configure AWS Amplify
@@ -54,7 +52,7 @@ const components = {
     Header() {
       const { tokens } = useTheme();
       return (
-        <Heading padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`} level={3} color={tokens.colors.red[80]}>
+        <Heading padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}  level={3} color={tokens.colors.red[80]}>
           City High Orientation
         </Heading>
       );
@@ -110,7 +108,7 @@ export default function App() {
       <ConfigProvider theme={{ token: { colorPrimary: "#9e2a2b" } }}>
         <ThemeProvider theme={earthyTheme}>
           <Authenticator style={{ backgroundColor: "blue" }} formFields={formFields} components={components} hideSignUp={true}>
-            {({ signOut, user }) => (
+            {({ user }) => (
               <main>
                 <ProgressProvider>
                   <Routes>

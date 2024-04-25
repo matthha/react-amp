@@ -68,9 +68,9 @@ function HomeAdmin(props) {
   const totalModules = orientationModules.length;
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "white" }}>
-      <NavBar />
-      <div className="contentBody">
+    <div className="page-body">
+    <NavBar /> {/*  Navigation bar at the top of the page */}
+    <div className="content-body">
         <h1 className="header1">Orientation Dashboard</h1>
 
         <div className="content paragraph">

@@ -78,6 +78,9 @@
 .margin-top-medium {
   margin-top: 12px;
 }
+.margin-top-large {
+  margin-top: 20px;
+}
 .margin-vertical-small {
   margin: 12px 0;
 }
@@ -252,6 +255,16 @@
   border-radius: 100px;
 }
 
+/* Certification page styles */
+.profile-display {
+  padding: 10px 0;
+  color: black;
+}
+.profile-card {
+  padding: 15px;
+  background-color: #f0f0f1;
+  border-radius: 8px;
+}
 /* Nav bar component styles*/
 .menu-icon {
   background: var(--primary-color-1);
@@ -282,6 +295,10 @@
   width: auto;
 }
 
+//overide for login page
+[data-amplify-authenticator] {
+  padding-bottom: 100px;
+}
 
 .contentBox {
   display: flex;
@@ -317,17 +334,6 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-.profile-display {
-  padding: 10px 0;
-  color: black;
-}
-
-.profile-card {
-  padding: 15px;
-  background-color: #f0f0f1;
-  border-radius: 8px;
 }
 
 .site-collapse-custom-panel {
@@ -424,6 +430,9 @@
   }
   .margin-top-medium {
     margin-top: 16px;
+  }
+  .margin-top-large {
+    margin-top: 24px;
   }
   .margin-vertical-small {
     margin: 16px 0;
@@ -524,8 +533,8 @@
   .header-menu {
     max-width: 90rem;
     margin: auto;
-    padding-left: 28px; 
-    padding-right: 28px; 
+    padding-left: 28px;
+    padding-right: 28px;
   }
 
   .content,
@@ -570,5 +579,4 @@
   .divMargin {
     margin-bottom: 10px;
   }
-
 }
