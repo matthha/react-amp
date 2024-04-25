@@ -1,22 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ProgressProvider } from "./ProgressContext"; // Adjust the path if necessary
+import { ProgressProvider } from "./ProgressContext"; // Context for tracking user progress
 import "./reset.css";
 import "./App.scss";
-import { adminInfo } from "./JSONs/adminInfo";
+import { adminInfo } from "./JSONs/adminInfo"; // Contains admin specific information
 import "@aws-amplify/ui-react/styles.css";
-import {
-  Button,
-  Flex,
-  Heading,
-  Text,
-  TextField,
-  Image,
-  View,
-  withAuthenticator,
-  Authenticator,
-  useTheme,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Heading, Text, TextField, Image, View, withAuthenticator, Authenticator, useTheme } from "@aws-amplify/ui-react";
 import { generateClient } from "aws-amplify/api";
 import Home from "./screens/Home";
 import HomeAdmin from "./screens/HomeAdmin";
@@ -31,12 +20,11 @@ import ContactPage from "./screens/ContactPage";
 import config from "./aws-exports";
 import { Amplify } from "aws-amplify";
 import { ThemeProvider } from "@aws-amplify/ui-react";
-
 import { ConfigProvider } from "antd";
 
-Amplify.configure(config);
+Amplify.configure(config); // Configure AWS Amplify
 
-// const client = generateClient();
+// Custom sign-in and confirmation form configurations
 const formFields = {
   signIn: {
     username: {
@@ -52,16 +40,12 @@ const formFields = {
   },
 };
 
+// Define custom components for the Amplify Authenticator UI
 const components = {
   Header() {
     const { tokens } = useTheme();
-
     return (
-      <View
-        textAlign="center"
-        padding={tokens.space.xxxl}
-        backgroundColor={tokens.colors.brand.primary[20]}
-      >
+      <View textAlign="center" padding={tokens.space.xxxl} backgroundColor={tokens.colors.brand.primary[20]}>
         <Image alt="CCHS Logo" src="/cclogo.png" />
       </View>
     );
@@ -69,26 +53,17 @@ const components = {
   SignIn: {
     Header() {
       const { tokens } = useTheme();
-
       return (
-        <Heading
-          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-          level={3}
-          color={tokens.colors.red[80]}
-        >
+        <Heading padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`} level={3} color={tokens.colors.red[80]}>
           City High Orientation
         </Heading>
       );
     },
-
     VerifyUser: {
       Header() {
         const { tokens } = useTheme();
         return (
-          <Heading
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-            level={3}
-          >
+          <Heading padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`} level={3}>
             Enter Information:
           </Heading>
         );
@@ -97,15 +72,11 @@ const components = {
         return <Text>Footer Information</Text>;
       },
     },
-
     ConfirmVerifyUser: {
       Header() {
         const { tokens } = useTheme();
         return (
-          <Heading
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-            level={3}
-          >
+          <Heading padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`} level={3}>
             Enter Information:
           </Heading>
         );
@@ -117,6 +88,7 @@ const components = {
   },
 };
 
+// Define a custom theme for the application
 const earthyTheme = {
   name: "earthTheme",
   tokens: {
@@ -135,59 +107,27 @@ const earthyTheme = {
 export default function App() {
   return (
     <Router>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#9e2a2b",
-          },
-        }}
-      >
+      <ConfigProvider theme={{ token: { colorPrimary: "#9e2a2b" } }}>
         <ThemeProvider theme={earthyTheme}>
-          <Authenticator
-            style={{ backgroundColor: "blue" }}
-            formFields={formFields}
-            components={components}
-            hideSignUp={true}
-          >
-            {({ signOut, user }) => {
-              // * This is the current admin path and their username
-              if (user?.username === adminInfo.adminUsername) {
-                return (
-                  <main>
-                    <ProgressProvider>
-                      <Routes>
+          <Authenticator style={{ backgroundColor: "blue" }} formFields={formFields} components={components} hideSignUp={true}>
+            {({ signOut, user }) => (
+              <main>
+                <ProgressProvider>
+                  <Routes>
+                    {/* Conditional rendering of routes based on whether the user is an admin */}
+                    {user?.username === adminInfo.adminUsername ? (
+                      <>
                         <Route path="/" element={<HomeAdmin user={user} />} />
-                        <Route
-                          path="/admin"
-                          element={<HomeAdmin user={user} />}
-                        />
-                        <Route path="/home" element={<Home user={user} />} />
-                        <Route path="/video/*" element={<Video />} />
-                        <Route path="/quiz/*" element={<Quiz user={user} />} />
-                        <Route path="/recap" element={<RecapPage />} />
-                        <Route path="/faq" element={<FAQPage />} />
-                        <Route path="/contact" element={<ContactPage />} />
-                        <Route path="/profile" element={<ProfilePage />} />
-                        <Route
-                          path="/recapcontent/:moduleName"
-                          element={<RecapContentPage />}
-                        />
-                        <Route path="/result/*" element={<Result />} />
-                      </Routes>
-                    </ProgressProvider>
-                  </main>
-                );
-              } else {
-                return (
-                  <main>
-                    <ProgressProvider>
-                      <Routes>
+                        <Route path="/admin" element={<HomeAdmin user={user} />} />
+                      </>
+                    ) : (
                         <Route path="/" element={<Home user={user} />} />
-                        <Route path="/home" element={<Home user={user} />} />
-                        <Route path="/video/*" element={<Video />} />
-                        <Route path="/quiz/*" element={<Quiz user={user} />} />
-                        <Route path="/recap" element={<RecapPage />} />
-                        <Route path="/faq" element={<FAQPage />} />
+                    )}
+                    <Route path="/home" element={<Home user={user} />} />
+                    <Route path="/video/*" element={<Video />} />
+                    <Route path="/quiz/*" element={<Quiz user={user} />} />
+                    <Route path="/recap" element={<RecapPage />} />
+                    <Route path="/faq" element={<FAQPage />} />
                         <Route path="/contact" element={<ContactPage />} />
                         <Route path="/profile" element={<ProfilePage />} />
                         <Route
@@ -198,9 +138,7 @@ export default function App() {
                       </Routes>
                     </ProgressProvider>
                   </main>
-                );
-              }
-            }}
+                  )}
           </Authenticator>
         </ThemeProvider>
       </ConfigProvider>
