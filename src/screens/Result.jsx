@@ -1,79 +1,65 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import ResultCard from "../components/ResultCard";
-import { Card, Radio, Button, Space, ConfigProvider } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import moduleData from "../orientationModules.json"; // path to your JSON file
-import { Drawer, Menu, Progress, Row, Col } from "antd";
+import { Button } from "antd";
 
-//Delete this after
-import { content } from "../JSONs/Modules";
-
-const Result = (props) => {
-  //TODO: change this to the quiz page passed value
+const Result = () => {
   const location = useLocation();
-  useEffect(()=> {window.scrollTo(0, 0)},[])
+  const navigate = useNavigate();
+
+  // Scrolls to the top of the page when the component is mounted
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Retrieve the necessary state from the previous route
   const module = location.state?.module ?? {};
-  const moduleName = location.state?.module?.title ?? "Unknown Module";
+  const moduleName = module.title ?? "Unknown Module";
   const answers = location.state?.answers || {};
   const myRecord = location.state.myRecord;
   const quizList = module.quizList;
-  console.log(answers);
-  console.log(module);
-  const calculateScore = (answers, module) => {
-    let score = 0;
-    // Loop through each question in the module's quizList
-    module.quizList.forEach((quiz, index) => {
-      // Check if the user's answer matches the correct answer
-      const correctAnswer = quiz.correctAnswer;
-      if (answers[index] === correctAnswer) {
-        score += 1; // Increment the score for each correct answer
-      }
-    });
 
-    return score;
+  // Function to calculate the score based on correct answers
+  const calculateScore = () => {
+    return quizList.reduce(
+      (acc, quiz, index) =>
+        acc + (answers[index] === quiz.correctAnswer ? 1 : 0),
+      0
+    );
   };
-  const navigate = useNavigate();
 
-  const score = calculateScore(answers, module);
+  const score = calculateScore();
   const totalQuestion = quizList.length;
 
+  // Function to navigate back to the quiz page to retake the quiz
   const handleTakeAgain = () => {
-    navigate(`/quiz/${moduleName}`, { state: { module, myRecord } }); // Navigate to your quiz page route
+    navigate(`/quiz/${moduleName}`, { state: { module, myRecord } });
   };
-  const handlebackhome = () => {
-    //TODO
-    //handle the logic to move to the next module
-    navigate(`/home`);
+
+  // Function to navigate back to the home page
+  const handleBackHome = () => {
+    navigate("/home");
   };
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "white" }}>
+    <div className="page-body">
       <NavBar />
-      <div className="contentBody quizBody">
-        <h1 className="header1" style={{ marginBottom: "12px" }}>
-          {moduleName} Quiz Result
-        </h1>
-
+      <div className="content-body quiz-body">
+        <h1 className="header1">Quiz Result</h1>
+        <p className="body-text-2 secondary-text margin-bottom-small">
+          {moduleName} Module
+        </p>
         {score >= module.scoreForPassing ? (
           <div>
             <h3 className="header3">
               Your Score for this attempt:{" "}
-              <span style={{ color: "#299E63" }}>{score}</span>/{totalQuestion}{" "}
+              <span className="color-semantic-green">{score}</span>/
+              {totalQuestion}{" "}
             </h3>
-            <p
-              className="content"
-              style={{ marginTop: "8px", marginBottom: 20 }}
-            >
+            <p className="body-text-2 margin-top-small margin-bottom-medium">
               Congras! You have completed this Module!
             </p>
-            <div style={{ width: "100%", display:"flex", justifyContent:"center" }}>
-              <img className="resultImg"
-                src="/images/Congrats.png"
-                alt="congrats on finishing the module!"
-              />
-            </div>
             <div
               style={{
                 width: "100%",
@@ -81,12 +67,15 @@ const Result = (props) => {
                 justifyContent: "center",
               }}
             >
-              <Button
-                className="resultpageButton"
-                onClick={handlebackhome}
-                block
-              >
-                <div className="buttonText">Back to Home</div>
+              <img
+                className="resultImg"
+                src="/images/Congrats.png"
+                alt="congrats on finishing the module!"
+              />
+            </div>
+            <div className="button-container">
+              <Button className="action-button" onClick={handleBackHome} block>
+                <div className="body-text-1">Back to Home</div>
               </Button>
             </div>
           </div>
@@ -94,28 +83,16 @@ const Result = (props) => {
           <div>
             <h3 className="header3">
               Your Score for this attempt:{" "}
-              <span style={{ color: "#C51C00" }}>{score}</span>/{totalQuestion}{" "}
+              <span className="color-semantic-red">{score}</span>/
+              {totalQuestion}{" "}
             </h3>
-            <p
-              className="content"
-              style={{ marginTop: "8px", marginBottom: 20 }}
-            >
+            <p className="body-text-2 margin-top-small margin-bottom-medium">
               For this quiz, you will have unlimited attempts, but need to get{" "}
               {module.scoreForPassing}/{totalQuestion} to complete this module.
             </p>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                className="resultpageButton"
-                onClick={handleTakeAgain}
-                block
-              >
-                <div className="buttonText">Take the Quiz Again</div>
+            <div className="button-container">
+              <Button className="action-button" onClick={handleTakeAgain} block>
+                <div className="body-text-1">Take the Quiz Again</div>
               </Button>
             </div>
           </div>

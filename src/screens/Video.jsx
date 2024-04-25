@@ -29,10 +29,11 @@ const IntroductionVideo = () => {
     <div className="page-body">
       <NavBar />
       <div className="content-body quiz-body">
-        <h1 className="header1">{moduleName} Video</h1>
+        <h1 className="header1">Module Content</h1>
         <div className="secondary-text body-text-2">
-        {/* Display estimated time for the video */}
-          <ClockCircleOutlined /> {module.estimationTime} 
+          {/* Display estimated time for the video */}
+          <ClockCircleOutlined /> {module.estimationTime} to complete{" "}
+          {moduleName} Module
         </div>
         <div className="body-text-1">{module.description}</div>
         <div className="margin-vertical-small">
@@ -49,11 +50,7 @@ const IntroductionVideo = () => {
         {/* Display additional module content */}
         <Content content={module.content} />
         <div className="button-container">
-          <Button
-            className="action-button"
-            block
-            onClick={handleStartQuiz}
-          >
+          <Button className="action-button" block onClick={handleStartQuiz}>
             <div className="body-text-1">Start the quiz</div>
           </Button>
         </div>

@@ -72,9 +72,10 @@ const Quiz = () => {
     <div className="page-body">
       <NavBar />
       <div className="content-body quiz-body">
-        <h1 className="header1">{moduleName} Quiz</h1>
+        <h1 className="header1">Module Quiz</h1>
+        <p className="body-text-2 secondary-text margin-bottom-small">{moduleName} Module</p>
         {module.quizList.map((quizItem, index) => (
-          <Card key={index} className="margin-top-medium">
+          <Card key={index} className="margin-top-medium padding-bottom-small">
             <h3 className="header3">Question {index + 1}</h3>
             <p className="body-text-2 padding-vertical-medium">
               {quizItem.question}

@@ -78,6 +78,12 @@
 .margin-top-medium {
   margin-top: 12px;
 }
+.margin-vertical-small {
+  margin: 12px 0;
+}
+.margin-vertical-medium {
+  margin: 16px 0;
+}
 .margin-vertical-large {
   margin: 40px 0;
 }
@@ -110,7 +116,9 @@
 .color-semantic-red{
   color: var(--semantic-color-red);
 }
-
+.color-semantic-green{
+  color: var(--semantic-color-green);
+}
 .secondary-text {
   color: var(--secondary-color-2);
 }
@@ -151,7 +159,6 @@
   height: 40px;
   border-radius: 100px;
 }
-
 
 /* FAQ page styles */
 //This is the style for the faq container on the faq page
@@ -223,6 +230,24 @@
   height: 100%;
 }
 
+/* result page styles */
+/* result card component styles*/
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ant-card-body {
+  padding: 16px !important;
+}
+.alert-inline {
+  display: inline-flex; /* Makes the alert hug its content */
+  align-items: center;
+  margin-left: 16px; /* Adjust as needed for spacing */
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
 //This is the congrats image on the quiz result page
 .resultImg {
   width: 100%;
@@ -255,10 +280,7 @@
   line-height: var(--line-height);
 }
 
-.ant-card-body {
-  padding: 8px !important;
-  padding-bottom: 20px !important;
-}
+
 .status-card {
   display: flex;
   gap: 4px;
@@ -319,7 +341,6 @@
 }
 
 
-
 .navBox {
   border-bottom: 1px solid #f0f0f1;
   padding: 20px 24px 40px 24px;
@@ -341,26 +362,9 @@
   width: auto;
 }
 
-.question-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
 
-.alert-inline {
-  display: inline-flex; /* Makes the alert hug its content */
-  align-items: center;
-  margin-left: 16px; /* Adjust as needed for spacing */
-  padding: 4px 10px;
-  color: #000;
-  font-feature-settings: "clig" off, "liga" off;
-  /* 14-medium */
-  font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
+
+
 .cover-img {
   height: 164px;
   object-fit: cover;
@@ -371,17 +375,7 @@
 .ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
   border-bottom-color: white !important;
 }
-.resultpageButton {
-  background-color: #9e2a2b;
-  border-color: #9e2a2b;
-  color: white;
-  height: 40px;
-  border-radius: 100px;
-  width: auto;
-  align-items: center;
-  padding: 8px 28px;
-  min-width: 212px;
-}
+
 
 /* styles to hide certain class for mobile version with maximum width of 500px*/
 @media (max-width: 500px) {
@@ -433,11 +427,20 @@
   .margin-top-medium {
     margin-top: 16px;
   }
+  .margin-vertical-small {
+    margin: 16px 0;
+  }
+  .margin-vertical-medium {
+    margin: 24px 0;
+  }
   .margin-vertical-large {
     margin: 48px 0;
   }
   .padding-vertical-medium {
     padding: 18px 0;
+  }
+  .padding-bottom-small {
+    padding-bottom: 4px;
   }
 
   /* styles for page bodies */
@@ -446,6 +449,13 @@
     max-width: 90rem;
     margin: auto;
   }
+  /* Button Styles */
+//This is the style for all the buttons
+.action-button {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  height: 50px;
+}
 
   /* FAQ page styles */
   //This is the style for the faq container on the faq page
@@ -493,13 +503,18 @@
     padding: 8px 28px;
     border-radius: 100px;
   }
-  /* Video page styles */
-
-  .action-button {
-    margin-left: 10rem;
-    margin-right: 10rem;
-    height: 50px;
+ 
+  /* result card component styles*/
+  .ant-card-body {
+    padding: 20px !important;
   }
+  .alert-inline {
+    padding: 4px 16px;
+  }
+
+
+
+
   .menuicon {
     display: none;
   }
@@ -517,10 +532,7 @@
   .ant-tabs-tab-btn {
     font-size: 18px;
   }
-  .ant-card-body {
-    padding: 20px !important;
-    padding-bottom: 20px !important;
-  }
+
   .card-body {
     gap: 8px;
   }
@@ -558,15 +570,6 @@
   }
   .ant-alert-message {
     font-size: 16px;
-  }
-  .resultpageButton {
-    height: 50px;
-    border-radius: 100px;
-    width: 30vw !important;
-    align-items: center;
-    padding: 8px 28px;
-    min-width: 280px;
-    max-width: 500px;
   }
   .divMargin {
     margin-bottom: 10px;
