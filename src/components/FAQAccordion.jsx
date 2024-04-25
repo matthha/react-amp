@@ -24,7 +24,7 @@ const FAQAccordion = ({ question, answer }) => {
             style={{ marginRight: "10px", padding: "8px 0 0 16px" }}
             size="2xs"
           />
-          <p className="header3">{question}</p> {/* Question text */}
+          <p className="header3 color-primary-2 ">{question}</p> {/* Question text */}
         </button>
         {/* Content area that displays if the accordion is open */}
         {isOpen && (
