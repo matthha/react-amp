@@ -21,7 +21,7 @@ const FAQAccordion = ({ question, answer }) => {
           {/* Icon changes based on whether the accordion is open or closed */}
           <FontAwesomeIcon
             icon={isOpen ? faChevronUp : faChevronDown}
-            style={{ marginRight: "10px", padding: "8px 0 0 16px" }}
+            style={{ marginRight: "10px", padding: "8px 0 0 16px", color: "#000"}}
             size="2xs"
           />
           <p className="header3 color-primary-2 ">{question}</p> {/* Question text */}
