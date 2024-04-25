@@ -128,8 +128,9 @@
 /* styles for page bodies */
 //This is the page body style for all the pages
 .page-body {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--primary-color-3);
+  padding-bottom: 60px;
 }
 //this is the content body style for all the pages
 .content-body {
@@ -294,22 +295,6 @@
   height: 100%;
   width: auto;
 }
-
-//overide for login page
-[data-amplify-authenticator] {
-  padding-bottom: 100px;
-}
-
-.contentBox {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.paragraph {
-  margin-top: 12px;
-}
 .ant-menu-title-content {
   color: white;
 }
@@ -325,17 +310,24 @@
   font-weight: 500;
   line-height: var(--line-height);
 }
-
-.status-card {
-  display: flex;
-  gap: 4px;
+/* Style for the collapse panel header in nav bar*/
+.site-collapse-custom-panel > .ant-collapse-header {
+  padding-left: 0 !important;
+  color: #9e2a2b;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-family);
 }
-.card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* Style for the content box in nav bar*/
+.site-collapse-custom-panel .ant-collapse-content-box {
+  font-size: 16px;
+  padding-left: 20px;
+  margin-left: 10px;
+  font-family: var(--font-family);
 }
-
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
+  border-bottom-color: white !important;
+}
 .site-collapse-custom-panel {
   background: #fff;
   border: 0;
@@ -345,40 +337,24 @@
   font-family: Inter, Helvetica, Arial, Verdana, Tahoma, sans-serif;
 }
 
-/* Style for the collapse panel header in nav bar*/
-.site-collapse-custom-panel > .ant-collapse-header {
-  padding-left: 0 !important;
-  color: #9e2a2b;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: var(--font-family);
-}
-/* Style for the content box in nav ba*/
-.site-collapse-custom-panel .ant-collapse-content-box {
-  font-size: 16px;
-  padding-left: 20px;
-  margin-left: 10px;
-  font-family: var(--font-family);
-}
-
-/* CSS file */
-
-.cardStyle {
+/* home page style*/
+.card-body {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 13px;
-  margin-bottom: 10px;
-  /* other styles */
+  flex-direction: column;
+  gap: 6px;
 }
-
 .cover-img {
   height: 164px;
   object-fit: cover;
 }
+.status-card {
+  display: flex;
+  gap: 4px;
+}
 
-.ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child::after {
-  border-bottom-color: white !important;
+//overide for login page
+[data-amplify-authenticator] {
+  padding-bottom: 100px;
 }
 
 /* styles to hide certain class for mobile version with maximum width of 500px*/
@@ -463,6 +439,9 @@
     margin-right: 10rem;
     height: 50px;
   }
+  .button-container {
+    margin-top: 24px;
+  }
 
   /* FAQ page styles */
   //This is the style for the faq container on the faq page
@@ -510,6 +489,7 @@
     padding: 8px 28px;
     border-radius: 100px;
   }
+
   /* Result page component styles*/
   .result-img {
     width: 40vw;
@@ -536,47 +516,22 @@
     padding-left: 28px;
     padding-right: 28px;
   }
-
-  .content,
-  .ant-tabs-tab-btn {
-    font-size: 18px;
-  }
-
-  .card-body {
-    gap: 8px;
-  }
-  .ant-col {
-    padding-right: 2vw !important;
-    padding-bottom: 1vw !important;
-  }
-  .cover-img {
-    height: 240px;
-  }
-
   .site-collapse-custom-panel {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
   .site-collapse-custom-panel > .ant-collapse-header {
     font-size: 20px;
   }
-
   .site-collapse-custom-panel .ant-collapse-content-box {
     font-size: 20px;
   }
 
-  .profile-input {
-    font-size: 18px;
+  /* home page style*/
+  .card-body {
+    gap: 8px;
   }
-
-  .button-container {
-    margin-top: 24px;
-  }
-  .ant-alert-message {
-    font-size: 16px;
-  }
-  .divMargin {
-    margin-bottom: 10px;
+  .cover-img {
+    height: 240px;
   }
 }

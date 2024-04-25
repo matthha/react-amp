@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 
-// Move this to a higher level if possible
-
 const RecapCard = ({ title, description, icon }) => {
   let iconObj = icon;
   const navigate = useNavigate();
@@ -40,7 +38,7 @@ const RecapCard = ({ title, description, icon }) => {
       <button
         className="recap-button body-text-2"
         onClick={(e) => {
-          e.stopPropagation(); // Correct use of event stopping
+          e.stopPropagation(); 
           handleNavigation(true);
         }}
       >

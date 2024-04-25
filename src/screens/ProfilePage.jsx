@@ -26,6 +26,7 @@ function ProfilePage() {
         console.error("Error fetching user information:", error);
       }
     };
+
     fetchUserInfo();
   }, []);
 
@@ -34,63 +35,78 @@ function ProfilePage() {
       <NavBar />
       <div className="content-body">
         <h1 className="header1">Certification</h1>
-
-        <h3 className="header3 margin-vertical-medium">GENERAL INFORMATION</h3>
-        <div className="profile-card" style={{ marginBottom: 25 }}>
-          <h4
-            className="body-text-3 secondary-text"
-            style={{ paddingBottom: 5 }}
-          >
-            USERNAME
-          </h4>
-          <div className="profile-display">{username}</div>
-        </div>
-      </div>
-      <h3 className="header3 margin-vertical-large">COMPLETION STATUS</h3>
-
-      {completionPercentage >= 100 ? (
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-            }}
-          >
-            <img
-              src="/images/badge.jpg"
-              alt="Completed"
-              style={{ width: "160px", height: "135px" }}
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                paddingTop: "20px",
-              }}
-            >
-              <span
-                className="body-text-2 semibold"
-                style={{ marginLeft: "12px" }}
+          <h3 className="header3 margin-vertical-medium" >
+            GENERAL INFORMATION
+          </h3>
+          <div>
+            <div className="profile-card" style={{ marginBottom: 25 }}>
+              <h4
+                className="body-text-3 secondary-text"
+                style={{ paddingBottom: 5 }}
               >
-                Congratulations!
-              </span>
-              <span className="body-text-2" style={{ marginLeft: "12px" }}>
-                {" "}
-                You have completed all the modules!
-              </span>
+                USERNAME
+              </h4>
+              <div className="profile-display">{username}</div>
             </div>
           </div>
         </div>
-      ) : (
         <div>
-          <MinusCircleFilled style={{ color: "#C51C00", fontSize: "24px" }} />
-          <span style={{ marginLeft: "12px" }}>
-            You have not completed all the modules yet.
-          </span>
+          <h3 className="header3 margin-vertical-medium" >
+            COMPLETION STATUS
+          </h3>
+          <div>
+            {completionPercentage >= 100 ? (
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <img
+                    src="/images/badge.jpg"
+                    alt="Completed"
+                    style={{ width: "160px", height: "135px" }}
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      paddingTop: "20px",
+                    }}
+                  >
+                    <span
+                      className="body-text-2 semibold"
+                      style={{ marginLeft: "10px" }}
+                    >
+                      Congratulations!
+                    </span>
+                    <span
+                      className="body-text-2"
+                      style={{ marginLeft: "10px" }}
+                    >
+                      {" "}
+                      You have completed all the modules!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <MinusCircleFilled
+                  style={{ color: "#C51C00", fontSize: "24px" }}
+                />
+                <span style={{ marginLeft: "10px" }}>
+                  You have not completed all the modules yet.
+                </span>
+              </div>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

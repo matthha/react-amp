@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
 import { Progress, Tabs } from "antd";
 import { content } from "../JSONs/Modules";
 import { generateClient } from "aws-amplify/api";
@@ -12,13 +10,10 @@ import NavBar from "../components/NavBar";
 const orientationModules = content;
 
 function HomeAdmin(props) {
-  const [myRecords, setMyRecords] = useState([]);
   const [thePassed, setThePassed] = useState([]);
   const [theInProgress, setTheInProgress] = useState([]);
 
   const client = generateClient();
-
-  const navigate = useNavigate();
 
   async function fetchProgress() {
     function CheckFinished(obj) {
@@ -42,7 +37,6 @@ function HomeAdmin(props) {
       const apiData = await client.graphql({ query: listProgresses });
 
       if (apiData.data.listProgresses.items.length !== 0) {
-        setMyRecords(apiData.data.listProgresses.items);
 
         const comp = apiData.data.listProgresses.items.filter(CheckFinished);
         const prog = apiData.data.listProgresses.items.filter(CheckInProgress);
@@ -73,21 +67,21 @@ function HomeAdmin(props) {
     <div className="content-body">
         <h1 className="header1">Orientation Dashboard</h1>
 
-        <div className="content paragraph">
+        <div className="body-text-2 margin-top-medium">
           Hello, {props?.user.username} <br />
           Current user progress are below:
         </div>
         <Tabs
           defaultActiveKey="1"
-          className="content"
+          className="body-text-2"
           items={[
             {
               key: "1",
               label: `In Progress (${theInProgress.length})`,
               children: theInProgress.map((person, index) => (
-                <div key={index} className="content">
+                <div key={index} className="body-text-2">
                   <h3>{person.userID}</h3>
-                  <p>
+                  <p className="body-text-2">
                     Completed {JSON.parse(person?.progress).length} out of{" "}
                     {totalModules}
                   </p>
@@ -103,7 +97,7 @@ function HomeAdmin(props) {
               key: "2",
               label: `Completed (${thePassed.length})`,
               children: thePassed.map((person, index) => (
-                <div key={index} className="content">
+                <div key={index} className="body-text-2">
                   <h3>{person.userID}</h3>
                   <p>
                     Completed {JSON.parse(person?.progress).length} out of{" "}
